@@ -6,10 +6,9 @@ androidxLifeCycleRuntime = "2.6.1"
 androidxComposeActivity = "1.7.2"
 androidxComposeBom = "2023.01.00"
 androidxComposeCompiler = "1.4.7"
+androidxComposeNavigation = "2.5.3"
 
-kotlinBom = "1.8.0"
 androidDesugarJdkLibs = "2.0.3"
-
 androidxEspresso = "3.5.0"
 androidxJunit = "1.1.5"
 junit4 = "4.13.2"
@@ -18,6 +17,7 @@ junit4 = "4.13.2"
 androidx-core-ktx = {group = "androidx.core", name="core-ktx", version.ref = "androidxCore"}
 androidx-lifecycle-runtime = {group = "androidx.lifecycle", name="lifecycle-runtime-ktx", version.ref="androidxLifeCycleRuntime"}
 androidx-compose-activity = {group = "androidx.activity", name="activity-compose", version.ref="androidxComposeActivity"}
+androidx-compose-navigation = {group = "androidx.navigation", name="navigation-compose", version.ref="androidxComposeNavigation"}
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui"}
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics"}
