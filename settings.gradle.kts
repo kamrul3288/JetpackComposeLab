@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "JetpackComposeLab"
 include(":app")
+include(":common")
