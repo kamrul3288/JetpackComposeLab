@@ -33,6 +33,10 @@ gradlePlugin{
             id = "composelab.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
+        register("androidLibrary") {
+            id = "composelab.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
         register("androidFlavors") {
             id = "composelab.android.application.flavors"
             implementationClass = "AndroidApplicationFlavorsConventionPlugin"
