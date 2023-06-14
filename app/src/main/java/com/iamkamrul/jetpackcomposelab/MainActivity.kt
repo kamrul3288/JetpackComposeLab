@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.iamkamrul.jetpackcomposelab.navigation.ApplicationNav
-import com.iamkamrul.jetpackcomposelab.ui.theme.JetpackComposeLabTheme
+import com.iamkamrul.common.theme.JetpackComposeLabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

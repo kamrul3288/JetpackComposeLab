@@ -40,6 +40,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 }
             }
             dependencies {
+                add("implementation",libs.findLibrary("androidx-core-ktx").get())
+                add("implementation",libs.findLibrary("androidx-lifecycle-runtime").get())
+                add("implementation",libs.findLibrary("androidx-compose-activity").get())
+                add("implementation",libs.findLibrary("androidx-compose-ui").get())
+                add("implementation",libs.findLibrary("androidx-compose-ui-graphics").get())
+                add("implementation",libs.findLibrary("androidx-compose-ui-tooling-preview").get())
+                add("implementation",libs.findLibrary("androidx-compose-material3").get())
                 add("androidTestImplementation", kotlin("test"))
                 add("testImplementation", kotlin("test"))
             }
