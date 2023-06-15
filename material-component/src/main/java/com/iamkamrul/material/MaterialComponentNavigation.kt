@@ -10,8 +10,12 @@ fun NavController.navigateToMaterialComponentScreen(){
     this.navigate(materialComponentsRoute)
 }
 
-fun NavGraphBuilder.materialComponentScreen(){
+fun NavGraphBuilder.materialComponentScreen(
+    onBackClick:()->Unit
+){
     composable(route = materialComponentsRoute){
-        MaterialComponentRoute()
+        MaterialComponentRoute(
+            onBackClick = onBackClick
+        )
     }
 }

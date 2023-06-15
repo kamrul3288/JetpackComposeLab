@@ -25,6 +25,8 @@ fun ApplicationNav(
             onClickMaterial = navController::navigateToMaterialComponentScreen,
             onClickLayout = {}
         )
-        materialComponentScreen()
+        materialComponentScreen(
+            onBackClick = navController::popBackStack
+        )
     }
 }

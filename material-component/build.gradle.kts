@@ -8,5 +8,6 @@ android {
 }
 
 dependencies{
+    implementation(project(":common"))
     implementation(libs.androidx.compose.navigation)
 }
