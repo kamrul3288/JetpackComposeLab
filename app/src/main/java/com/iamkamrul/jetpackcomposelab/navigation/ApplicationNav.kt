@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.iamkamrul.jetpackcomposelab.mainScreen
 import com.iamkamrul.jetpackcomposelab.mainScreenRoute
+import com.iamkamrul.material.materialComponentScreen
+import com.iamkamrul.material.navigateToMaterialComponentScreen
 
 @Composable
 fun ApplicationNav(
@@ -19,6 +21,10 @@ fun ApplicationNav(
         startDestination = startDestination,
         modifier = modifier
     ){
-        mainScreen()
+        mainScreen(
+            onClickMaterial = navController::navigateToMaterialComponentScreen,
+            onClickLayout = {}
+        )
+        materialComponentScreen()
     }
 }

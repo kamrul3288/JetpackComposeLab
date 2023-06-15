@@ -21,13 +21,22 @@ import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ComponentButton
 
 @Composable
-internal fun MainRoute(){
-    MainScreen()
+internal fun MainRoute(
+    onClickMaterial:()->Unit,
+    onClickLayout:()->Unit
+){
+    MainScreen(
+      onClickLayout = onClickLayout,
+      onClickMaterial = onClickMaterial
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun MainScreen(){
+internal fun MainScreen(
+    onClickMaterial:()->Unit,
+    onClickLayout:()->Unit
+){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -48,17 +57,13 @@ internal fun MainScreen(){
                 ComponentButton(
                     modifier = Modifier.weight(0.8f).height(80.dp),
                     buttonLabel = "Layouts",
-                    onClick = {
-
-                    }
+                    onClick = onClickLayout
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
                     buttonLabel = "Material Component",
-                    onClick = {
-
-                    }
+                    onClick = onClickMaterial
                 )
             }
 

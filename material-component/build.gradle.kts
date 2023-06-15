@@ -6,3 +6,7 @@ plugins {
 android {
     namespace = "com.iamkamrul.common"
 }
+
+dependencies{
+    implementation(libs.androidx.compose.navigation)
+}
