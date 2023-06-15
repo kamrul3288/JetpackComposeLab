@@ -47,8 +47,15 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 add("implementation",libs.findLibrary("androidx-compose-ui-graphics").get())
                 add("implementation",libs.findLibrary("androidx-compose-ui-tooling-preview").get())
                 add("implementation",libs.findLibrary("androidx-compose-material3").get())
-                add("androidTestImplementation", kotlin("test"))
-                add("testImplementation", kotlin("test"))
+
+                add("testImplementation",libs.findLibrary("junit4").get())
+                add("androidTestImplementation",libs.findLibrary("androidx-junit").get())
+                add("androidTestImplementation",libs.findLibrary("androidx-espresso-core").get())
+                add("androidTestImplementation",libs.findLibrary("androidx-compose-ui-test-junit4").get())
+                add("debugImplementation",libs.findLibrary("androidx-compose-ui-tooling").get())
+                add("debugImplementation",libs.findLibrary("androidx-compose-ui-test-manifest").get())
+
+
             }
         }
     }

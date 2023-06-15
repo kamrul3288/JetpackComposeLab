@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "JetpackComposeLab"
 include(":app")
 include(":common")
+include(":material-component")
