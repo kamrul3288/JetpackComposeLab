@@ -25,19 +25,14 @@ import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ComponentButton
 import com.iamkamrul.common.theme.White
 
-@Composable
-fun MaterialComponentRoute(
-    onBackClick:()->Unit
-){
-    MaterialComponentScreen(
-        onBackClick =  onBackClick
-    )
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun  MaterialComponentScreen(
-    onBackClick:()->Unit
+fun  MaterialComponentScreen(
+    onBackClick:()->Unit,
+    onTextClick:()->Unit,
+    onButtonClick:()->Unit,
+    onIconClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -66,7 +61,7 @@ internal fun  MaterialComponentScreen(
                 ComponentButton(
                     modifier = Modifier.weight(0.8f).height(70.dp),
                     buttonLabel = "Texts",
-                    onClick = {}
+                    onClick = onTextClick
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(

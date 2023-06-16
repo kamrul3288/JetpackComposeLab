@@ -9,6 +9,8 @@ import com.iamkamrul.jetpackcomposelab.mainScreen
 import com.iamkamrul.jetpackcomposelab.mainScreenRoute
 import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
+import com.iamkamrul.material.texts.navigateToTextScreenRoute
+import com.iamkamrul.material.texts.textScreen
 
 @Composable
 fun ApplicationNav(
@@ -26,7 +28,12 @@ fun ApplicationNav(
             onClickLayout = {}
         )
         materialComponentScreen(
-            onBackClick = navController::popBackStack
+            onBackClick = navController::popBackStack,
+            onTextClick = navController::navigateToTextScreenRoute,
+            onButtonClick = {},
+            onIconClick = {}
         )
+
+        textScreen(onBackClick = navController::popBackStack)
     }
 }

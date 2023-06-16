@@ -11,11 +11,17 @@ fun NavController.navigateToMaterialComponentScreen(){
 }
 
 fun NavGraphBuilder.materialComponentScreen(
-    onBackClick:()->Unit
+    onBackClick:()->Unit,
+    onTextClick:()->Unit,
+    onButtonClick:()->Unit,
+    onIconClick:()->Unit,
 ){
     composable(route = materialComponentsRoute){
-        MaterialComponentRoute(
-            onBackClick = onBackClick
+        MaterialComponentScreen(
+            onBackClick = onBackClick,
+            onTextClick = onTextClick,
+            onButtonClick = onButtonClick,
+            onIconClick = onIconClick,
         )
     }
 }
