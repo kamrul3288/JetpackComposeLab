@@ -67,14 +67,14 @@ fun  MaterialComponentScreen(
                 ComponentButton(
                     modifier = Modifier.weight(1f).height(70.dp),
                     buttonLabel = "Buttons",
-                    onClick = {}
+                    onClick = onButtonClick
                 )
 
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
                     modifier = Modifier.weight(0.8f).height(70.dp),
                     buttonLabel = "Icons",
-                    onClick = {}
+                    onClick = onIconClick
                 )
             }
 

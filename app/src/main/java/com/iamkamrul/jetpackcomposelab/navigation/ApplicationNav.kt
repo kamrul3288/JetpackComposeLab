@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.iamkamrul.jetpackcomposelab.mainScreen
 import com.iamkamrul.jetpackcomposelab.mainScreenRoute
+import com.iamkamrul.material.buttons.buttonScreen
+import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
 import com.iamkamrul.material.texts.navigateToTextScreenRoute
@@ -30,10 +32,10 @@ fun ApplicationNav(
         materialComponentScreen(
             onBackClick = navController::popBackStack,
             onTextClick = navController::navigateToTextScreenRoute,
-            onButtonClick = {},
+            onButtonClick = navController::navigateToButtonScreen,
             onIconClick = {}
         )
-
         textScreen(onBackClick = navController::popBackStack)
+        buttonScreen(onBackClick = navController::popBackStack)
     }
 }

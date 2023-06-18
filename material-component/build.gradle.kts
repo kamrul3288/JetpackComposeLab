@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.iamkamrul.common"
+    namespace = "com.iamkamrul.material"
 }
 
 dependencies{
