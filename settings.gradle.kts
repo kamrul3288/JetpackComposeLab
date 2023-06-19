@@ -18,3 +18,4 @@ rootProject.name = "JetpackComposeLab"
 include(":app")
 include(":common")
 include(":material-component")
+include(":layout-example")
