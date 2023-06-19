@@ -21,6 +21,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ComponentButton
 import com.iamkamrul.common.theme.White
@@ -61,11 +62,13 @@ fun  MaterialComponentScreen(
                 ComponentButton(
                     modifier = Modifier.weight(0.8f).height(70.dp),
                     buttonLabel = "Texts",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTextClick
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
                     modifier = Modifier.weight(1f).height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Buttons",
                     onClick = onButtonClick
                 )
@@ -73,6 +76,7 @@ fun  MaterialComponentScreen(
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
                     modifier = Modifier.weight(0.8f).height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Icons",
                     onClick = onIconClick
                 )

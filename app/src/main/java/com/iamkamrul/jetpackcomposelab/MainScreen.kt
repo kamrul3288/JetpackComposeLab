@@ -16,7 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ComponentButton
 
@@ -41,7 +41,7 @@ internal fun MainScreen(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(text = "Jetpack ComposeLab", color = Color.White)
+                    Text(text = "Jetpack ComposeLab")
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary
@@ -50,39 +50,51 @@ internal fun MainScreen(
         }
     ) {
         val modifier = Modifier.padding(it)
-        Column(modifier = modifier.fillMaxSize().padding(16.dp)) {
+        Column(modifier = modifier
+            .fillMaxSize()
+            .padding(4.dp)) {
 
             //-----------Row  1----------------------
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
-                    modifier = Modifier.weight(0.8f).height(80.dp),
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(80.dp),
                     buttonLabel = "Layouts",
+                    icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onClickLayout
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
-                    modifier = Modifier.weight(1f).height(80.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Material Component",
                     onClick = onClickMaterial
                 )
             }
 
             //-----------Row  2----------------------
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
                     buttonLabel = "Modifiers",
+                    icon = painterResource(id = R.drawable.ic_modifier),
                     onClick = {
 
                     }
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
-                    modifier = Modifier.weight(0.8f).height(80.dp),
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(80.dp),
                     buttonLabel = "Navigation",
+                    icon = painterResource(id = R.drawable.ic_navigation),
                     onClick = {
 
                     }
@@ -90,23 +102,25 @@ internal fun MainScreen(
             }
 
             //-----------Row  3----------------------
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(80.dp),
                     buttonLabel = "List",
+                    icon = painterResource(id = R.drawable.ic_list),
                     onClick = {
 
                     }
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
                     buttonLabel = "Multiview List",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
@@ -114,19 +128,25 @@ internal fun MainScreen(
             }
 
             //-----------Row  4----------------------
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
-                    modifier = Modifier.weight(1f).height(80.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
                     buttonLabel = "Resources",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
-                    modifier = Modifier.weight(1f).height(80.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
                     buttonLabel = "Animation",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
@@ -134,21 +154,25 @@ internal fun MainScreen(
             }
 
             //-----------Row  5----------------------
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
-                    modifier = Modifier.weight(0.8f).height(80.dp),
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(80.dp),
                     buttonLabel = "MVVM",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
                     buttonLabel = "Clean Architecture",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
@@ -156,19 +180,25 @@ internal fun MainScreen(
             }
 
             //-----------Row  6----------------------
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
-                    modifier = Modifier.weight(1f).height(80.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
                     buttonLabel = "Sample Project",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 ComponentButton(
-                    modifier = Modifier.weight(1f).height(80.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
                     buttonLabel = "Google Map",
+                    icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }

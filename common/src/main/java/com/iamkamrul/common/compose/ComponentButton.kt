@@ -8,39 +8,44 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.R
+import com.iamkamrul.common.theme.color
 
 @Composable
 fun ComponentButton(
     modifier: Modifier,
     buttonLabel:String,
+    icon:Painter,
     onClick:()->Unit
 ){
     Card(
         modifier = modifier.clickable { onClick() },
-        shape = RoundedCornerShape(5.dp)
+        shape = RoundedCornerShape(5.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.color.card
+        )
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.ic_android),
+                painter = icon,
                 contentDescription = "android"
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = buttonLabel,
-                style = MaterialTheme.typography.titleMedium
+                style = MaterialTheme.typography.titleSmall
             )
         }
     }

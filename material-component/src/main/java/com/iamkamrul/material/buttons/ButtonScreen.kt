@@ -20,6 +20,7 @@ import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
@@ -29,12 +30,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Black
 import com.iamkamrul.common.theme.Pink80
 import com.iamkamrul.common.theme.Purple40
 import com.iamkamrul.common.theme.Purple80
 import com.iamkamrul.common.theme.PurpleGrey40
 import com.iamkamrul.common.theme.PurpleGrey80
+import com.iamkamrul.common.theme.color
 import com.iamkamrul.material.R
 
 @Composable
@@ -93,11 +94,11 @@ internal fun ButtonScreen(
             OutlinedButton(
                 onClick = {},
                 modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.outlinedButtonColors(
-                    contentColor = Black
-                ),
                 border = BorderStroke(width = 2.dp, color = Purple40),
-                shape = RoundedCornerShape(5.dp)
+                shape = RoundedCornerShape(5.dp),
+                colors = ButtonDefaults.outlinedButtonColors(
+                    contentColor = MaterialTheme.color.black
+                )
             ) {
                 Text(text = "Outlined Button")
             }
@@ -106,7 +107,10 @@ internal fun ButtonScreen(
             Spacer(modifier = Modifier.height(10.dp))
             TextButton(
                 onClick = {},
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.outlinedButtonColors(
+                    contentColor = MaterialTheme.color.black
+                )
             ) {
                 Text(text = "Text Button")
             }
