@@ -28,6 +28,7 @@ android {
 dependencies {
     implementation(project(":common"))
     implementation(project(":material-component"))
+    implementation(project(":layout-example"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime)

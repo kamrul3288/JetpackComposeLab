@@ -10,14 +10,14 @@ import androidx.compose.ui.unit.sp
 import com.iamkamrul.common.R
 
 internal val helveticaFamily = FontFamily(
-    Font(R.font.helvetica_neue_ultra_light,FontWeight.ExtraLight,FontStyle.Normal),
-    Font(R.font.helvetica_neue_light,FontWeight.Light,FontStyle.Normal),
-    Font(R.font.helvetica_neue,FontWeight.Normal, FontStyle.Normal),
-    Font(R.font.helvetica_neue_italic,FontWeight.Normal, FontStyle.Italic),
-    Font(R.font.helvetica_neue_medium,FontWeight.Medium,FontStyle.Normal),
-    Font(R.font.helvetica_neue_bold,FontWeight.Bold,FontStyle.Normal),
-    Font(R.font.helvetica_neue_bold_italic,FontWeight.Bold,FontStyle.Italic),
-    Font(R.font.helvetica_neue_black,FontWeight.Black,FontStyle.Normal),
+    Font(R.font.roboto_extra_light,FontWeight.ExtraLight,FontStyle.Normal),
+    Font(R.font.roboto_light,FontWeight.Light,FontStyle.Normal),
+    Font(R.font.roboto_regular,FontWeight.Normal, FontStyle.Normal),
+    Font(R.font.roboto_italic,FontWeight.Normal, FontStyle.Italic),
+    Font(R.font.roboto_medium,FontWeight.Medium,FontStyle.Normal),
+    Font(R.font.roboto_bold,FontWeight.Bold,FontStyle.Normal),
+    Font(R.font.roboto_bold_italic,FontWeight.Bold,FontStyle.Italic),
+    Font(R.font.roboto_black,FontWeight.Black,FontStyle.Normal),
 
 )
 
