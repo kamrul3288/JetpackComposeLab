@@ -11,11 +11,16 @@ fun NavController.navigateToLayoutHomeScreen(){
 }
 
 fun NavGraphBuilder.layoutHomeScreen(
-    onBackClick:()->Unit
+    onBackClick:()->Unit,
+    onColumnBtnClick:()->Unit,
+    onRowBtnClick:()->Unit
 ){
     composable(route = layoutHomeRoute){
         LayoutHomeScreen(
-            onBackClick = onBackClick
+            onBackClick = onBackClick,
+            onColumnBtnClick = onColumnBtnClick,
+            onRowBtnClick = onRowBtnClick,
+
         )
     }
 }
