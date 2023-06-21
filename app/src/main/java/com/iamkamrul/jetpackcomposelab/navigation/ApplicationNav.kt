@@ -11,6 +11,8 @@ import com.iamkamrul.layout.column.columnScreen
 import com.iamkamrul.layout.column.navigateToColumnScreen
 import com.iamkamrul.layout.layoutHomeScreen
 import com.iamkamrul.layout.navigateToLayoutHomeScreen
+import com.iamkamrul.layout.row.navigateToRowScreen
+import com.iamkamrul.layout.row.rowScreen
 import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.materialComponentScreen
@@ -36,10 +38,11 @@ fun ApplicationNav(
         layoutHomeScreen(
             onBackClick = navController::popBackStack,
             onColumnBtnClick = navController::navigateToColumnScreen,
-            onRowBtnClick = {},
+            onRowBtnClick = navController::navigateToRowScreen,
         )
 
         columnScreen(onBackClick = navController::popBackStack)
+        rowScreen(onBackClick = navController::popBackStack)
 
         materialComponentScreen(
             onBackClick = navController::popBackStack,
