@@ -18,7 +18,9 @@ import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
 fun LayoutHomeScreen(
     onBackClick:()->Unit,
     onColumnBtnClick:()->Unit,
-    onRowBtnClick:()->Unit
+    onRowBtnClick:()->Unit,
+    onBoxBtnClick:()->Unit,
+    onBoxWithConstraintBtnClick:()->Unit,
 ){
     ScaffoldWithBackNavigation(title = "Layouts", onBackClick = onBackClick) {
         val modifier = Modifier.padding(it)
@@ -38,6 +40,23 @@ fun LayoutHomeScreen(
                     buttonLabel = "Row",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onRowBtnClick
+                )
+            }
+
+            Spacer(modifier = Modifier.height(5.dp))
+            Row{
+                ComponentButton(
+                    modifier = Modifier.weight(0.8f).height(80.dp),
+                    buttonLabel = "Box",
+                    icon = painterResource(id = R.drawable.ic_layout),
+                    onClick = onBoxBtnClick
+                )
+                Spacer(modifier = Modifier.width(5.dp))
+                ComponentButton(
+                    modifier = Modifier.weight(1f).height(80.dp),
+                    buttonLabel = "BoxWithConstraints",
+                    icon = painterResource(id = R.drawable.ic_layout),
+                    onClick = onBoxWithConstraintBtnClick
                 )
             }
         }

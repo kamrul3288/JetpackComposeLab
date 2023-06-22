@@ -13,13 +13,17 @@ fun NavController.navigateToLayoutHomeScreen(){
 fun NavGraphBuilder.layoutHomeScreen(
     onBackClick:()->Unit,
     onColumnBtnClick:()->Unit,
-    onRowBtnClick:()->Unit
+    onRowBtnClick:()->Unit,
+    onBoxBtnClick:()->Unit,
+    onBoxWithConstraintBtnClick:()->Unit,
 ){
     composable(route = layoutHomeRoute){
         LayoutHomeScreen(
             onBackClick = onBackClick,
             onColumnBtnClick = onColumnBtnClick,
             onRowBtnClick = onRowBtnClick,
+            onBoxBtnClick = onBoxBtnClick,
+            onBoxWithConstraintBtnClick = onBoxWithConstraintBtnClick,
 
         )
     }
