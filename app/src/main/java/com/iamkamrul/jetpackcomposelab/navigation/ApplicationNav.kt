@@ -9,6 +9,8 @@ import com.iamkamrul.jetpackcomposelab.mainScreen
 import com.iamkamrul.jetpackcomposelab.mainScreenRoute
 import com.iamkamrul.layout.box.boxScreen
 import com.iamkamrul.layout.box.navigateToBoxScreen
+import com.iamkamrul.layout.boxconstraint.boxWithConstraintScreen
+import com.iamkamrul.layout.boxconstraint.navigateToBoxWithConstraint
 import com.iamkamrul.layout.column.columnScreen
 import com.iamkamrul.layout.column.navigateToColumnScreen
 import com.iamkamrul.layout.layoutHomeScreen
@@ -42,13 +44,13 @@ fun ApplicationNav(
             onColumnBtnClick = navController::navigateToColumnScreen,
             onRowBtnClick = navController::navigateToRowScreen,
             onBoxBtnClick = navController::navigateToBoxScreen,
-            onBoxWithConstraintBtnClick = {}
+            onBoxWithConstraintBtnClick = navController::navigateToBoxWithConstraint
         )
 
         columnScreen(onBackClick = navController::popBackStack)
         rowScreen(onBackClick = navController::popBackStack)
         boxScreen(onBackClick = navController::popBackStack)
-
+        boxWithConstraintScreen(onBackClick = navController::popBackStack)
         materialComponentScreen(
             onBackClick = navController::popBackStack,
             onTextClick = navController::navigateToTextScreenRoute,
