@@ -10,4 +10,7 @@ android {
 dependencies{
     implementation(project(":common"))
     implementation(libs.androidx.compose.navigation)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.ui.util)
+    implementation(libs.accompanist.pager.indicators)
 }

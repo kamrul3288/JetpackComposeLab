@@ -7,6 +7,8 @@ androidxComposeActivity = "1.7.2"
 androidxComposeBom = "2023.01.00"
 androidxComposeCompiler = "1.4.7"
 androidxComposeNavigation = "2.5.3"
+androidxComposeFoundation = "1.4.3"
+accompanist = "0.30.1"
 
 androidDesugarJdkLibs = "2.0.3"
 androidxEspresso = "3.5.0"
@@ -14,15 +16,18 @@ androidxJunit = "1.1.5"
 junit4 = "4.13.2"
 
 [libraries]
+accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
 androidx-core-ktx = {group = "androidx.core", name="core-ktx", version.ref = "androidxCore"}
 androidx-lifecycle-runtime = {group = "androidx.lifecycle", name="lifecycle-runtime-ktx", version.ref="androidxLifeCycleRuntime"}
 androidx-compose-activity = {group = "androidx.activity", name="activity-compose", version.ref="androidxComposeActivity"}
 androidx-compose-navigation = {group = "androidx.navigation", name="navigation-compose", version.ref="androidxComposeNavigation"}
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui"}
+androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics"}
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3"}
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref="androidxComposeFoundation"}
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }

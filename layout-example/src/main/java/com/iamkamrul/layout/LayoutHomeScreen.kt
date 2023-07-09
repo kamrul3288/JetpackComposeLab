@@ -21,6 +21,7 @@ fun LayoutHomeScreen(
     onRowBtnClick:()->Unit,
     onBoxBtnClick:()->Unit,
     onBoxWithConstraintBtnClick:()->Unit,
+    onHorizontalPagerBtnClick:()->Unit
 ){
     ScaffoldWithBackNavigation(title = "Layouts", onBackClick = onBackClick) {
         val modifier = Modifier.padding(it)
@@ -55,6 +56,24 @@ fun LayoutHomeScreen(
                 ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
                     buttonLabel = "BoxWithConstraints",
+                    icon = painterResource(id = R.drawable.ic_layout),
+                    onClick = onBoxWithConstraintBtnClick
+                )
+            }
+
+
+            Spacer(modifier = Modifier.height(5.dp))
+            Row{
+                ComponentButton(
+                    modifier = Modifier.weight(1f).height(80.dp),
+                    buttonLabel = "Horizontal Pager",
+                    icon = painterResource(id = R.drawable.ic_layout),
+                    onClick = onHorizontalPagerBtnClick
+                )
+                Spacer(modifier = Modifier.width(5.dp))
+                ComponentButton(
+                    modifier = Modifier.weight(0.8f).height(80.dp),
+                    buttonLabel = "Vertical Pager",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onBoxWithConstraintBtnClick
                 )
