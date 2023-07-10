@@ -21,7 +21,8 @@ fun LayoutHomeScreen(
     onRowBtnClick:()->Unit,
     onBoxBtnClick:()->Unit,
     onBoxWithConstraintBtnClick:()->Unit,
-    onHorizontalPagerBtnClick:()->Unit
+    onHorizontalPagerBtnClick:()->Unit,
+    onVerticalPagerBtnClick:()->Unit,
 ){
     ScaffoldWithBackNavigation(title = "Layouts", onBackClick = onBackClick) {
         val modifier = Modifier.padding(it)
@@ -75,7 +76,7 @@ fun LayoutHomeScreen(
                     modifier = Modifier.weight(0.8f).height(80.dp),
                     buttonLabel = "Vertical Pager",
                     icon = painterResource(id = R.drawable.ic_layout),
-                    onClick = onBoxWithConstraintBtnClick
+                    onClick = onVerticalPagerBtnClick
                 )
             }
         }

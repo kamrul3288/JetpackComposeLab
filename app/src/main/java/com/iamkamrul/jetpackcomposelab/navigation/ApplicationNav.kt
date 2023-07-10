@@ -19,6 +19,8 @@ import com.iamkamrul.layout.layoutHomeScreen
 import com.iamkamrul.layout.navigateToLayoutHomeScreen
 import com.iamkamrul.layout.row.navigateToRowScreen
 import com.iamkamrul.layout.row.rowScreen
+import com.iamkamrul.layout.vpager.navigateToVerticalPager
+import com.iamkamrul.layout.vpager.verticalPagerScreen
 import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.materialComponentScreen
@@ -47,7 +49,8 @@ fun ApplicationNav(
             onRowBtnClick = navController::navigateToRowScreen,
             onBoxBtnClick = navController::navigateToBoxScreen,
             onBoxWithConstraintBtnClick = navController::navigateToBoxWithConstraint,
-            onHorizontalPagerBtnClick = navController::navigateToHorizontalPagerScreen
+            onHorizontalPagerBtnClick = navController::navigateToHorizontalPagerScreen,
+            onVerticalPagerBtnClick = navController::navigateToVerticalPager
         )
 
         columnScreen(onBackClick = navController::popBackStack)
@@ -55,6 +58,7 @@ fun ApplicationNav(
         boxScreen(onBackClick = navController::popBackStack)
         boxWithConstraintScreen(onBackClick = navController::popBackStack)
         horizontalPagerScreen(onBackClick = navController::popBackStack)
+        verticalPagerScreen(onBackClick = navController::popBackStack)
         materialComponentScreen(
             onBackClick = navController::popBackStack,
             onTextClick = navController::navigateToTextScreenRoute,
