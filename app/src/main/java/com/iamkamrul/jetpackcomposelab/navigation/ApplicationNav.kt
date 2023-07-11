@@ -13,6 +13,8 @@ import com.iamkamrul.layout.boxconstraint.boxWithConstraintScreen
 import com.iamkamrul.layout.boxconstraint.navigateToBoxWithConstraint
 import com.iamkamrul.layout.column.columnScreen
 import com.iamkamrul.layout.column.navigateToColumnScreen
+import com.iamkamrul.layout.flow.flowLayoutScreen
+import com.iamkamrul.layout.flow.navigateToFlowLayout
 import com.iamkamrul.layout.hpager.horizontalPagerScreen
 import com.iamkamrul.layout.hpager.navigateToHorizontalPagerScreen
 import com.iamkamrul.layout.layoutHomeScreen
@@ -50,15 +52,18 @@ fun ApplicationNav(
             onBoxBtnClick = navController::navigateToBoxScreen,
             onBoxWithConstraintBtnClick = navController::navigateToBoxWithConstraint,
             onHorizontalPagerBtnClick = navController::navigateToHorizontalPagerScreen,
-            onVerticalPagerBtnClick = navController::navigateToVerticalPager
+            onVerticalPagerBtnClick = navController::navigateToVerticalPager,
+            onFlowBtnClick = navController::navigateToFlowLayout,
         )
-
         columnScreen(onBackClick = navController::popBackStack)
         rowScreen(onBackClick = navController::popBackStack)
         boxScreen(onBackClick = navController::popBackStack)
         boxWithConstraintScreen(onBackClick = navController::popBackStack)
         horizontalPagerScreen(onBackClick = navController::popBackStack)
         verticalPagerScreen(onBackClick = navController::popBackStack)
+        flowLayoutScreen(onBackClick  = navController::popBackStack)
+
+
         materialComponentScreen(
             onBackClick = navController::popBackStack,
             onTextClick = navController::navigateToTextScreenRoute,

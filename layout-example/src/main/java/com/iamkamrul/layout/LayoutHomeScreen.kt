@@ -23,6 +23,7 @@ fun LayoutHomeScreen(
     onBoxWithConstraintBtnClick:()->Unit,
     onHorizontalPagerBtnClick:()->Unit,
     onVerticalPagerBtnClick:()->Unit,
+    onFlowBtnClick:()->Unit,
 ){
     ScaffoldWithBackNavigation(title = "Layouts", onBackClick = onBackClick) {
         val modifier = Modifier.padding(it)
@@ -77,6 +78,23 @@ fun LayoutHomeScreen(
                     buttonLabel = "Vertical Pager",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onVerticalPagerBtnClick
+                )
+            }
+
+            Spacer(modifier = Modifier.height(5.dp))
+            Row{
+                ComponentButton(
+                    modifier = Modifier.weight(0.8f).height(80.dp),
+                    buttonLabel = "Flow",
+                    icon = painterResource(id = R.drawable.ic_layout),
+                    onClick = onFlowBtnClick
+                )
+                Spacer(modifier = Modifier.width(5.dp))
+                ComponentButton(
+                    modifier = Modifier.weight(1f).height(80.dp),
+                    buttonLabel = "Constraint",
+                    icon = painterResource(id = R.drawable.ic_layout),
+                    onClick = {}
                 )
             }
         }
