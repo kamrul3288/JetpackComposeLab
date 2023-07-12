@@ -19,6 +19,7 @@ fun NavGraphBuilder.layoutHomeScreen(
     onHorizontalPagerBtnClick:()->Unit,
     onVerticalPagerBtnClick:()->Unit,
     onFlowBtnClick:()->Unit,
+    onConstraintLayoutBtnClick:()->Unit,
 ){
     composable(route = layoutHomeRoute){
         LayoutHomeScreen(
@@ -29,7 +30,8 @@ fun NavGraphBuilder.layoutHomeScreen(
             onBoxWithConstraintBtnClick = onBoxWithConstraintBtnClick,
             onHorizontalPagerBtnClick = onHorizontalPagerBtnClick,
             onVerticalPagerBtnClick = onVerticalPagerBtnClick,
-            onFlowBtnClick = onFlowBtnClick
+            onFlowBtnClick = onFlowBtnClick,
+            onConstraintLayoutBtnClick = onConstraintLayoutBtnClick,
         )
     }
 }

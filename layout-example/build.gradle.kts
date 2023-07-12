@@ -13,4 +13,5 @@ dependencies{
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.ui.util)
     implementation(libs.accompanist.pager.indicators)
+    implementation(libs.androidx.compose.constraintlayout)
 }

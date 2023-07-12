@@ -13,6 +13,8 @@ import com.iamkamrul.layout.boxconstraint.boxWithConstraintScreen
 import com.iamkamrul.layout.boxconstraint.navigateToBoxWithConstraint
 import com.iamkamrul.layout.column.columnScreen
 import com.iamkamrul.layout.column.navigateToColumnScreen
+import com.iamkamrul.layout.constraintlayout.constraintLayoutScreen
+import com.iamkamrul.layout.constraintlayout.navigateToConstraintLayout
 import com.iamkamrul.layout.flow.flowLayoutScreen
 import com.iamkamrul.layout.flow.navigateToFlowLayout
 import com.iamkamrul.layout.hpager.horizontalPagerScreen
@@ -54,6 +56,7 @@ fun ApplicationNav(
             onHorizontalPagerBtnClick = navController::navigateToHorizontalPagerScreen,
             onVerticalPagerBtnClick = navController::navigateToVerticalPager,
             onFlowBtnClick = navController::navigateToFlowLayout,
+            onConstraintLayoutBtnClick = navController::navigateToConstraintLayout,
         )
         columnScreen(onBackClick = navController::popBackStack)
         rowScreen(onBackClick = navController::popBackStack)
@@ -62,6 +65,7 @@ fun ApplicationNav(
         horizontalPagerScreen(onBackClick = navController::popBackStack)
         verticalPagerScreen(onBackClick = navController::popBackStack)
         flowLayoutScreen(onBackClick  = navController::popBackStack)
+        constraintLayoutScreen(onBackClick  = navController::popBackStack)
 
 
         materialComponentScreen(

@@ -24,6 +24,7 @@ fun LayoutHomeScreen(
     onHorizontalPagerBtnClick:()->Unit,
     onVerticalPagerBtnClick:()->Unit,
     onFlowBtnClick:()->Unit,
+    onConstraintLayoutBtnClick:()->Unit,
 ){
     ScaffoldWithBackNavigation(title = "Layouts", onBackClick = onBackClick) {
         val modifier = Modifier.padding(it)
@@ -92,9 +93,9 @@ fun LayoutHomeScreen(
                 Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
-                    buttonLabel = "Constraint",
+                    buttonLabel = "ConstraintLayout",
                     icon = painterResource(id = R.drawable.ic_layout),
-                    onClick = {}
+                    onClick = onConstraintLayoutBtnClick
                 )
             }
         }
