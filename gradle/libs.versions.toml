@@ -14,6 +14,8 @@ androidDesugarJdkLibs = "2.0.3"
 androidxEspresso = "3.5.0"
 androidxJunit = "1.1.5"
 junit4 = "4.13.2"
+coil = "2.4.0"
+
 
 [libraries]
 accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
@@ -37,6 +39,8 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4"}
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling"}
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest"}
+
+coil = {group="io.coil-kt", name="coil-compose", version.ref="coil"}
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
