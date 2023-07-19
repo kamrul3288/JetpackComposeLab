@@ -1,6 +1,8 @@
 package com.iamkamrul.material.image
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,9 +19,12 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -33,6 +38,24 @@ import com.iamkamrul.material.R
 internal fun ImageScreen(
     onBackClick:()->Unit
 ) {
+
+    val rainbowColorsBrush = remember {
+        Brush.sweepGradient(
+            listOf(
+                Color(0xFF9575CD),
+                Color(0xFFBA68C8),
+                Color(0xFFE57373),
+                Color(0xFFFFB74D),
+                Color(0xFFFFF176),
+                Color(0xFFAED581),
+                Color(0xFF4DD0E1),
+                Color(0xFF9575CD)
+            )
+        )
+    }
+    val borderWidth = 4.dp
+
+
     ScaffoldWithBackNavigation(title = "Images", onBackClick = onBackClick) {
         Column(modifier = Modifier
             .fillMaxSize()
@@ -122,6 +145,11 @@ internal fun ImageScreen(
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .size(150.dp)
+                        .border(
+                            BorderStroke(borderWidth, rainbowColorsBrush),
+                            CircleShape
+                        )
+                        .padding(borderWidth)
                         .clip(CircleShape),
                 )
             }
