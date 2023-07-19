@@ -34,6 +34,7 @@ fun  MaterialComponentScreen(
     onTextClick:()->Unit,
     onButtonClick:()->Unit,
     onIconClick:()->Unit,
+    onImageBtnClick:()->Unit
 ){
     Scaffold(
         topBar = {
@@ -55,19 +56,25 @@ fun  MaterialComponentScreen(
         }
     ) {
         val modifier = Modifier.padding(it)
-        Column(modifier = modifier.fillMaxSize().padding(16.dp)) {
+        Column(modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp)) {
 
             //-----------Row  1----------------------
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
-                    modifier = Modifier.weight(0.8f).height(70.dp),
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
                     buttonLabel = "Texts",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTextClick
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
-                    modifier = Modifier.weight(1f).height(70.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Buttons",
                     onClick = onButtonClick
@@ -75,10 +82,45 @@ fun  MaterialComponentScreen(
 
                 Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
-                    modifier = Modifier.weight(0.8f).height(70.dp),
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Icons",
                     onClick = onIconClick
+                )
+            }
+
+
+            //-----------Row  1----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    buttonLabel = "Images",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onImageBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Cards",
+                    onClick = {}
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "TextField",
+                    onClick = {}
                 )
             }
 
