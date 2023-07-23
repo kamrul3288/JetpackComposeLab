@@ -34,7 +34,8 @@ fun  MaterialComponentScreen(
     onTextClick:()->Unit,
     onButtonClick:()->Unit,
     onIconClick:()->Unit,
-    onImageBtnClick:()->Unit
+    onImageBtnClick:()->Unit,
+    onCardBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -110,7 +111,7 @@ fun  MaterialComponentScreen(
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Cards",
-                    onClick = {}
+                    onClick = onCardBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(10.dp))

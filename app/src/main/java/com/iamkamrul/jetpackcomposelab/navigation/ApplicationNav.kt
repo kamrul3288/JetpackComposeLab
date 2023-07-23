@@ -27,6 +27,8 @@ import com.iamkamrul.layout.vpager.navigateToVerticalPager
 import com.iamkamrul.layout.vpager.verticalPagerScreen
 import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
+import com.iamkamrul.material.cards.cardScreen
+import com.iamkamrul.material.cards.navigateToCardScreen
 import com.iamkamrul.material.icons.iconScreen
 import com.iamkamrul.material.icons.navigateToIconScreen
 import com.iamkamrul.material.image.imageScreen
@@ -77,11 +79,13 @@ fun ApplicationNav(
             onTextClick = navController::navigateToTextScreenRoute,
             onButtonClick = navController::navigateToButtonScreen,
             onIconClick = navController::navigateToIconScreen,
-            onImageBtnClick = navController::navigateToImageScreen
+            onImageBtnClick = navController::navigateToImageScreen,
+            onCardBtnClick = navController::navigateToCardScreen
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
         iconScreen(onBackClick = navController::popBackStack)
         imageScreen(onBackClick = navController::popBackStack)
+        cardScreen(onBackClick = navController::popBackStack)
     }
 }
