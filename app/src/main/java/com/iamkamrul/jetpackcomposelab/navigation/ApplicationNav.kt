@@ -35,6 +35,8 @@ import com.iamkamrul.material.image.imageScreen
 import com.iamkamrul.material.image.navigateToImageScreen
 import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
+import com.iamkamrul.material.textfield.navigateToTextFieldScreen
+import com.iamkamrul.material.textfield.textFieldScreen
 import com.iamkamrul.material.texts.navigateToTextScreenRoute
 import com.iamkamrul.material.texts.textScreen
 
@@ -80,12 +82,14 @@ fun ApplicationNav(
             onButtonClick = navController::navigateToButtonScreen,
             onIconClick = navController::navigateToIconScreen,
             onImageBtnClick = navController::navigateToImageScreen,
-            onCardBtnClick = navController::navigateToCardScreen
+            onCardBtnClick = navController::navigateToCardScreen,
+            onTextFieldBtnClick = navController::navigateToTextFieldScreen
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
         iconScreen(onBackClick = navController::popBackStack)
         imageScreen(onBackClick = navController::popBackStack)
         cardScreen(onBackClick = navController::popBackStack)
+        textFieldScreen(onBackClick = navController::popBackStack)
     }
 }
