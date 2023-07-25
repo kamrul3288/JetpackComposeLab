@@ -39,6 +39,8 @@ import com.iamkamrul.material.textfield.navigateToTextFieldScreen
 import com.iamkamrul.material.textfield.textFieldScreen
 import com.iamkamrul.material.texts.navigateToTextScreenRoute
 import com.iamkamrul.material.texts.textScreen
+import com.iamkamrul.material.topappbar.navigateToTopAppBarScreen
+import com.iamkamrul.material.topappbar.topAppBarScreen
 
 @Composable
 fun ApplicationNav(
@@ -83,7 +85,8 @@ fun ApplicationNav(
             onIconClick = navController::navigateToIconScreen,
             onImageBtnClick = navController::navigateToImageScreen,
             onCardBtnClick = navController::navigateToCardScreen,
-            onTextFieldBtnClick = navController::navigateToTextFieldScreen
+            onTextFieldBtnClick = navController::navigateToTextFieldScreen,
+            onTopAppBarBtnClick = navController::navigateToTopAppBarScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
@@ -91,5 +94,6 @@ fun ApplicationNav(
         imageScreen(onBackClick = navController::popBackStack)
         cardScreen(onBackClick = navController::popBackStack)
         textFieldScreen(onBackClick = navController::popBackStack)
+        topAppBarScreen(onBackClick = navController::popBackStack)
     }
 }

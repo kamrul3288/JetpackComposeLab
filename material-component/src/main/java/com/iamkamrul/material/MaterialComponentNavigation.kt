@@ -18,6 +18,7 @@ fun NavGraphBuilder.materialComponentScreen(
     onImageBtnClick:()->Unit,
     onCardBtnClick:()->Unit,
     onTextFieldBtnClick:()->Unit,
+    onTopAppBarBtnClick:()->Unit,
 ){
     composable(route = materialComponentsRoute){
         MaterialComponentScreen(
@@ -28,6 +29,7 @@ fun NavGraphBuilder.materialComponentScreen(
             onImageBtnClick = onImageBtnClick,
             onCardBtnClick = onCardBtnClick,
             onTextFieldBtnClick = onTextFieldBtnClick,
+            onTopAppBarBtnClick = onTopAppBarBtnClick
 
         )
     }

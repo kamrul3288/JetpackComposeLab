@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
+import com.iamkamrul.common.theme.Purple40
 import com.iamkamrul.common.theme.color
 
 @Composable
@@ -40,7 +41,8 @@ fun ComponentButton(
         ) {
             Icon(
                 painter = icon,
-                contentDescription = "android"
+                contentDescription = "android",
+                tint = Purple40
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(

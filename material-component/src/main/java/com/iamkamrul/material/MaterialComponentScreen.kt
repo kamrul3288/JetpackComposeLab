@@ -37,6 +37,7 @@ fun  MaterialComponentScreen(
     onImageBtnClick:()->Unit,
     onCardBtnClick:()->Unit,
     onTextFieldBtnClick:()->Unit,
+    onTopAppBarBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -94,7 +95,7 @@ fun  MaterialComponentScreen(
             }
 
 
-            //-----------Row  1----------------------
+            //-----------Row  2----------------------
             Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
@@ -123,6 +124,39 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "TextField",
                     onClick = onTextFieldBtnClick
+                )
+            }
+
+
+            //-----------Row  3----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    buttonLabel = "Top Appbar",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onTopAppBarBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Time Picker",
+                    onClick = {}
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "ToolTips",
+                    onClick = {}
                 )
             }
 
