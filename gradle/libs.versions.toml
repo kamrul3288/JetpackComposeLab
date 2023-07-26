@@ -2,6 +2,7 @@
 androidGradlePlugin = "8.0.2"
 kotlin = "1.8.21"
 androidxCore = "1.10.1"
+material3 = "1.2.0-alpha02"
 androidxLifeCycleRuntime = "2.6.1"
 androidxComposeActivity = "1.7.2"
 androidxComposeBom = "2023.01.00"
@@ -28,7 +29,7 @@ androidx-compose-ui = { group = "androidx.compose.ui", name = "ui"}
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics"}
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3"}
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref="material3"}
 androidx-compose-materialicon = { group = "androidx.compose.material", name = "material-icons-extended"}
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref="androidxComposeFoundation"}
 androidx-compose-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
