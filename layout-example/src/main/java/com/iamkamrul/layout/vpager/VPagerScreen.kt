@@ -1,7 +1,6 @@
 @file:OptIn(ExperimentalFoundationApi::class)
 
 package com.iamkamrul.layout.vpager
-
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,9 +18,10 @@ import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
 fun VerticalPagerScreen(
     onBackClick:()->Unit
 ){
-    val pagerState = rememberPagerState(initialPage = 0)
+    val pagerState = rememberPagerState(pageCount = {10}, initialPage = 0)
+
     ScaffoldWithBackNavigation(title = "Vertical Pager", onBackClick = onBackClick) {
-        VerticalPager(pageCount = 10, state = pagerState) {
+        VerticalPager(state = pagerState) {
             Box(modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ){
