@@ -41,10 +41,10 @@ import kotlin.math.absoluteValue
 fun HorizontalPagerScreen(
     onBackClick:()->Unit
 ){
-    val pagerState = rememberPagerState(initialPage = 1)
-    val pagerState1 = rememberPagerState(initialPage = 0)
-    val pagerState2 = rememberPagerState(initialPage = 0)
-    val pagerState3 = rememberPagerState(initialPage = 0)
+    val pagerState = rememberPagerState(pageCount = {5}, initialPage = 0)
+    val pagerState1 = rememberPagerState(pageCount = {5},initialPage = 0)
+    val pagerState2 = rememberPagerState(pageCount = {5},initialPage = 0)
+    val pagerState3 = rememberPagerState(pageCount = {5},initialPage = 1)
     val coroutineScope = rememberCoroutineScope()
 
     ScaffoldWithBackNavigation(title = "Horizontal Pager", onBackClick = onBackClick) { it ->
@@ -57,7 +57,6 @@ fun HorizontalPagerScreen(
             //---------------------EXAMPLE 1----------------------------
             Text(text = "Example-1", modifier = Modifier.padding(8.dp))
             HorizontalPager(
-                pageCount = 5,
                 state = pagerState
             ) {
                 Box(
@@ -79,7 +78,7 @@ fun HorizontalPagerScreen(
                     .fillMaxWidth()
                     .height(100.dp)
             ) {
-                HorizontalPager(pageCount = 5, state = pagerState1) {
+                HorizontalPager(state = pagerState1) {
                     Text(
                         text = "Page Index $it",
                         modifier = Modifier
@@ -143,7 +142,7 @@ fun HorizontalPagerScreen(
                     .height(100.dp)
                     .background(Purple80)
             ) {
-                HorizontalPager(pageCount = 5, state = pagerState2) {
+                HorizontalPager(state = pagerState2) {
                     Text(
                         text = "Horizontal Pager Index : $it",
                         modifier = Modifier
@@ -164,7 +163,6 @@ fun HorizontalPagerScreen(
             //---------------------EXAMPLE 3----------------------------
             Text(text = "Example-4", modifier = Modifier.padding(8.dp))
             HorizontalPager(
-                pageCount = 4,
                 state = pagerState3,
                 contentPadding = PaddingValues(horizontal = 64.dp),
             ) {page->
