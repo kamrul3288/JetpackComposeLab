@@ -38,6 +38,7 @@ fun  MaterialComponentScreen(
     onCardBtnClick:()->Unit,
     onTextFieldBtnClick:()->Unit,
     onTopAppBarBtnClick:()->Unit,
+    onTimePickerBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -146,7 +147,7 @@ fun  MaterialComponentScreen(
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Time Picker",
-                    onClick = {}
+                    onClick = onTimePickerBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(10.dp))

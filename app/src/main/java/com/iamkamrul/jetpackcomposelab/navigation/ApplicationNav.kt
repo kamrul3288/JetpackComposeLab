@@ -39,6 +39,8 @@ import com.iamkamrul.material.textfield.navigateToTextFieldScreen
 import com.iamkamrul.material.textfield.textFieldScreen
 import com.iamkamrul.material.texts.navigateToTextScreenRoute
 import com.iamkamrul.material.texts.textScreen
+import com.iamkamrul.material.timepicker.navigateToTimePickerScreen
+import com.iamkamrul.material.timepicker.timePickerScreen
 import com.iamkamrul.material.topappbar.navigateToTopAppBarScreen
 import com.iamkamrul.material.topappbar.topAppBarScreen
 
@@ -87,6 +89,7 @@ fun ApplicationNav(
             onCardBtnClick = navController::navigateToCardScreen,
             onTextFieldBtnClick = navController::navigateToTextFieldScreen,
             onTopAppBarBtnClick = navController::navigateToTopAppBarScreen,
+            onTimePickerBtnClick = navController::navigateToTimePickerScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
@@ -95,5 +98,6 @@ fun ApplicationNav(
         cardScreen(onBackClick = navController::popBackStack)
         textFieldScreen(onBackClick = navController::popBackStack)
         topAppBarScreen(onBackClick = navController::popBackStack)
+        timePickerScreen(onBackClick = navController::popBackStack)
     }
 }
