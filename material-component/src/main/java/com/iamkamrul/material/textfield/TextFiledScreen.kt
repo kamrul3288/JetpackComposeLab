@@ -14,11 +14,11 @@ import androidx.compose.material.icons.outlined.Error
 import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material.icons.outlined.VisibilityOff
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -42,7 +42,6 @@ import com.iamkamrul.common.theme.Purple80
 import com.iamkamrul.common.theme.Red
 import com.iamkamrul.common.theme.color
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun TextFieldScreen(
     onBackClick:()->Unit
@@ -66,15 +65,16 @@ internal fun TextFieldScreen(
                     textFiledValue = value
                 },
                 modifier = Modifier.fillMaxWidth(),
-                colors = TextFieldDefaults.textFieldColors(
-                    textColor = MaterialTheme.color.black
+                colors = TextFieldDefaults.colors(
+                    focusedTextColor = MaterialTheme.color.black,
+                    unfocusedTextColor = MaterialTheme.color.black,
                 ),
                 label = {
                     Text(text = "Input Your Email")
                 }
             )
 
-            
+
             Spacer(modifier = Modifier.height(16.dp))
             OutlinedTextField(
                 value = textFiledValue,
@@ -85,9 +85,11 @@ internal fun TextFieldScreen(
                 label = {
                     Text(text = "Input Your Email")
                 },
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    textColor = MaterialTheme.color.black,
-                    containerColor = Color.Transparent,
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = MaterialTheme.color.black,
+                    unfocusedTextColor = MaterialTheme.color.black,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedContainerColor = Color.Transparent,
                     unfocusedBorderColor = Purple80,
                     focusedBorderColor = Purple40
                 ),
@@ -105,9 +107,11 @@ internal fun TextFieldScreen(
                 label = {
                     Text(text = "Input Your Password")
                 },
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    textColor = MaterialTheme.color.black,
-                    containerColor = Color.Transparent,
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = MaterialTheme.color.black,
+                    unfocusedTextColor = MaterialTheme.color.black,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedContainerColor = Color.Transparent,
                     unfocusedBorderColor = Pink80,
                     focusedBorderColor = Pink40
                 ),
@@ -135,9 +139,11 @@ internal fun TextFieldScreen(
                     textFiledValue = value
                 },
                 modifier = Modifier.fillMaxWidth(),
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    textColor = MaterialTheme.color.black,
-                    containerColor = Color.LightGray.copy(alpha = 0.4f),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = MaterialTheme.color.black,
+                    unfocusedTextColor = MaterialTheme.color.black,
+                    unfocusedContainerColor = Color.LightGray.copy(alpha = 0.4f),
+                    focusedContainerColor = Color.LightGray.copy(alpha = 0.4f),
                     unfocusedBorderColor = Color.Transparent,
                     focusedBorderColor = MaterialTheme.color.black
                 ),
@@ -157,15 +163,17 @@ internal fun TextFieldScreen(
                     isPhoneNumberInValid = value.length<10
                 },
                 modifier = Modifier.fillMaxWidth(),
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    textColor = MaterialTheme.color.black,
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = MaterialTheme.color.black,
+                    unfocusedTextColor = MaterialTheme.color.black,
+                    errorTextColor = MaterialTheme.color.black,
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                 placeholder = {
                     Text(text = "Enter Phone Number", color = Color.Gray)
                 }
             )
-            
+
             if (isPhoneNumberInValid){
                 Spacer(modifier = Modifier.height(4.dp))
                 Row(
@@ -177,7 +185,7 @@ internal fun TextFieldScreen(
                 }
             }
 
-          
+
         }
     }
 }
