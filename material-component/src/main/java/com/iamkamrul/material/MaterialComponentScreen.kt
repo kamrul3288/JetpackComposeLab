@@ -39,6 +39,7 @@ fun  MaterialComponentScreen(
     onTextFieldBtnClick:()->Unit,
     onTopAppBarBtnClick:()->Unit,
     onTimePickerBtnClick:()->Unit,
+    onTooltipBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -156,8 +157,8 @@ fun  MaterialComponentScreen(
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "ToolTips",
-                    onClick = {}
+                    buttonLabel = "ToolTip",
+                    onClick = onTooltipBtnClick
                 )
             }
 
