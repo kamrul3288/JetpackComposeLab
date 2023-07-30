@@ -35,6 +35,8 @@ import com.iamkamrul.material.image.imageScreen
 import com.iamkamrul.material.image.navigateToImageScreen
 import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
+import com.iamkamrul.material.tabs.navigateToTabsScreen
+import com.iamkamrul.material.tabs.tabsScreen
 import com.iamkamrul.material.textfield.navigateToTextFieldScreen
 import com.iamkamrul.material.textfield.textFieldScreen
 import com.iamkamrul.material.texts.navigateToTextScreenRoute
@@ -93,6 +95,7 @@ fun ApplicationNav(
             onTopAppBarBtnClick = navController::navigateToTopAppBarScreen,
             onTimePickerBtnClick = navController::navigateToTimePickerScreen,
             onTooltipBtnClick = navController::navigateToTooltipScreen,
+            onTabsBtnClick = navController::navigateToTabsScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
@@ -103,5 +106,6 @@ fun ApplicationNav(
         topAppBarScreen(onBackClick = navController::popBackStack)
         timePickerScreen(onBackClick = navController::popBackStack)
         tooltipScreen(onBackClick = navController::popBackStack)
+        tabsScreen(onBackClick = navController::popBackStack)
     }
 }

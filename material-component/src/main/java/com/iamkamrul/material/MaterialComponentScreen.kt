@@ -40,6 +40,7 @@ fun  MaterialComponentScreen(
     onTopAppBarBtnClick:()->Unit,
     onTimePickerBtnClick:()->Unit,
     onTooltipBtnClick:()->Unit,
+    onTabsBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -159,6 +160,40 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "ToolTip",
                     onClick = onTooltipBtnClick
+                )
+            }
+
+
+
+            //-----------Row  4----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    buttonLabel = "Tabs",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onTabsBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Switch",
+                    onClick = {}
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Snack bars",
+                    onClick = {}
                 )
             }
 
