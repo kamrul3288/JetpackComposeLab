@@ -11,7 +11,8 @@ data class AppColor(
     val white: Color = Color.Unspecified,
     val black: Color = Color.Unspecified,
     val card:Color = Color.Unspecified,
-    val clockDialColor:Color = Color.Unspecified
+    val clockDialColor:Color = Color.Unspecified,
+    val sliderThumbColor:Color = Color.Unspecified,
 )
 internal val LocalAppColor = compositionLocalOf { AppColor() }
 
@@ -26,13 +27,15 @@ internal val LocalLightColorScheme = AppColor(
     white = Color(0xFFFFFFFF),
     black = Color(0xFF000000),
     card = White,
-    clockDialColor = Color(0xFFE6E0E9)
+    clockDialColor = Color(0xFFE6E0E9),
+    sliderThumbColor = Purple40
 )
 
 internal val LocalDarkColorScheme = AppColor(
     white = Color(0xFF000000),
     black = Color(0xFFFFFFFF),
     card = Black80,
-    clockDialColor = Black50
+    clockDialColor = Black50,
+    sliderThumbColor = White,
 )
 
