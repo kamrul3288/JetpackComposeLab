@@ -42,6 +42,7 @@ fun  MaterialComponentScreen(
     onTooltipBtnClick:()->Unit,
     onTabsBtnClick:()->Unit,
     onSwitchBtnClick:()->Unit,
+    onSnackBarBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -194,7 +195,7 @@ fun  MaterialComponentScreen(
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Snack bars",
-                    onClick = {}
+                    onClick = onSnackBarBtnClick
                 )
             }
 

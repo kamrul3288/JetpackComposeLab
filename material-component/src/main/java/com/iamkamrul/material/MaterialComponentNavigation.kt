@@ -23,6 +23,7 @@ fun NavGraphBuilder.materialComponentScreen(
     onTooltipBtnClick:()->Unit,
     onTabsBtnClick:()->Unit,
     onSwitchBtnClick:()->Unit,
+    onSnackBarBtnClick:()->Unit,
 ){
     composable(route = materialComponentsRoute){
         MaterialComponentScreen(
@@ -38,6 +39,7 @@ fun NavGraphBuilder.materialComponentScreen(
             onTooltipBtnClick = onTooltipBtnClick,
             onTabsBtnClick = onTabsBtnClick,
             onSwitchBtnClick = onSwitchBtnClick,
+            onSnackBarBtnClick = onSnackBarBtnClick,
         )
     }
 }
