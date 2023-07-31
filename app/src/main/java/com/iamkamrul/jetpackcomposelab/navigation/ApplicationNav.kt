@@ -37,6 +37,8 @@ import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
 import com.iamkamrul.material.slider.navigateToSliderScreen
 import com.iamkamrul.material.slider.sliderScreen
+import com.iamkamrul.material.slidesheet.navigateToSlideSheetScreen
+import com.iamkamrul.material.slidesheet.slideSheetScreen
 import com.iamkamrul.material.snackbar.navigateToSnackBarScreen
 import com.iamkamrul.material.snackbar.snackBarScreen
 import com.iamkamrul.material.switches.navigateToSwitchScreen
@@ -105,7 +107,7 @@ fun ApplicationNav(
             onSwitchBtnClick = navController::navigateToSwitchScreen,
             onSnackBarBtnClick = navController::navigateToSnackBarScreen,
             onSlideBtnClick = navController::navigateToSliderScreen,
-            onSlideSheetBtnClick = navController::navigateToSnackBarScreen,
+            onSlideSheetBtnClick = navController::navigateToSlideSheetScreen,
             onSearchBtnClick = navController::navigateToSnackBarScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
@@ -121,5 +123,6 @@ fun ApplicationNav(
         switchScreen(onBackClick = navController::popBackStack)
         snackBarScreen(onBackClick = navController::popBackStack)
         sliderScreen(onBackClick = navController::popBackStack)
+        slideSheetScreen(onBackClick = navController::popBackStack)
     }
 }
