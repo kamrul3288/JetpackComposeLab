@@ -21,9 +21,11 @@ import com.iamkamrul.common.theme.White
 fun ScaffoldWithBackNavigation(
     title:String,
     onBackClick:()->Unit,
+    snackbarHost: @Composable () -> Unit = {},
     content: @Composable (PaddingValues) -> Unit
 ){
     Scaffold(
+        snackbarHost = snackbarHost,
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
