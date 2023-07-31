@@ -41,6 +41,7 @@ fun  MaterialComponentScreen(
     onTimePickerBtnClick:()->Unit,
     onTooltipBtnClick:()->Unit,
     onTabsBtnClick:()->Unit,
+    onSwitchBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -183,7 +184,7 @@ fun  MaterialComponentScreen(
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Switch",
-                    onClick = {}
+                    onClick = onSwitchBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(10.dp))
