@@ -43,6 +43,9 @@ fun  MaterialComponentScreen(
     onTabsBtnClick:()->Unit,
     onSwitchBtnClick:()->Unit,
     onSnackBarBtnClick:()->Unit,
+    onSlideBtnClick:()->Unit,
+    onSlideSheetBtnClick:()->Unit,
+    onSearchBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -196,6 +199,39 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Snack bars",
                     onClick = onSnackBarBtnClick
+                )
+            }
+
+
+            //-----------Row  5----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    buttonLabel = "Slider",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onSlideBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Slide Sheets",
+                    onClick = onSlideSheetBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Search",
+                    onClick = onSearchBtnClick
                 )
             }
 

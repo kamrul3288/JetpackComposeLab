@@ -102,6 +102,9 @@ fun ApplicationNav(
             onTabsBtnClick = navController::navigateToTabsScreen,
             onSwitchBtnClick = navController::navigateToSwitchScreen,
             onSnackBarBtnClick = navController::navigateToSnackBarScreen,
+            onSlideBtnClick = navController::navigateToSnackBarScreen,
+            onSlideSheetBtnClick = navController::navigateToSnackBarScreen,
+            onSearchBtnClick = navController::navigateToSnackBarScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)

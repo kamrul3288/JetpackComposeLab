@@ -24,6 +24,9 @@ fun NavGraphBuilder.materialComponentScreen(
     onTabsBtnClick:()->Unit,
     onSwitchBtnClick:()->Unit,
     onSnackBarBtnClick:()->Unit,
+    onSlideBtnClick:()->Unit,
+    onSlideSheetBtnClick:()->Unit,
+    onSearchBtnClick:()->Unit,
 ){
     composable(route = materialComponentsRoute){
         MaterialComponentScreen(
@@ -40,6 +43,9 @@ fun NavGraphBuilder.materialComponentScreen(
             onTabsBtnClick = onTabsBtnClick,
             onSwitchBtnClick = onSwitchBtnClick,
             onSnackBarBtnClick = onSnackBarBtnClick,
+            onSlideBtnClick = onSlideBtnClick,
+            onSlideSheetBtnClick = onSlideSheetBtnClick,
+            onSearchBtnClick = onSearchBtnClick,
         )
     }
 }
