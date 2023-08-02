@@ -35,6 +35,8 @@ import com.iamkamrul.material.image.imageScreen
 import com.iamkamrul.material.image.navigateToImageScreen
 import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
+import com.iamkamrul.material.navigationdrawer.navigateToNavigationDrawerScreen
+import com.iamkamrul.material.navigationdrawer.navigationDrawerScreen
 import com.iamkamrul.material.progressbar.navigateToProgressBarScreen
 import com.iamkamrul.material.progressbar.progressBarScreen
 import com.iamkamrul.material.radio.navigateToRadioButtonScreen
@@ -117,7 +119,7 @@ fun ApplicationNav(
             onSearchBtnClick = navController::navigateToSearchScreen,
             onRadioBtnClick = navController::navigateToRadioButtonScreen,
             onProgressBtnClick = navController:: navigateToProgressBarScreen,
-            onNavDrawerBtnClick = navController::navigateToSearchScreen,
+            onNavDrawerBtnClick = navController::navigateToNavigationDrawerScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
@@ -136,5 +138,6 @@ fun ApplicationNav(
         searchScreen(onBackClick = navController::popBackStack)
         radioButtonScreen(onBackClick = navController::popBackStack)
         progressBarScreen(onBackClick = navController::popBackStack)
+        navigationDrawerScreen(onBackClick = navController::popBackStack)
     }
 }
