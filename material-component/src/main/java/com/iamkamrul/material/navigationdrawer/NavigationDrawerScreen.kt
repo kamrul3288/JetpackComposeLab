@@ -96,7 +96,7 @@ fun DrawerHeader() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .background(MaterialTheme.colorScheme.secondary)
+            .background(Purple40.copy(alpha = 0.7f))
             .padding(24.dp)
             .fillMaxWidth()
     ) {
