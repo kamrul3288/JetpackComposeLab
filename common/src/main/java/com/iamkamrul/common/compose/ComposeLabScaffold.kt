@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.BottomSheetScaffoldState
@@ -47,6 +48,36 @@ fun ScaffoldWithBackNavigation(
                         imageVector = Icons.Default.ArrowBack,
                         modifier = Modifier.clickable {onBackClick()},
                         contentDescription = "back_icon", tint = White
+                    )
+                }
+            )
+        },
+        content = content
+    )
+}
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ScaffoldWithMenu(
+    title:String,
+    onMeniClick:()->Unit,
+    content: @Composable (PaddingValues) -> Unit
+){
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(text = title, color = Color.White)
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                ),
+                navigationIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Menu,
+                        modifier = Modifier.clickable {onMeniClick()},
+                        contentDescription = "menu_icon", tint = White
                     )
                 }
             )

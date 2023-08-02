@@ -138,6 +138,6 @@ fun ApplicationNav(
         searchScreen(onBackClick = navController::popBackStack)
         radioButtonScreen(onBackClick = navController::popBackStack)
         progressBarScreen(onBackClick = navController::popBackStack)
-        navigationDrawerScreen(onBackClick = navController::popBackStack)
+        navigationDrawerScreen()
     }
 }

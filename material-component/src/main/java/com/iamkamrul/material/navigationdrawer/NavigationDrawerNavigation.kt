@@ -10,11 +10,9 @@ fun NavController.navigateToNavigationDrawerScreen(){
     this.navigate(navigationDrawerScreenRoute)
 }
 
-fun NavGraphBuilder.navigationDrawerScreen(
-    onBackClick:()->Unit
-) {
+fun NavGraphBuilder.navigationDrawerScreen() {
     composable(route = navigationDrawerScreenRoute) {
-        NavigationDrawerScreen(onBackClick = onBackClick)
+        NavigationDrawerScreen()
     }
 }
 
