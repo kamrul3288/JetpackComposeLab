@@ -35,6 +35,8 @@ import com.iamkamrul.material.image.imageScreen
 import com.iamkamrul.material.image.navigateToImageScreen
 import com.iamkamrul.material.materialComponentScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
+import com.iamkamrul.material.radio.navigateToRadioButtonScreen
+import com.iamkamrul.material.radio.radioButtonScreen
 import com.iamkamrul.material.search.navigateToSearchScreen
 import com.iamkamrul.material.search.searchScreen
 import com.iamkamrul.material.slider.navigateToSliderScreen
@@ -111,7 +113,7 @@ fun ApplicationNav(
             onSlideBtnClick = navController::navigateToSliderScreen,
             onSlideSheetBtnClick = navController::navigateToSlideSheetScreen,
             onSearchBtnClick = navController::navigateToSearchScreen,
-            onRadioBtnClick = navController::navigateToSearchScreen,
+            onRadioBtnClick = navController::navigateToRadioButtonScreen,
             onProgressBtnClick = navController::navigateToSearchScreen,
             onNavDrawerBtnClick = navController::navigateToSearchScreen,
         )
@@ -130,5 +132,6 @@ fun ApplicationNav(
         sliderScreen(onBackClick = navController::popBackStack)
         slideSheetScreen(onBackClick = navController::popBackStack)
         searchScreen(onBackClick = navController::popBackStack)
+        radioButtonScreen(onBackClick = navController::popBackStack)
     }
 }
