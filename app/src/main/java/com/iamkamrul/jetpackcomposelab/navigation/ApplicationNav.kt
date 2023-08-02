@@ -111,6 +111,9 @@ fun ApplicationNav(
             onSlideBtnClick = navController::navigateToSliderScreen,
             onSlideSheetBtnClick = navController::navigateToSlideSheetScreen,
             onSearchBtnClick = navController::navigateToSearchScreen,
+            onRadioBtnClick = navController::navigateToSearchScreen,
+            onProgressBtnClick = navController::navigateToSearchScreen,
+            onNavDrawerBtnClick = navController::navigateToSearchScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)

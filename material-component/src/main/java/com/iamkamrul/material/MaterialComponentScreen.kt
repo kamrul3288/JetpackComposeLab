@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -46,6 +48,9 @@ fun  MaterialComponentScreen(
     onSlideBtnClick:()->Unit,
     onSlideSheetBtnClick:()->Unit,
     onSearchBtnClick:()->Unit,
+    onRadioBtnClick:()->Unit,
+    onProgressBtnClick:()->Unit,
+    onNavDrawerBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -69,7 +74,9 @@ fun  MaterialComponentScreen(
         val modifier = Modifier.padding(it)
         Column(modifier = modifier
             .fillMaxSize()
-            .padding(16.dp)) {
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState())
+        ) {
 
             //-----------Row  1----------------------
             Row(modifier = Modifier.fillMaxWidth()) {
@@ -232,6 +239,38 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Search",
                     onClick = onSearchBtnClick
+                )
+            }
+
+            //-----------Row  6----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    buttonLabel = "Radio Button",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onRadioBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Progress Bar",
+                    onClick = onProgressBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Nav Drawer",
+                    onClick = onNavDrawerBtnClick
                 )
             }
 
