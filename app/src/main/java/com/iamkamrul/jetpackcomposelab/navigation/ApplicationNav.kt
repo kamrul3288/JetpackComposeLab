@@ -36,6 +36,8 @@ import com.iamkamrul.material.icons.navigateToIconScreen
 import com.iamkamrul.material.image.imageScreen
 import com.iamkamrul.material.image.navigateToImageScreen
 import com.iamkamrul.material.materialComponentScreen
+import com.iamkamrul.material.menu.menuScreenScreen
+import com.iamkamrul.material.menu.navigateToMenuScreenScreen
 import com.iamkamrul.material.navigateToMaterialComponentScreen
 import com.iamkamrul.material.navigationdrawer.navigateToNavigationDrawerScreen
 import com.iamkamrul.material.navigationdrawer.navigationDrawerScreen
@@ -123,7 +125,7 @@ fun ApplicationNav(
             onProgressBtnClick = navController:: navigateToProgressBarScreen,
             onNavDrawerBtnClick = navController::navigateToNavigationDrawerScreen,
             onBottomNavigationBtnClick = navController::navigateToBottomNavigationScreen,
-            onMenusBtnClick = navController::navigateToNavigationDrawerScreen,
+            onMenusBtnClick = navController::navigateToMenuScreenScreen,
             onDividerBtnClick = navController::navigateToNavigationDrawerScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
@@ -145,6 +147,7 @@ fun ApplicationNav(
         progressBarScreen(onBackClick = navController::popBackStack)
         navigationDrawerScreen()
         bottomNavigationScreen(onBackClick = navController::popBackStack)
+        menuScreenScreen(onBackClick = navController::popBackStack)
 
     }
 }
