@@ -31,8 +31,9 @@ fun ScaffoldWithBackNavigation(
     title:String,
     onBackClick:()->Unit,
     snackbarHost: @Composable () -> Unit = {},
-    content: @Composable (PaddingValues) -> Unit
-){
+    bottomBar: @Composable () -> Unit = {},
+    content: @Composable (PaddingValues) -> Unit,
+    ){
     Scaffold(
         snackbarHost = snackbarHost,
         topBar = {
@@ -52,6 +53,7 @@ fun ScaffoldWithBackNavigation(
                 }
             )
         },
+        bottomBar = bottomBar,
         content = content
     )
 }

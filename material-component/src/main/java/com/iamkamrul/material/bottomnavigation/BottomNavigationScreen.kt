@@ -1,26 +1,94 @@
 package com.iamkamrul.material.bottomnavigation
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.common.theme.color
+import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavBookmarkScreen
+import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavHomeScreen
+import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavProfileScreen
 
 
 @Composable
 internal fun BottomNavigationScreen(
-    onBackClick:()->Unit
+    onBackClick:()->Unit,
+    navController: NavHostController = rememberNavController()
 ) {
-    ScaffoldWithBackNavigation(title = "Bottom Navigation", onBackClick = onBackClick) {
-        Column(
-            modifier = Modifier.fillMaxSize().padding(it),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
 
+    var selectedItem by remember { mutableIntStateOf(0) }
+    navController.addOnDestinationChangedListener{_,destination,_->
+        selectedItem = when(destination.route){
+            bottomNavigationBookmarksScreenRoute-> 1
+            bottomNavigationProfileScreenRoute-> 2
+            else -> 0
+        }
+    }
+
+    ScaffoldWithBackNavigation(
+        title = "Bottom Navigation",
+        onBackClick = onBackClick,
+        bottomBar = {
+            NavigationBar(
+                containerColor = MaterialTheme.color.card,
+                contentColor = MaterialTheme.color.black
+            ){
+                bottomNavItems.forEachIndexed {index, item ->
+                    NavigationBarItem(
+                        selected = selectedItem == index,
+                        onClick = {
+                            selectedItem = index
+                            navController.navigate(item.route){
+                                popUpTo(navController.graph.findStartDestination().id)
+                                launchSingleTop = true
+                            }
+                        },
+                        icon = {
+                            Icon(imageVector = item.labelIcon, contentDescription = "")
+                        },
+                        label = {
+                            Text(text = item.label)
+                        },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = MaterialTheme.color.black,
+                            unselectedIconColor = MaterialTheme.color.black.copy(alpha = 0.5f),
+                            selectedTextColor = MaterialTheme.color.black,
+                            unselectedTextColor = MaterialTheme.color.black.copy(alpha = 0.5f)
+                        )
+                    )
+                }
+            }
+        }
+    ) {
+        NavHost(
+            navController = navController ,
+            startDestination = bottomNavigationHomeScreenRoute
+        ){
+
+            composable(route = bottomNavigationHomeScreenRoute){
+                BottomNavHomeScreen()
+            }
+
+            composable(route = bottomNavigationProfileScreenRoute){
+                BottomNavProfileScreen()
+            }
+
+            composable(route = bottomNavigationBookmarksScreenRoute){
+                BottomNavBookmarkScreen()
+            }
         }
     }
 }
