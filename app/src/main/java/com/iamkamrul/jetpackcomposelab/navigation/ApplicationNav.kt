@@ -31,6 +31,8 @@ import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.cards.cardScreen
 import com.iamkamrul.material.cards.navigateToCardScreen
+import com.iamkamrul.material.divider.dividerScreen
+import com.iamkamrul.material.divider.navigateToDividerScreen
 import com.iamkamrul.material.icons.iconScreen
 import com.iamkamrul.material.icons.navigateToIconScreen
 import com.iamkamrul.material.image.imageScreen
@@ -126,7 +128,7 @@ fun ApplicationNav(
             onNavDrawerBtnClick = navController::navigateToNavigationDrawerScreen,
             onBottomNavigationBtnClick = navController::navigateToBottomNavigationScreen,
             onMenusBtnClick = navController::navigateToMenuScreenScreen,
-            onDividerBtnClick = navController::navigateToNavigationDrawerScreen,
+            onDividerBtnClick = navController::navigateToDividerScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
@@ -148,6 +150,7 @@ fun ApplicationNav(
         navigationDrawerScreen()
         bottomNavigationScreen(onBackClick = navController::popBackStack)
         menuScreenScreen(onBackClick = navController::popBackStack)
+        dividerScreen(onBackClick = navController::popBackStack)
 
     }
 }
