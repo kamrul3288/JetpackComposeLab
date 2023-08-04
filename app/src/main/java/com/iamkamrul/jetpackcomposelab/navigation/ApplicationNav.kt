@@ -25,6 +25,8 @@ import com.iamkamrul.layout.row.navigateToRowScreen
 import com.iamkamrul.layout.row.rowScreen
 import com.iamkamrul.layout.vpager.navigateToVerticalPager
 import com.iamkamrul.layout.vpager.verticalPagerScreen
+import com.iamkamrul.material.bottomnavigation.bottomNavigationScreen
+import com.iamkamrul.material.bottomnavigation.navigateToBottomNavigationScreen
 import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.cards.cardScreen
@@ -120,7 +122,7 @@ fun ApplicationNav(
             onRadioBtnClick = navController::navigateToRadioButtonScreen,
             onProgressBtnClick = navController:: navigateToProgressBarScreen,
             onNavDrawerBtnClick = navController::navigateToNavigationDrawerScreen,
-            onBottomNavigationBtnClick = navController::navigateToNavigationDrawerScreen,
+            onBottomNavigationBtnClick = navController::navigateToBottomNavigationScreen,
             onMenusBtnClick = navController::navigateToNavigationDrawerScreen,
             onDividerBtnClick = navController::navigateToNavigationDrawerScreen,
         )
@@ -142,5 +144,7 @@ fun ApplicationNav(
         radioButtonScreen(onBackClick = navController::popBackStack)
         progressBarScreen(onBackClick = navController::popBackStack)
         navigationDrawerScreen()
+        bottomNavigationScreen(onBackClick = navController::popBackStack)
+
     }
 }
