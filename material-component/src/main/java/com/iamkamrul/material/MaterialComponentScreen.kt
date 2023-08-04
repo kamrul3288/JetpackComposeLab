@@ -51,6 +51,9 @@ fun  MaterialComponentScreen(
     onRadioBtnClick:()->Unit,
     onProgressBtnClick:()->Unit,
     onNavDrawerBtnClick:()->Unit,
+    onBottomNavigationBtnClick:()->Unit,
+    onMenusBtnClick:()->Unit,
+    onDividerBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -78,7 +81,7 @@ fun  MaterialComponentScreen(
             .verticalScroll(rememberScrollState())
         ) {
 
-            //-----------Row  1----------------------
+            //-------------------------- Row  1 ---------------------------
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
@@ -110,7 +113,7 @@ fun  MaterialComponentScreen(
             }
 
 
-            //-----------Row  2----------------------
+            //--------------------------- Row  2 ----------------------
             Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
@@ -143,7 +146,7 @@ fun  MaterialComponentScreen(
             }
 
 
-            //-----------Row  3----------------------
+            //---------------------------- Row  3 ----------------------
             Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
@@ -177,7 +180,7 @@ fun  MaterialComponentScreen(
 
 
 
-            //-----------Row  4----------------------
+            //------------------------------- Row  4 ----------------------
             Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
@@ -210,7 +213,7 @@ fun  MaterialComponentScreen(
             }
 
 
-            //-----------Row  5----------------------
+            //------------------------------ Row  5 ----------------------
             Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
@@ -242,7 +245,7 @@ fun  MaterialComponentScreen(
                 )
             }
 
-            //-----------Row  6----------------------
+            //------------------------------ Row  6 ----------------------
             Spacer(modifier = Modifier.height(8.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
@@ -273,6 +276,40 @@ fun  MaterialComponentScreen(
                     onClick = onNavDrawerBtnClick
                 )
             }
+
+
+            //----------------------------- Row  7----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    buttonLabel = "Bottom Navigation",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onBottomNavigationBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Menus",
+                    onClick = onMenusBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Divider",
+                    onClick = onDividerBtnClick
+                )
+            }
+
 
         }
     }

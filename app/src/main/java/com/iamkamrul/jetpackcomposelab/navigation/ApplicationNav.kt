@@ -120,6 +120,9 @@ fun ApplicationNav(
             onRadioBtnClick = navController::navigateToRadioButtonScreen,
             onProgressBtnClick = navController:: navigateToProgressBarScreen,
             onNavDrawerBtnClick = navController::navigateToNavigationDrawerScreen,
+            onBottomNavigationBtnClick = navController::navigateToNavigationDrawerScreen,
+            onMenusBtnClick = navController::navigateToNavigationDrawerScreen,
+            onDividerBtnClick = navController::navigateToNavigationDrawerScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
