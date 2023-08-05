@@ -57,6 +57,9 @@ fun  MaterialComponentScreen(
     onDialogBtnClick:()->Unit,
     onDatePickerBtnClick:()->Unit,
     onChipsBtnClick:()->Unit,
+    onCheckboxBtnClick:()->Unit,
+    onBadgeBtnClick:()->Unit,
+    onBottomAppbarBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -344,6 +347,38 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Chips",
                     onClick = onChipsBtnClick
+                )
+            }
+
+            //----------------------------- Row  9----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    buttonLabel = "Checkbox",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onCheckboxBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Badge",
+                    onClick = onBadgeBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Bottom Appbar",
+                    onClick = onBottomAppbarBtnClick
                 )
             }
 

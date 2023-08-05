@@ -36,6 +36,9 @@ fun NavGraphBuilder.materialComponentScreen(
     onDialogBtnClick:()->Unit,
     onDatePickerBtnClick:()->Unit,
     onChipsBtnClick:()->Unit,
+    onCheckboxBtnClick:()->Unit,
+    onBadgeBtnClick:()->Unit,
+    onBottomAppbarBtnClick:()->Unit,
 ){
     composable(route = materialComponentsRoute){
         MaterialComponentScreen(
@@ -64,6 +67,9 @@ fun NavGraphBuilder.materialComponentScreen(
             onDialogBtnClick = onDialogBtnClick,
             onDatePickerBtnClick = onDatePickerBtnClick,
             onChipsBtnClick = onChipsBtnClick,
+            onCheckboxBtnClick = onCheckboxBtnClick,
+            onBadgeBtnClick = onBadgeBtnClick,
+            onBottomAppbarBtnClick = onBottomAppbarBtnClick,
         )
     }
 }

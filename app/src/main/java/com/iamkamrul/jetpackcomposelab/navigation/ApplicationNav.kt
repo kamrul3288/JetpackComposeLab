@@ -138,6 +138,9 @@ fun ApplicationNav(
             onDialogBtnClick = navController::navigateToDialogScreen,
             onDatePickerBtnClick = navController::navigateToDatePickerScreen,
             onChipsBtnClick = navController::navigateToChipScreen,
+            onCheckboxBtnClick = navController::navigateToChipScreen,
+            onBadgeBtnClick = navController::navigateToChipScreen,
+            onBottomAppbarBtnClick = navController::navigateToChipScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
