@@ -31,6 +31,8 @@ import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.cards.cardScreen
 import com.iamkamrul.material.cards.navigateToCardScreen
+import com.iamkamrul.material.dialog.dialogScreen
+import com.iamkamrul.material.dialog.navigateToDialogScreen
 import com.iamkamrul.material.divider.dividerScreen
 import com.iamkamrul.material.divider.navigateToDividerScreen
 import com.iamkamrul.material.icons.iconScreen
@@ -129,7 +131,7 @@ fun ApplicationNav(
             onBottomNavigationBtnClick = navController::navigateToBottomNavigationScreen,
             onMenusBtnClick = navController::navigateToMenuScreenScreen,
             onDividerBtnClick = navController::navigateToDividerScreen,
-            onDialogBtnClick = navController::navigateToDividerScreen,
+            onDialogBtnClick = navController::navigateToDialogScreen,
             onDatePickerBtnClick = navController::navigateToDividerScreen,
             onChipsBtnClick = navController::navigateToDividerScreen,
         )
@@ -154,6 +156,7 @@ fun ApplicationNav(
         bottomNavigationScreen(onBackClick = navController::popBackStack)
         menuScreenScreen(onBackClick = navController::popBackStack)
         dividerScreen(onBackClick = navController::popBackStack)
+        dialogScreen(onBackClick = navController::popBackStack)
 
     }
 }
