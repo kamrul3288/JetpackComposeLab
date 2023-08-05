@@ -54,6 +54,9 @@ fun  MaterialComponentScreen(
     onBottomNavigationBtnClick:()->Unit,
     onMenusBtnClick:()->Unit,
     onDividerBtnClick:()->Unit,
+    onDialogBtnClick:()->Unit,
+    onDatePickerBtnClick:()->Unit,
+    onChipsBtnClick:()->Unit,
 ){
     Scaffold(
         topBar = {
@@ -307,6 +310,40 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Divider",
                     onClick = onDividerBtnClick
+                )
+            }
+
+
+
+            //----------------------------- Row  8----------------------
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    buttonLabel = "Dialogs",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onDialogBtnClick
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Date Picker",
+                    onClick = onDatePickerBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(0.8f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Chips",
+                    onClick = onChipsBtnClick
                 )
             }
 

@@ -129,6 +129,9 @@ fun ApplicationNav(
             onBottomNavigationBtnClick = navController::navigateToBottomNavigationScreen,
             onMenusBtnClick = navController::navigateToMenuScreenScreen,
             onDividerBtnClick = navController::navigateToDividerScreen,
+            onDialogBtnClick = navController::navigateToDividerScreen,
+            onDatePickerBtnClick = navController::navigateToDividerScreen,
+            onChipsBtnClick = navController::navigateToDividerScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
