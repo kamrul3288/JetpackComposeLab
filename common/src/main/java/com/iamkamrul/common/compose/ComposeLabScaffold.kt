@@ -12,6 +12,7 @@ import androidx.compose.material3.BottomSheetScaffoldState
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -45,11 +46,12 @@ fun ScaffoldWithBackNavigation(
                     containerColor = MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        modifier = Modifier.clickable {onBackClick()},
-                        contentDescription = "back_icon", tint = White
-                    )
+                    IconButton(onClick = onBackClick) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "back_icon", tint = White
+                        )
+                    }
                 }
             )
         },
@@ -116,11 +118,12 @@ fun ScaffoldWithBottomSheet(
                     containerColor = MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        modifier = Modifier.clickable {onBackClick()},
-                        contentDescription = "back_icon", tint = White
-                    )
+                    IconButton(onClick = onBackClick) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "back_icon", tint = White
+                        )
+                    }
                 }
             )
         }
