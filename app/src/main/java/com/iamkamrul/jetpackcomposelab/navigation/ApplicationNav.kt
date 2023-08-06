@@ -27,6 +27,8 @@ import com.iamkamrul.layout.vpager.navigateToVerticalPager
 import com.iamkamrul.layout.vpager.verticalPagerScreen
 import com.iamkamrul.material.badge.badgeScreen
 import com.iamkamrul.material.badge.navigateToBadgeScreen
+import com.iamkamrul.material.bottomappbar.bottomAppBarScreen
+import com.iamkamrul.material.bottomappbar.navigateToBottomAppBarScreen
 import com.iamkamrul.material.bottomnavigation.bottomNavigationScreen
 import com.iamkamrul.material.bottomnavigation.navigateToBottomNavigationScreen
 import com.iamkamrul.material.buttons.buttonScreen
@@ -144,7 +146,7 @@ fun ApplicationNav(
             onChipsBtnClick = navController::navigateToChipScreen,
             onCheckboxBtnClick = navController::navigateToCheckBoxScreen,
             onBadgeBtnClick = navController::navigateToBadgeScreen,
-            onBottomAppbarBtnClick = navController::navigateToChipScreen,
+            onBottomAppbarBtnClick = navController::navigateToBottomAppBarScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
         buttonScreen(onBackClick = navController::popBackStack)
@@ -172,6 +174,7 @@ fun ApplicationNav(
         chipScreen(onBackClick = navController::popBackStack)
         checkBoxScreen(onBackClick = navController::popBackStack)
         badgeScreen(onBackClick = navController::popBackStack)
+        bottomAppBarScreen(onBackClick = navController::popBackStack)
 
     }
 }
