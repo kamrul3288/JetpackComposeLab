@@ -83,7 +83,6 @@ fun  MaterialComponentScreen(
         val modifier = Modifier.padding(it)
         Column(modifier = modifier
             .fillMaxSize()
-            .padding(16.dp)
             .verticalScroll(rememberScrollState())
         ) {
 
@@ -97,7 +96,7 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTextClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
@@ -107,7 +106,7 @@ fun  MaterialComponentScreen(
                     onClick = onButtonClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -119,18 +118,30 @@ fun  MaterialComponentScreen(
             }
 
 
+
             //--------------------------- Row  2 ----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
-                        .weight(1f)
+                        .weight(0.8f)
                         .height(70.dp),
                     buttonLabel = "Images",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onImageBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+
+                Spacer(modifier = Modifier.width(5.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "TextField",
+                    onClick = onTextFieldBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -140,30 +151,22 @@ fun  MaterialComponentScreen(
                     onClick = onCardBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
-                ComponentButton(
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(70.dp),
-                    icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "TextField",
-                    onClick = onTextFieldBtnClick
-                )
+
             }
 
 
             //---------------------------- Row  3 ----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
-                        .weight(1f)
+                        .weight(0.8f)
                         .height(70.dp),
                     buttonLabel = "Top Appbar",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTopAppBarBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
@@ -173,10 +176,10 @@ fun  MaterialComponentScreen(
                     onClick = onTimePickerBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
-                        .weight(1f)
+                        .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "ToolTip",
@@ -187,7 +190,7 @@ fun  MaterialComponentScreen(
 
 
             //------------------------------- Row  4 ----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
@@ -197,7 +200,18 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTabsBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+
+                Spacer(modifier = Modifier.width(5.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Snack bars",
+                    onClick = onSnackBarBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -207,20 +221,12 @@ fun  MaterialComponentScreen(
                     onClick = onSwitchBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
-                ComponentButton(
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(70.dp),
-                    icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Snack bars",
-                    onClick = onSnackBarBtnClick
-                )
+
             }
 
 
             //------------------------------ Row  5 ----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
@@ -230,7 +236,7 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onSlideBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
@@ -240,7 +246,7 @@ fun  MaterialComponentScreen(
                     onClick = onSlideSheetBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -252,7 +258,7 @@ fun  MaterialComponentScreen(
             }
 
             //------------------------------ Row  6 ----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
@@ -262,7 +268,7 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onRadioBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
@@ -272,10 +278,10 @@ fun  MaterialComponentScreen(
                     onClick = onProgressBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
-                        .weight(1f)
+                        .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Nav Drawer",
@@ -285,17 +291,11 @@ fun  MaterialComponentScreen(
 
 
             //----------------------------- Row  7----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
+
+
+
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(70.dp),
-                    buttonLabel = "Bottom Navigation",
-                    icon = painterResource(id = R.drawable.ic_material),
-                    onClick = onBottomNavigationBtnClick
-                )
-                Spacer(modifier = Modifier.width(10.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -304,8 +304,19 @@ fun  MaterialComponentScreen(
                     buttonLabel = "Menus",
                     onClick = onMenusBtnClick
                 )
+                Spacer(modifier = Modifier.width(5.dp))
 
-                Spacer(modifier = Modifier.width(10.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    buttonLabel = "Bottom Navigation",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = onBottomNavigationBtnClick
+                )
+
+
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -319,7 +330,7 @@ fun  MaterialComponentScreen(
 
 
             //----------------------------- Row  8----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
@@ -329,7 +340,7 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onDialogBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
@@ -339,7 +350,7 @@ fun  MaterialComponentScreen(
                     onClick = onDatePickerBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -351,7 +362,7 @@ fun  MaterialComponentScreen(
             }
 
             //----------------------------- Row  9----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 ComponentButton(
                     modifier = Modifier
@@ -361,7 +372,17 @@ fun  MaterialComponentScreen(
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onCheckboxBtnClick
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(5.dp))
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(70.dp),
+                    icon = painterResource(id = R.drawable.ic_material),
+                    buttonLabel = "Bottom Appbar",
+                    onClick = onBottomAppbarBtnClick
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
@@ -371,15 +392,7 @@ fun  MaterialComponentScreen(
                     onClick = onBadgeBtnClick
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
-                ComponentButton(
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(70.dp),
-                    icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Bottom Appbar",
-                    onClick = onBottomAppbarBtnClick
-                )
+
             }
 
 

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -17,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.theme.Purple40
 import com.iamkamrul.common.theme.color
 
 @Composable
@@ -42,9 +42,10 @@ fun ComponentButton(
             Icon(
                 painter = icon,
                 contentDescription = "android",
-                tint = Purple40
+                tint = MaterialTheme.color.black,
+                modifier = Modifier.size(18.dp)
             )
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = buttonLabel,
                 style = MaterialTheme.typography.titleSmall
