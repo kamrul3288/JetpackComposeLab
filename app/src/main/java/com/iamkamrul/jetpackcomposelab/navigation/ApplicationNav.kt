@@ -25,6 +25,8 @@ import com.iamkamrul.layout.row.navigateToRowScreen
 import com.iamkamrul.layout.row.rowScreen
 import com.iamkamrul.layout.vpager.navigateToVerticalPager
 import com.iamkamrul.layout.vpager.verticalPagerScreen
+import com.iamkamrul.material.badge.badgeScreen
+import com.iamkamrul.material.badge.navigateToBadgeScreen
 import com.iamkamrul.material.bottomnavigation.bottomNavigationScreen
 import com.iamkamrul.material.bottomnavigation.navigateToBottomNavigationScreen
 import com.iamkamrul.material.buttons.buttonScreen
@@ -141,7 +143,7 @@ fun ApplicationNav(
             onDatePickerBtnClick = navController::navigateToDatePickerScreen,
             onChipsBtnClick = navController::navigateToChipScreen,
             onCheckboxBtnClick = navController::navigateToCheckBoxScreen,
-            onBadgeBtnClick = navController::navigateToChipScreen,
+            onBadgeBtnClick = navController::navigateToBadgeScreen,
             onBottomAppbarBtnClick = navController::navigateToChipScreen,
         )
         textScreen(onBackClick = navController::popBackStack)
@@ -169,6 +171,7 @@ fun ApplicationNav(
         datePickerScreen(onBackClick = navController::popBackStack)
         chipScreen(onBackClick = navController::popBackStack)
         checkBoxScreen(onBackClick = navController::popBackStack)
+        badgeScreen(onBackClick = navController::popBackStack)
 
     }
 }
