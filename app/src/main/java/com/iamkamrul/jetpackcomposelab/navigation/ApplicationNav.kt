@@ -31,6 +31,8 @@ import com.iamkamrul.material.buttons.buttonScreen
 import com.iamkamrul.material.buttons.navigateToButtonScreen
 import com.iamkamrul.material.cards.cardScreen
 import com.iamkamrul.material.cards.navigateToCardScreen
+import com.iamkamrul.material.checkbox.checkBoxScreen
+import com.iamkamrul.material.checkbox.navigateToCheckBoxScreen
 import com.iamkamrul.material.chips.chipScreen
 import com.iamkamrul.material.chips.navigateToChipScreen
 import com.iamkamrul.material.datepicker.datePickerScreen
@@ -138,7 +140,7 @@ fun ApplicationNav(
             onDialogBtnClick = navController::navigateToDialogScreen,
             onDatePickerBtnClick = navController::navigateToDatePickerScreen,
             onChipsBtnClick = navController::navigateToChipScreen,
-            onCheckboxBtnClick = navController::navigateToChipScreen,
+            onCheckboxBtnClick = navController::navigateToCheckBoxScreen,
             onBadgeBtnClick = navController::navigateToChipScreen,
             onBottomAppbarBtnClick = navController::navigateToChipScreen,
         )
@@ -166,6 +168,7 @@ fun ApplicationNav(
         dialogScreen(onBackClick = navController::popBackStack)
         datePickerScreen(onBackClick = navController::popBackStack)
         chipScreen(onBackClick = navController::popBackStack)
+        checkBoxScreen(onBackClick = navController::popBackStack)
 
     }
 }
