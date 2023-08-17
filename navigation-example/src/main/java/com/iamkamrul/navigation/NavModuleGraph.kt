@@ -5,6 +5,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.navigation
 import com.iamkamrul.navigation.login.loginScreen
 import com.iamkamrul.navigation.login.loginScreenRoute
+import com.iamkamrul.navigation.signup.navigateToSignUpScreen
+import com.iamkamrul.navigation.signup.signUpScreen
 import com.iamkamrul.navigation.verifyotp.navigateToOtpVerifyScreen
 import com.iamkamrul.navigation.verifyotp.otpVerifyScreen
 
@@ -25,7 +27,12 @@ fun NavGraphBuilder.navigationModuleGraph(navController: NavController){
 
         otpVerifyScreen(
             onBackClick = navController::popBackStack,
-            onSignUpBtnClick = {}
+            onSignUpBtnClick = navController::navigateToSignUpScreen
+        )
+
+        signUpScreen(
+            onBackClick = navController::popBackStack,
+            onHomeBtnClick = {}
         )
 
     }
