@@ -1,4 +1,4 @@
-package com.iamkamrul.material._dummy
+package com.iamkamrul.navigation._dummy
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
