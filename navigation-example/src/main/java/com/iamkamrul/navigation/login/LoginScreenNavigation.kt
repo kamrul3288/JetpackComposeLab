@@ -7,7 +7,7 @@ const val loginScreenRoute = "loginScreenRoute"
 
 internal fun NavGraphBuilder.loginScreen(
     onBackClick:()->Unit,
-    onOtpVerifyBtnClick:()->Unit,
+    onOtpVerifyBtnClick:(String)->Unit,
     onHomeBtnClick:()->Unit,
 ){
     composable(route = loginScreenRoute){

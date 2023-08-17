@@ -23,7 +23,7 @@ import com.iamkamrul.common.theme.White
 @Composable
 internal fun LoginScreen(
     onBackClick:()->Unit,
-    onOtpVerifyBtnClick:()->Unit,
+    onOtpVerifyBtnClick:(String)->Unit,
     onHomeBtnClick:()->Unit,
 ) {
     ScaffoldWithBackNavigation(title = "Login", onBackClick = onBackClick) {
@@ -47,7 +47,9 @@ internal fun LoginScreen(
             }
 
             ElevatedButton(
-                onClick = onOtpVerifyBtnClick,
+                onClick = {
+                    onOtpVerifyBtnClick("+8801701999999")
+                },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White

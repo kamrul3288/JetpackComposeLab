@@ -24,7 +24,8 @@ import com.iamkamrul.common.theme.White
 @Composable
 internal fun OtpVerifyScreen(
     onBackClick:()->Unit,
-    onSignUpBtnClick:()->Unit
+    onSignUpBtnClick:()->Unit,
+    phoneNumber:String
 ) {
     ScaffoldWithBackNavigation(title = "Otp Verify", onBackClick = onBackClick) {
         Column(
@@ -34,6 +35,7 @@ internal fun OtpVerifyScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            Text(text = phoneNumber, style = MaterialTheme.typography.titleLarge)
             Text(text = "Otp Verified successfully")
 
             Spacer(modifier = Modifier.height(32.dp))

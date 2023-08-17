@@ -22,7 +22,9 @@ fun NavGraphBuilder.navigationModuleGraph(navController: NavController){
         loginScreen(
             onBackClick = navController::popBackStack,
             onHomeBtnClick = {},
-            onOtpVerifyBtnClick = navController::navigateToOtpVerifyScreen,
+            onOtpVerifyBtnClick = {phoneNumber->
+                navController.navigateToOtpVerifyScreen(phoneNumber = phoneNumber)
+            },
         )
 
         otpVerifyScreen(
