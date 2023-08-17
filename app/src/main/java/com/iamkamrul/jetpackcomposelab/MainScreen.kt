@@ -25,7 +25,8 @@ import com.iamkamrul.common.compose.ComponentButton
 @Composable
 internal fun MainScreen(
     onMaterialBtnClick:()->Unit,
-    onLayoutBtnClick:()->Unit
+    onLayoutBtnClick:()->Unit,
+    onNavigationBtnClick:()->Unit
 ){
     Scaffold(
         topBar = {
@@ -68,6 +69,16 @@ internal fun MainScreen(
             //-----------Row  2----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
+
+                ComponentButton(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
+                    buttonLabel = "Navigation",
+                    icon = painterResource(id = R.drawable.ic_navigation),
+                    onClick = onNavigationBtnClick
+                )
+                Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
                     modifier = Modifier
                         .weight(1f)
@@ -78,17 +89,7 @@ internal fun MainScreen(
 
                     }
                 )
-                Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
-                    modifier = Modifier
-                        .weight(0.8f)
-                        .height(80.dp),
-                    buttonLabel = "Navigation",
-                    icon = painterResource(id = R.drawable.ic_navigation),
-                    onClick = {
 
-                    }
-                )
             }
 
             //-----------Row  3----------------------
