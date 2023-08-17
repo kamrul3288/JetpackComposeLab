@@ -20,22 +20,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ComponentButton
 
-@Composable
-internal fun MainRoute(
-    onClickMaterial:()->Unit,
-    onClickLayout:()->Unit
-){
-    MainScreen(
-      onClickLayout = onClickLayout,
-      onClickMaterial = onClickMaterial
-    )
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun MainScreen(
-    onClickMaterial:()->Unit,
-    onClickLayout:()->Unit
+    onMaterialBtnClick:()->Unit,
+    onLayoutBtnClick:()->Unit
 ){
     Scaffold(
         topBar = {
@@ -62,7 +52,7 @@ internal fun MainScreen(
                         .height(80.dp),
                     buttonLabel = "Layouts",
                     icon = painterResource(id = R.drawable.ic_layout),
-                    onClick = onClickLayout
+                    onClick = onMaterialBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
@@ -71,7 +61,7 @@ internal fun MainScreen(
                         .height(80.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Material Component",
-                    onClick = onClickMaterial
+                    onClick = onLayoutBtnClick
                 )
             }
 

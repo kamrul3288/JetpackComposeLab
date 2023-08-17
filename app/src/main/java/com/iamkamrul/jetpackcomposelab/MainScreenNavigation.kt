@@ -5,13 +5,13 @@ import androidx.navigation.compose.composable
 
 const val mainScreenRoute = "main_activity_route"
 fun NavGraphBuilder.mainScreen(
-    onClickMaterial:()->Unit,
-    onClickLayout:()->Unit
+    onMaterialBtnClick:()->Unit,
+    onLayoutBtnClick:()->Unit
 ){
     composable(mainScreenRoute){
-        MainRoute(
-            onClickMaterial = onClickMaterial,
-            onClickLayout = onClickLayout,
+        MainScreen(
+            onMaterialBtnClick = onMaterialBtnClick,
+            onLayoutBtnClick = onLayoutBtnClick,
         )
     }
 }

@@ -81,6 +81,7 @@ import com.iamkamrul.material.tooltip.navigateToTooltipScreen
 import com.iamkamrul.material.tooltip.tooltipScreen
 import com.iamkamrul.material.topappbar.navigateToTopAppBarScreen
 import com.iamkamrul.material.topappbar.topAppBarScreen
+import com.iamkamrul.navigation.navigationModuleGraph
 
 @Composable
 fun ApplicationNav(
@@ -94,8 +95,8 @@ fun ApplicationNav(
         modifier = modifier
     ){
         mainScreen(
-            onClickMaterial = navController::navigateToMaterialComponentScreen,
-            onClickLayout = navController::navigateToLayoutHomeScreen
+            onMaterialBtnClick = navController::navigateToMaterialComponentScreen,
+            onLayoutBtnClick = navController::navigateToLayoutHomeScreen
         )
         layoutHomeScreen(
             onBackClick = navController::popBackStack,
@@ -175,6 +176,8 @@ fun ApplicationNav(
         checkBoxScreen(onBackClick = navController::popBackStack)
         badgeScreen(onBackClick = navController::popBackStack)
         bottomAppBarScreen(onBackClick = navController::popBackStack)
+
+        navigationModuleGraph(navController = navController)
 
     }
 }
