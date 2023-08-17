@@ -3,6 +3,8 @@ package com.iamkamrul.navigation
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.navigation
+import com.iamkamrul.navigation.home.homeScreenScreen
+import com.iamkamrul.navigation.home.navigateToHomeScreenScreen
 import com.iamkamrul.navigation.login.loginScreen
 import com.iamkamrul.navigation.login.loginScreenRoute
 import com.iamkamrul.navigation.signup.navigateToSignUpScreen
@@ -21,7 +23,9 @@ fun NavGraphBuilder.navigationModuleGraph(navController: NavController){
 
         loginScreen(
             onBackClick = navController::popBackStack,
-            onHomeBtnClick = {},
+            onHomeBtnClick = {user->
+                navController.navigateToHomeScreenScreen(user = user)
+            },
             onOtpVerifyBtnClick = {phoneNumber->
                 navController.navigateToOtpVerifyScreen(phoneNumber = phoneNumber)
             },
@@ -33,8 +37,20 @@ fun NavGraphBuilder.navigationModuleGraph(navController: NavController){
         )
 
         signUpScreen(
+            onBackClick = {
+               navController.navigate(navModuleGraphRoute){
+                   popUpTo(navModuleGraphRoute){
+                       inclusive = true
+                   }
+               }
+            },
+            onHomeBtnClick = {user ->
+                navController.navigateToHomeScreenScreen(user = user)
+            }
+        )
+
+        homeScreenScreen(
             onBackClick = navController::popBackStack,
-            onHomeBtnClick = {}
         )
 
     }

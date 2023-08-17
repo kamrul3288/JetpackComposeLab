@@ -21,11 +21,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
 import com.iamkamrul.common.theme.White
+import com.iamkamrul.navigation.home.User
 
 @Composable
 internal fun SignUpScreen(
     onBackClick:()->Unit,
-    onHomeBtnClick:()->Unit,
+    onHomeBtnClick:(User)->Unit,
 ) {
 
     BackHandler(enabled = true) {
@@ -43,7 +44,9 @@ internal fun SignUpScreen(
 
             Spacer(modifier = Modifier.height(32.dp))
             ElevatedButton(
-                onClick = onHomeBtnClick,
+                onClick = {
+                    onHomeBtnClick(User(name = "Kamrul Hasan", phoneNumber = "+8801701999999"))
+                },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White

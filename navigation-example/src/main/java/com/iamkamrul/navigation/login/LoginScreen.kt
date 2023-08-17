@@ -19,12 +19,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
 import com.iamkamrul.common.theme.White
+import com.iamkamrul.navigation.home.User
 
 @Composable
 internal fun LoginScreen(
     onBackClick:()->Unit,
     onOtpVerifyBtnClick:(String)->Unit,
-    onHomeBtnClick:()->Unit,
+    onHomeBtnClick:(User)->Unit,
 ) {
     ScaffoldWithBackNavigation(title = "Login", onBackClick = onBackClick) {
         Column(
@@ -35,7 +36,9 @@ internal fun LoginScreen(
             verticalArrangement = Arrangement.Center
         ) {
             ElevatedButton(
-                onClick = onHomeBtnClick,
+                onClick = {
+                   onHomeBtnClick(User(name = "Kamrul Hasan", phoneNumber = "+8801701999999"))
+                },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White
