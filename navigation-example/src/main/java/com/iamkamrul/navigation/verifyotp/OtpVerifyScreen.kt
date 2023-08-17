@@ -1,9 +1,10 @@
-package com.iamkamrul.navigation.login
+package com.iamkamrul.navigation.verifyotp
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
@@ -21,12 +22,11 @@ import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
 import com.iamkamrul.common.theme.White
 
 @Composable
-internal fun LoginScreen(
+internal fun OtpVerifyScreen(
     onBackClick:()->Unit,
-    onOtpVerifyBtnClick:()->Unit,
-    onHomeBtnClick:()->Unit,
+    onSignUpBtnClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "Login", onBackClick = onBackClick) {
+    ScaffoldWithBackNavigation(title = "Otp Verify", onBackClick = onBackClick) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -34,26 +34,17 @@ internal fun LoginScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            ElevatedButton(
-                onClick = onHomeBtnClick,
-                colors = ButtonDefaults.elevatedButtonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
-                )
-            ) {
-                Text(text = "Navigation To Home", style = MaterialTheme.typography.labelLarge)
-                Spacer(modifier = Modifier.width(5.dp))
-                Icon(imageVector = Icons.Default.ArrowCircleRight, contentDescription = null)
-            }
+            Text(text = "Otp Verified successfully")
 
+            Spacer(modifier = Modifier.height(32.dp))
             ElevatedButton(
-                onClick = onOtpVerifyBtnClick,
+                onClick = onSignUpBtnClick,
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White
                 )
             ) {
-                Text(text = "Navigation To Opt Verify", style = MaterialTheme.typography.labelLarge)
+                Text(text = "Navigation To Signup", style = MaterialTheme.typography.labelLarge)
                 Spacer(modifier = Modifier.width(5.dp))
                 Icon(imageVector = Icons.Default.ArrowCircleRight, contentDescription = null)
             }

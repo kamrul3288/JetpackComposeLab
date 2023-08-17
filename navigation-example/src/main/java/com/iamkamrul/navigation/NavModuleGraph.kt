@@ -5,6 +5,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.navigation
 import com.iamkamrul.navigation.login.loginScreen
 import com.iamkamrul.navigation.login.loginScreenRoute
+import com.iamkamrul.navigation.verifyotp.navigateToOtpVerifyScreen
+import com.iamkamrul.navigation.verifyotp.otpVerifyScreen
 
 const val navModuleGraphRoute = "navModuleGraphRoute"
 
@@ -18,7 +20,12 @@ fun NavGraphBuilder.navigationModuleGraph(navController: NavController){
         loginScreen(
             onBackClick = navController::popBackStack,
             onHomeBtnClick = {},
-            onOtpVerifyBtnClick = {},
+            onOtpVerifyBtnClick = navController::navigateToOtpVerifyScreen,
+        )
+
+        otpVerifyScreen(
+            onBackClick = navController::popBackStack,
+            onSignUpBtnClick = {}
         )
 
     }
