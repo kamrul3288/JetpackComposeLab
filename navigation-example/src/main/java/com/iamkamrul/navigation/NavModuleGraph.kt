@@ -15,7 +15,11 @@ fun NavController.navigateToNavigationModule(){
 fun NavGraphBuilder.navigationModuleGraph(navController: NavController){
     navigation(startDestination = loginScreenRoute, route = navModuleGraphRoute){
 
-        loginScreen(onBackClick = navController::popBackStack)
+        loginScreen(
+            onBackClick = navController::popBackStack,
+            onHomeBtnClick = {},
+            onOtpVerifyBtnClick = {},
+        )
 
     }
 }

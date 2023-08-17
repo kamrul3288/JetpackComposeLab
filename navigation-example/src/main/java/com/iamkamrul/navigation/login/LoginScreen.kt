@@ -22,7 +22,9 @@ import com.iamkamrul.common.theme.White
 
 @Composable
 internal fun LoginScreen(
-    onBackClick:()->Unit
+    onBackClick:()->Unit,
+    onOtpVerifyBtnClick:()->Unit,
+    onHomeBtnClick:()->Unit,
 ) {
     ScaffoldWithBackNavigation(title = "Login", onBackClick = onBackClick) {
         Column(
@@ -33,7 +35,7 @@ internal fun LoginScreen(
             verticalArrangement = Arrangement.Center
         ) {
             ElevatedButton(
-                onClick = {},
+                onClick = onOtpVerifyBtnClick,
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White
@@ -45,7 +47,7 @@ internal fun LoginScreen(
             }
 
             ElevatedButton(
-                onClick = {},
+                onClick = onHomeBtnClick,
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White
