@@ -53,7 +53,7 @@ internal fun MainScreen(
                         .height(80.dp),
                     buttonLabel = "Layouts",
                     icon = painterResource(id = R.drawable.ic_layout),
-                    onClick = onMaterialBtnClick
+                    onClick = onLayoutBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
                 ComponentButton(
@@ -62,7 +62,7 @@ internal fun MainScreen(
                         .height(80.dp),
                     icon = painterResource(id = R.drawable.ic_material),
                     buttonLabel = "Material Component",
-                    onClick = onLayoutBtnClick
+                    onClick = onMaterialBtnClick
                 )
             }
 
