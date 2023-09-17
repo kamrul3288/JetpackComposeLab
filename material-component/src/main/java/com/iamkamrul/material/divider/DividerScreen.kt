@@ -13,15 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 internal fun DividerScreen(
     onBackClick:()->Unit
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier

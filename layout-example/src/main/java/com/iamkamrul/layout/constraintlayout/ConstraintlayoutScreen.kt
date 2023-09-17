@@ -19,15 +19,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 
 @Composable
 fun ConstraintLayoutScreen(
     onBackClick:()->Unit
 ){
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "ConstraintLayout",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier

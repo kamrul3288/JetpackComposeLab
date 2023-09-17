@@ -10,9 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircleOutline
-import androidx.compose.material.icons.filled.RadioButtonUnchecked
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
@@ -27,7 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.Pink40
 import com.iamkamrul.designsystem.theme.Pink80
 import com.iamkamrul.designsystem.theme.White
@@ -42,9 +39,9 @@ internal fun RadioButtonScreen(
 
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Radio Button",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) { it ->
         Column(
             modifier = Modifier
@@ -111,7 +108,7 @@ internal fun RadioButtonScreen(
 
                     ) {
                         Icon(
-                            imageVector = if (it == selectedOption) Icons.Default.CheckCircleOutline else Icons.Default.RadioButtonUnchecked,
+                            imageVector = if (it == selectedOption) JclIcons.CheckCircleOutline else JclIcons.RadioButtonUnchecked,
                             contentDescription = "Radio",
                             tint = MaterialTheme.color.sliderThumbColor
                         )
@@ -147,8 +144,8 @@ internal fun RadioButtonScreen(
                                 onOptionSelected(it)
                             },
                             colors = ButtonDefaults.elevatedButtonColors(
-                                contentColor = com.iamkamrul.designsystem.theme.White,
-                                containerColor = if (it == selectedOption) com.iamkamrul.designsystem.theme.Pink40 else com.iamkamrul.designsystem.theme.Pink80
+                                contentColor = White,
+                                containerColor = if (it == selectedOption) Pink40 else Pink80
                             )
                         ) {
                             Text(text = it)

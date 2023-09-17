@@ -16,7 +16,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavBookmarkScreen
 import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavHomeScreen
@@ -38,9 +37,9 @@ internal fun BottomNavigationScreen(
         }
     }
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Bottom Navigation",
-        onBackClick = onBackClick,
+        onNavigationIconClick = onBackClick,
         bottomBar = {
             NavigationBar(
                 containerColor = MaterialTheme.color.card,

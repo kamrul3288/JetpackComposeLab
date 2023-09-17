@@ -18,8 +18,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.iamkamrul.designsystem.component.ScaffoldWithBottomSheet
-import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun SlideSheetScreen(
@@ -29,9 +27,9 @@ internal fun SlideSheetScreen(
     var showingModalSheet by remember { mutableStateOf(false) }
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBottomSheet(
+    com.iamkamrul.designsystem.component.ScaffoldBottomSheet(
         title = "Slide Sheet",
-        onBackClick = onBackClick,
+        onNavigationIconClick = onBackClick,
         bottomSheetContent = {
             PersistenceBottomSheetScreen()
         }

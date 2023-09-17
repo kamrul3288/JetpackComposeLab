@@ -18,16 +18,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun CardScreen(
     onBackClick:()->Unit
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Card",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier

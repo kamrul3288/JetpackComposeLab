@@ -10,19 +10,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.color
-import com.iamkamrul.layout.R
 
 @Composable
 fun BoxScreen(
     onBackClick:()->Unit,
 ){
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Box",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Box(
             modifier = Modifier
@@ -40,7 +39,7 @@ fun BoxScreen(
                 containerColor = MaterialTheme.color.card
             ) {
                 Text(text = "Add Task")
-                Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
+                Icon(imageVector = JclIcons.Add, contentDescription = "")
             }
 
         }

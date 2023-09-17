@@ -27,7 +27,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.bottomnavigation.bottomNavItems
 
@@ -39,9 +38,9 @@ internal fun BadgeScreen(
     var selectedItem by remember { mutableIntStateOf(0) }
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Badge",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier

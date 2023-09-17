@@ -11,8 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -25,7 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ComponentButton
+import com.iamkamrul.ui.component.FeatureCardItem
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.White
 
 
@@ -72,9 +71,9 @@ fun  MaterialComponentScreen(
                 ),
                 navigationIcon = {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector =JclIcons.ArrowBack,
                         modifier = Modifier.clickable {onBackClick()},
-                        contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
+                        contentDescription = "back_icon", tint = White
                     )
                 }
             )
@@ -88,31 +87,31 @@ fun  MaterialComponentScreen(
 
             //-------------------------- Row  1 ---------------------------
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Texts",
+                    label = "Texts",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTextClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Buttons",
+                    label = "Buttons",
                     onClick = onButtonClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Icons",
+                    label = "Icons",
                     onClick = onIconClick
                 )
             }
@@ -122,32 +121,32 @@ fun  MaterialComponentScreen(
             //--------------------------- Row  2 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Images",
+                    label = "Images",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onImageBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "TextField",
+                    label = "TextField",
                     onClick = onTextFieldBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Cards",
+                    label = "Cards",
                     onClick = onCardBtnClick
                 )
 
@@ -158,31 +157,31 @@ fun  MaterialComponentScreen(
             //---------------------------- Row  3 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Top Appbar",
+                    label = "Top Appbar",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTopAppBarBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Time Picker",
+                    label = "Time Picker",
                     onClick = onTimePickerBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "ToolTip",
+                    label = "ToolTip",
                     onClick = onTooltipBtnClick
                 )
             }
@@ -192,32 +191,32 @@ fun  MaterialComponentScreen(
             //------------------------------- Row  4 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Tabs",
+                    label = "Tabs",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onTabsBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Snack bars",
+                    label = "Snack bars",
                     onClick = onSnackBarBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Switch",
+                    label = "Switch",
                     onClick = onSwitchBtnClick
                 )
 
@@ -228,31 +227,31 @@ fun  MaterialComponentScreen(
             //------------------------------ Row  5 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Slider",
+                    label = "Slider",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onSlideBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Slide Sheets",
+                    label = "Slide Sheets",
                     onClick = onSlideSheetBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Search",
+                    label = "Search",
                     onClick = onSearchBtnClick
                 )
             }
@@ -260,31 +259,31 @@ fun  MaterialComponentScreen(
             //------------------------------ Row  6 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Radio Button",
+                    label = "Radio Button",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onRadioBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Progress Bar",
+                    label = "Progress Bar",
                     onClick = onProgressBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Nav Drawer",
+                    label = "Nav Drawer",
                     onClick = onNavDrawerBtnClick
                 )
             }
@@ -296,33 +295,33 @@ fun  MaterialComponentScreen(
 
 
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Menus",
+                    label = "Menus",
                     onClick = onMenusBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
 
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
-                    buttonLabel = "Bottom Navigation",
+                    label = "Bottom Navigation",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onBottomNavigationBtnClick
                 )
 
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Divider",
+                    label = "Divider",
                     onClick = onDividerBtnClick
                 )
             }
@@ -332,31 +331,31 @@ fun  MaterialComponentScreen(
             //----------------------------- Row  8----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Dialogs",
+                    label = "Dialogs",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onDialogBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Date Picker",
+                    label = "Date Picker",
                     onClick = onDatePickerBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Chips",
+                    label = "Chips",
                     onClick = onChipsBtnClick
                 )
             }
@@ -364,31 +363,31 @@ fun  MaterialComponentScreen(
             //----------------------------- Row  9----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
-                    buttonLabel = "Checkbox",
+                    label = "Checkbox",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = onCheckboxBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Bottom Appbar",
+                    label = "Bottom Appbar",
                     onClick = onBottomAppbarBtnClick
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Badge",
+                    label = "Badge",
                     onClick = onBadgeBtnClick
                 )
 

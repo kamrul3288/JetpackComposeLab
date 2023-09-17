@@ -16,17 +16,21 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ComponentButton
+import com.iamkamrul.designsystem.icon.JclIcons
+import com.iamkamrul.designsystem.theme.JetpackComposeLabTheme
+import com.iamkamrul.ui.component.FeatureCardItem
+import com.iamkamrul.ui.utils.DevicePreviews
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun MainScreen(
-    onMaterialBtnClick:()->Unit,
-    onLayoutBtnClick:()->Unit,
-    onNavigationBtnClick:()->Unit
+    onMaterialBtnClick:()->Unit = {},
+    onLayoutBtnClick:()->Unit = {},
+    onNavigationBtnClick:()->Unit = {}
 ){
     Scaffold(
         topBar = {
@@ -44,24 +48,25 @@ internal fun MainScreen(
         Column(modifier = modifier
             .fillMaxSize()
             .padding(4.dp)) {
+            
 
             //-----------Row  1----------------------
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
-                        .weight(0.8f)
+                        .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Layouts",
-                    icon = painterResource(id = R.drawable.ic_layout),
+                    label = "Layouts",
+                    icon = rememberVectorPainter(image = JclIcons.TableView),
                     onClick = onLayoutBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
                     icon = painterResource(id = R.drawable.ic_material),
-                    buttonLabel = "Material Component",
+                    label = "Material Component",
                     onClick = onMaterialBtnClick
                 )
             }
@@ -70,21 +75,21 @@ internal fun MainScreen(
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
 
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Navigation",
+                    label = "Navigation",
                     icon = painterResource(id = R.drawable.ic_navigation),
                     onClick = onNavigationBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Modifiers",
-                    icon = painterResource(id = R.drawable.ic_modifier),
+                    label = "Modifiers",
+                   icon = painterResource(id = R.drawable.ic_modifier),
                     onClick = {
 
                     }
@@ -95,22 +100,22 @@ internal fun MainScreen(
             //-----------Row  3----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
-                        .weight(0.8f)
+                        .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "List",
-                    icon = painterResource(id = R.drawable.ic_list),
+                    label = "List",
+                    icon = rememberVectorPainter(image = JclIcons.Menu),
                     onClick = {
 
                     }
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Multiview List",
+                    label = "Multiview List",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
@@ -121,22 +126,22 @@ internal fun MainScreen(
             //-----------Row  4----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Resources",
+                    label = "Resources",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Animation",
+                    label = "Animation",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
@@ -147,22 +152,22 @@ internal fun MainScreen(
             //-----------Row  5----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
-                        .weight(0.8f)
+                        .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "MVVM",
+                    label = "MVVM",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Clean Architecture",
+                    label = "Clean Architecture",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
@@ -171,24 +176,24 @@ internal fun MainScreen(
             }
 
             //-----------Row  6----------------------
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Sample Project",
+                    label = "Sample Project",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
                     }
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                com.iamkamrul.designsystem.component.ComponentButton(
+                FeatureCardItem(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    buttonLabel = "Google Map",
+                    label = "Google Map",
                     icon = painterResource(id = R.drawable.ic_material),
                     onClick = {
 
@@ -196,5 +201,14 @@ internal fun MainScreen(
                 )
             }
         }
+    }
+}
+
+
+@Composable
+@DevicePreviews
+fun PreviewMainScreen(){
+    JetpackComposeLabTheme {
+        MainScreen()
     }
 }

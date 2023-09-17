@@ -27,24 +27,18 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
-import com.iamkamrul.designsystem.theme.Pink80
-import com.iamkamrul.designsystem.theme.Purple40
-import com.iamkamrul.designsystem.theme.Purple80
-import com.iamkamrul.designsystem.theme.PurpleGrey40
-import com.iamkamrul.designsystem.theme.PurpleGrey80
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.color
-import com.iamkamrul.material.R
 
 @Composable
 internal fun ButtonScreen(
     onBackClick:()->Unit
 ){
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Buttons",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     )
     {
         val modifier = Modifier.padding(it)
@@ -63,7 +57,7 @@ internal fun ButtonScreen(
                     contentColor = White
                 )*/
             ) {
-                Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "add")
+                Icon(imageVector = JclIcons.Add, contentDescription = "add")
                 Text(text = "Elevated Button")
             }
 
@@ -139,7 +133,7 @@ internal fun ButtonScreen(
                     containerColor = com.iamkamrul.designsystem.theme.Pink80,
                     contentColor = com.iamkamrul.designsystem.theme.PurpleGrey40,
                 ) {
-                    Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
+                    Icon(imageVector = JclIcons.Add, contentDescription = "")
                     Text(text = "EXTENDED FAB")
                 }
             }
@@ -152,19 +146,19 @@ internal fun ButtonScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 IconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
+                    Icon(imageVector = JclIcons.Add, contentDescription = "")
                 }
 
                 FilledIconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
+                    Icon(imageVector = JclIcons.Add, contentDescription = "")
                 }
 
                 OutlinedIconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
+                    Icon(imageVector = JclIcons.Add, contentDescription = "")
                 }
 
                 FilledTonalIconButton(onClick = {}) {
-                    Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
+                    Icon(imageVector = JclIcons.Add, contentDescription = "")
                 }
             }
 

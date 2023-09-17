@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowCircleRight
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
@@ -18,8 +16,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
-import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 
 @Composable
 internal fun OtpVerifyScreen(
@@ -27,9 +25,9 @@ internal fun OtpVerifyScreen(
     onSignUpBtnClick:()->Unit,
     phoneNumber:String
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Otp Verify",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier
@@ -51,7 +49,7 @@ internal fun OtpVerifyScreen(
             ) {
                 Text(text = "Navigation To Signup", style = MaterialTheme.typography.labelLarge)
                 Spacer(modifier = Modifier.width(5.dp))
-                Icon(imageVector = Icons.Default.ArrowCircleRight, contentDescription = null)
+                Icon(imageVector = JclIcons.ArrowCircleRight, contentDescription = null)
             }
         }
     }

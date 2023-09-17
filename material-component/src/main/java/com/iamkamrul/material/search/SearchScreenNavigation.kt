@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -29,7 +28,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.Pink40
 import com.iamkamrul.designsystem.theme.color
 
@@ -41,9 +41,9 @@ internal fun SearchScreen(
     var active by rememberSaveable { mutableStateOf(false) }
     val lastSearches = mutableListOf<String>()
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Search",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) { it ->
         Column(
             modifier = Modifier
@@ -68,7 +68,7 @@ internal fun SearchScreen(
                 placeholder = { Text("Search") },
                 colors = SearchBarDefaults.colors(
                     containerColor = MaterialTheme.color.card,
-                    dividerColor = com.iamkamrul.designsystem.theme.Pink40,
+                    dividerColor = Pink40,
                     inputFieldColors = TextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.color.black,
                         unfocusedTextColor = MaterialTheme.color.black,
@@ -92,7 +92,7 @@ internal fun SearchScreen(
                     Row(
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Icon(imageVector = Icons.Default.History, contentDescription = "")
+                        Icon(imageVector = JclIcons.History, contentDescription = "")
                         Spacer(modifier = Modifier.width(10.dp))
                         Text(text = it)
                     }

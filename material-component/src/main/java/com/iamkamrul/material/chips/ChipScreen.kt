@@ -30,17 +30,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
-import com.iamkamrul.designsystem.theme.White
 import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun ChipScreen(
     onBackClick:()->Unit
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Chip",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
 
         val filterItemChips = listOf("Ongoing", "Confirmed", "Completed")

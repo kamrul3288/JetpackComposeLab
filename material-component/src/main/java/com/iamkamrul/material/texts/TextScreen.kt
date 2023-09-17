@@ -8,8 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -34,10 +32,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.iamkamrul.common.R
-import com.iamkamrul.designsystem.theme.Pink40
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.Purple40
-import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.material.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -59,7 +56,7 @@ fun TextScreen(
                 ),
                 navigationIcon = {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = JclIcons.ArrowBack,
                         modifier = Modifier.clickable {onBackClick()},
                         contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
                     )
@@ -79,12 +76,12 @@ fun TextScreen(
 
             Text(text = stringResource(id = R.string.app_name))
 
-            Text(text = "Hello Compose", style = MaterialTheme.typography.titleMedium, color = com.iamkamrul.designsystem.theme.Purple40)
+            Text(text = "Hello Compose", style = MaterialTheme.typography.titleMedium, color = Purple40)
 
 
             Text(
                 buildAnnotatedString {
-                    withStyle(style = SpanStyle(color = com.iamkamrul.designsystem.theme.Purple40)){
+                    withStyle(style = SpanStyle(color = Purple40)){
                         append("Hello")
                     }
                     withStyle(style = SpanStyle(color = com.iamkamrul.designsystem.theme.Pink40, fontWeight = FontWeight.Black)){
@@ -96,7 +93,7 @@ fun TextScreen(
 
             Text(
                 modifier = Modifier
-                    .background(color = com.iamkamrul.designsystem.theme.Purple40, shape = RoundedCornerShape(5.dp))
+                    .background(color = Purple40, shape = RoundedCornerShape(5.dp))
                     .padding(10.dp),
                 text = "Hello Compose",
                 style = MaterialTheme.typography.titleMedium,
@@ -104,7 +101,7 @@ fun TextScreen(
 
             Spacer(modifier = Modifier.height(10.dp))
             Text(
-                text = stringResource(id = R.string.lorem),
+                text = stringResource(id = com.iamkamrul.designsystem.R.string.lorem),
                 maxLines =  maxLine,
                 overflow = TextOverflow.Ellipsis,
                 onTextLayout = {result->

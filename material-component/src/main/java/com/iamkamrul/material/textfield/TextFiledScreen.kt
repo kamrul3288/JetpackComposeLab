@@ -10,10 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Error
 import androidx.compose.material.icons.outlined.Lock
-import androidx.compose.material.icons.outlined.Visibility
-import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -34,7 +31,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.Pink40
 import com.iamkamrul.designsystem.theme.Pink80
 import com.iamkamrul.designsystem.theme.Purple40
@@ -52,9 +49,9 @@ internal fun TextFieldScreen(
     var showPassword by remember { mutableStateOf(false) }
     var isPhoneNumberInValid by remember { mutableStateOf(false) }
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "TextField",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier
@@ -95,8 +92,8 @@ internal fun TextFieldScreen(
                     unfocusedTextColor = MaterialTheme.color.black,
                     unfocusedContainerColor = Color.Transparent,
                     focusedContainerColor = Color.Transparent,
-                    unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
-                    focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
+                    unfocusedBorderColor = Purple80,
+                    focusedBorderColor = Purple40
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
             )
@@ -117,15 +114,15 @@ internal fun TextFieldScreen(
                     unfocusedTextColor = MaterialTheme.color.black,
                     unfocusedContainerColor = Color.Transparent,
                     focusedContainerColor = Color.Transparent,
-                    unfocusedBorderColor = com.iamkamrul.designsystem.theme.Pink80,
-                    focusedBorderColor = com.iamkamrul.designsystem.theme.Pink40
+                    unfocusedBorderColor = Pink80,
+                    focusedBorderColor = Pink40
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
                 trailingIcon = {
                     IconButton(onClick = { showPassword = !showPassword }) {
                         Icon(
-                            imageVector = if (showPassword) Icons.Outlined.VisibilityOff else Icons.Outlined.Visibility,
+                            imageVector = if (showPassword) JclIcons.VisibilityOff else JclIcons.Visibility,
                             contentDescription = if (showPassword) "Show Password" else "Hide Password"
                         )
                     }
@@ -185,15 +182,15 @@ internal fun TextFieldScreen(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Icon(
-                        imageVector = Icons.Outlined.Error,
+                        imageVector = JclIcons.Error,
                         contentDescription = "Error",
-                        tint = com.iamkamrul.designsystem.theme.Red
+                        tint = Red
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = "Invalid Phone Number",
                         style = MaterialTheme.typography.labelSmall,
-                        color = com.iamkamrul.designsystem.theme.Red
+                        color = Red
                     )
                 }
             }

@@ -25,13 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.material.R
 
 @Composable
@@ -56,9 +54,9 @@ internal fun ImageScreen(
     val borderWidth = 4.dp
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Images",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier
@@ -93,7 +91,7 @@ internal fun ImageScreen(
                     modifier = Modifier.padding(8.dp)
                 )
                 Image(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_android),
+                    imageVector = JclIcons.Android,
                     contentDescription = "Android"
                 )
             }

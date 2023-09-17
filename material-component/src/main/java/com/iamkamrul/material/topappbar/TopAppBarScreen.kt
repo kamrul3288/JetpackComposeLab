@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AccountCircle
-import androidx.compose.material.icons.outlined.Attachment
 import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,16 +22,17 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun TopAppbarScreen(
     onBackClick:()->Unit
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Top Appbar Example",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier
@@ -60,16 +60,16 @@ internal fun TopAppbarScreen(
                 actions = {
                     IconButton(onClick = { }) {
                         Icon(
-                            imageVector = Icons.Outlined.Attachment,
+                            imageVector = JclIcons.Attachment,
                             contentDescription = "Attachment",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                     IconButton(onClick = { }) {
                         Icon(
                             imageVector = Icons.Outlined.AccountCircle,
                             contentDescription = "Account",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                 }
@@ -99,16 +99,16 @@ internal fun TopAppbarScreen(
                 actions = {
                     IconButton(onClick = { }) {
                         Icon(
-                            imageVector = Icons.Outlined.Attachment,
+                            imageVector = JclIcons.Attachment,
                             contentDescription = "Attachment",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                     IconButton(onClick = { }) {
                         Icon(
                             imageVector = Icons.Outlined.AccountCircle,
                             contentDescription = "Account",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                 }
@@ -135,16 +135,16 @@ internal fun TopAppbarScreen(
                 actions = {
                     IconButton(onClick = { }) {
                         Icon(
-                            imageVector = Icons.Outlined.Attachment,
+                            imageVector = JclIcons.Attachment,
                             contentDescription = "Attachment",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                     IconButton(onClick = { }) {
                         Icon(
                             imageVector = Icons.Outlined.AccountCircle,
                             contentDescription = "Account",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                 }
@@ -171,16 +171,16 @@ internal fun TopAppbarScreen(
                 actions = {
                     IconButton(onClick = { }) {
                         Icon(
-                            imageVector = Icons.Outlined.Attachment,
+                            imageVector = JclIcons.Attachment,
                             contentDescription = "Attachment",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                     IconButton(onClick = { }) {
                         Icon(
-                            imageVector = Icons.Outlined.AccountCircle,
+                            imageVector = JclIcons.AccountCircle,
                             contentDescription = "Account",
-                            tint = com.iamkamrul.designsystem.theme.White
+                            tint = White
                         )
                     }
                 }

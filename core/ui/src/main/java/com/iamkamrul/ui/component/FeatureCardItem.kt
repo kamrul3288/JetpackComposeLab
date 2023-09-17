@@ -1,4 +1,4 @@
-package com.iamkamrul.designsystem.component
+package com.iamkamrul.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,15 +17,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
+import com.iamkamrul.designsystem.icon.JclIcons
+import com.iamkamrul.designsystem.theme.JetpackComposeLabTheme
 import com.iamkamrul.designsystem.theme.color
+import com.iamkamrul.ui.utils.ComponentPreviews
+import com.iamkamrul.ui.utils.DevicePreviews
 
 @Composable
-fun ComponentButton(
+fun FeatureCardItem(
     modifier: Modifier,
-    buttonLabel:String,
+    label:String,
     icon:Painter,
-    onClick:()->Unit
+    onClick:()->Unit = {}
 ){
     Card(
         modifier = modifier.clickable { onClick() },
@@ -45,11 +51,25 @@ fun ComponentButton(
                 contentDescription = "android",
                 modifier = Modifier.size(18.dp)
             )
+
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = buttonLabel,
+                text = label,
                 style = MaterialTheme.typography.titleSmall,
             )
         }
+    }
+}
+
+
+@ComponentPreviews
+@Composable
+fun PreviewFeatureCardItem(){
+    JetpackComposeLabTheme {
+        FeatureCardItem(
+            modifier = Modifier.height(80.dp),
+            label = "Material Component",
+            icon = rememberVectorPainter(image = JclIcons.Android),
+        )
     }
 }

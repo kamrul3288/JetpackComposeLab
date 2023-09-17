@@ -12,13 +12,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Inbox
-import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material.icons.outlined.Logout
-import androidx.compose.material3.Divider
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
@@ -37,13 +34,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithMenu
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.Purple40
-import com.iamkamrul.designsystem.theme.White
 import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.R
 import kotlinx.coroutines.launch
@@ -69,9 +67,10 @@ internal fun NavigationDrawerScreen() {
             }
         },
     ){
-        com.iamkamrul.designsystem.component.ScaffoldWithMenu(
+        ScaffoldTopAppbar(
             title = "Navigation Drawer",
-            onMeniClick = {
+            navigationIcon = rememberVectorPainter(image = JclIcons.Menu),
+            onNavigationIconClick = {
                 scope.launch {
                     drawerState.open()
                 }
@@ -96,7 +95,7 @@ fun DrawerHeader() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .background(com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.7f))
+            .background(Purple40.copy(alpha = 0.7f))
             .padding(24.dp)
             .fillMaxWidth()
     ) {
@@ -126,7 +125,7 @@ private fun DrawerItem(){
 
     var selectedItem by remember { mutableIntStateOf(0) }
     NavigationDrawerItem(
-        icon = { Icon(Icons.Default.Inbox, contentDescription = null) },
+        icon = { Icon(JclIcons.Inbox, contentDescription = null) },
         label = { Text(text = "Inbox") },
         selected = selectedItem == 0,
         onClick = {
@@ -134,14 +133,14 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
     )
 
     NavigationDrawerItem(
-        icon = { Icon(Icons.Default.Send, contentDescription = null) },
+        icon = { Icon(JclIcons.Send, contentDescription = null) },
         label = { Text(text = "Outbox") },
         selected = selectedItem == 1,
         onClick = {
@@ -149,7 +148,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
@@ -164,13 +163,13 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
     )
 
-    Divider()
+    HorizontalDivider()
 
     NavigationDrawerItem(
         icon = { Icon(Icons.Outlined.Delete, contentDescription = null) },
@@ -181,14 +180,14 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
     )
 
     NavigationDrawerItem(
-        icon = { Icon(Icons.Outlined.Logout, contentDescription = null) },
+        icon = { Icon(JclIcons.Logout, contentDescription = null) },
         label = { Text(text = "Logout") },
         selected = selectedItem == 4,
         onClick = {
@@ -196,7 +195,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small

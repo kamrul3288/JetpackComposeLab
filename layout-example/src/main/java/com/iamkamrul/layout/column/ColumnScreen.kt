@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 import com.iamkamrul.designsystem.theme.PurpleGrey40
 import com.iamkamrul.designsystem.theme.PurpleGrey80
 import com.iamkamrul.designsystem.theme.color
@@ -25,9 +25,9 @@ import com.iamkamrul.designsystem.theme.color
 internal fun ColumnScreen(
     onBackClick:()->Unit,
 ){
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Column",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         //Use Column to place items vertically on the screen.
 
@@ -109,7 +109,7 @@ internal fun ColumnScreen(
             ) {
                 Text(
                     modifier = Modifier.fillMaxWidth().weight(0.4f)
-                        .background(com.iamkamrul.designsystem.theme.PurpleGrey40)
+                        .background(PurpleGrey40)
                         .wrapContentHeight(align = Alignment.CenterVertically),
                     text = "Weight Distribute: 40%",
                     style = MaterialTheme.typography.labelMedium,
@@ -119,7 +119,7 @@ internal fun ColumnScreen(
                     text = "Weight Distribute: 60%",
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.fillMaxWidth().weight(0.6f)
-                        .background(com.iamkamrul.designsystem.theme.PurpleGrey80)
+                        .background(PurpleGrey80)
                         .wrapContentHeight(align = Alignment.CenterVertically),
                     textAlign = TextAlign.Center
                 )

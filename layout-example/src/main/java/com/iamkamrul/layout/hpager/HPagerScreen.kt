@@ -30,7 +30,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import com.google.accompanist.pager.HorizontalPagerIndicator
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 import com.iamkamrul.designsystem.theme.Purple40
 import com.iamkamrul.designsystem.theme.Purple80
 import com.iamkamrul.designsystem.theme.PurpleGrey80
@@ -47,9 +47,9 @@ fun HorizontalPagerScreen(
     val pagerState3 = rememberPagerState(pageCount = {5},initialPage = 1)
     val coroutineScope = rememberCoroutineScope()
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Horizontal Pager",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) { it ->
 
         Column(
@@ -68,7 +68,7 @@ fun HorizontalPagerScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(100.dp)
-                        .background(com.iamkamrul.designsystem.theme.Purple80),
+                        .background(Purple80),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(text = "Horizontal Pager Index : $it")
@@ -88,7 +88,7 @@ fun HorizontalPagerScreen(
                         text = "Page Index $it",
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(com.iamkamrul.designsystem.theme.PurpleGrey80)
+                            .background(PurpleGrey80)
                             .wrapContentSize(align = Alignment.Center)
                     )
                 }
@@ -145,7 +145,7 @@ fun HorizontalPagerScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(100.dp)
-                    .background(com.iamkamrul.designsystem.theme.Purple80)
+                    .background(Purple80)
             ) {
                 HorizontalPager(state = pagerState2) {
                     Text(
@@ -197,7 +197,7 @@ fun HorizontalPagerScreen(
                         }
                         .fillMaxSize(),
                     colors = CardDefaults.cardColors(
-                        containerColor = com.iamkamrul.designsystem.theme.Purple40
+                        containerColor = Purple40
                     )
                 ) {
 

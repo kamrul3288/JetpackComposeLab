@@ -10,15 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 
 @Composable
 fun BoxWithConstraintScreen(
     onBackClick:()->Unit
 ){
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Box With Constraint",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         BoxWithConstraints(
             modifier = Modifier
@@ -26,7 +26,7 @@ fun BoxWithConstraintScreen(
                 .padding(it)
         ) {
             val scope = this
-            Log.e("BoxWithConstraintScreen", "BoxWithConstraintScreen: ${scope.maxWidth}",)
+            Log.e("BoxWithConstraintScreen", "BoxWithConstraintScreen: ${scope.maxWidth}")
             //Pixel 3
             if (scope.maxWidth > 400.dp) {
                 Text(

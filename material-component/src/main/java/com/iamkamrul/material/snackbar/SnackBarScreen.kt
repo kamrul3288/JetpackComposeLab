@@ -17,8 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
-import com.iamkamrul.designsystem.theme.White
 import kotlinx.coroutines.launch
 
 
@@ -30,9 +28,9 @@ internal fun SnackBarScreen(
     val snackBarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "SnackBar",
-        onBackClick = onBackClick,
+        onNavigationIconClick = onBackClick,
         snackbarHost = {
             SnackbarHost(snackBarHostState)
         }

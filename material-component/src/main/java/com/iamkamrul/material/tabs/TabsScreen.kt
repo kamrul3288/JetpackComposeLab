@@ -9,11 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccessTime
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
@@ -26,7 +21,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.Purple80
 import com.iamkamrul.designsystem.theme.White
 import kotlinx.coroutines.launch
@@ -37,19 +33,19 @@ internal fun TabsScreen(
 ) {
 
     val tabs = listOf(
-        TabsItem(title = "Home", icon = Icons.Default.Home, screen = {TabScreen(content = "Home")}),
-        TabsItem(title = "Recent", icon = Icons.Default.AccessTime, screen = {TabScreen(content = "Recent")}),
-        TabsItem(title = "Favourite", icon = Icons.Default.Favorite, screen = {TabScreen(content = "Favourite")}),
-        TabsItem(title = "Account", icon = Icons.Default.AccountCircle, screen = {TabScreen(content = "Account")}),
+        TabsItem(title = "Home", icon = JclIcons.Home, screen = {TabScreen(content = "Home")}),
+        TabsItem(title = "Recent", icon = JclIcons.AccessTime, screen = {TabScreen(content = "Recent")}),
+        TabsItem(title = "Favourite", icon = JclIcons.Favorite, screen = {TabScreen(content = "Favourite")}),
+        TabsItem(title = "Account", icon = JclIcons.AccountCircle, screen = {TabScreen(content = "Account")}),
     )
 
     val pagerState = rememberPagerState(initialPage = 0, pageCount = {tabs.size})
     val coroutineScope = rememberCoroutineScope()
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Tabs Example",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier.padding(it)
@@ -61,7 +57,7 @@ internal fun TabsScreen(
                     TabRowDefaults.PrimaryIndicator(
                         modifier = Modifier.tabIndicatorOffset(tabPositions[pagerState.currentPage]),
                         height = 4.dp,
-                        color = com.iamkamrul.designsystem.theme.Purple80,
+                        color = Purple80,
                         width = 30.dp
                     )
                 }
@@ -80,8 +76,8 @@ internal fun TabsScreen(
                                 pagerState.animateScrollToPage(index)
                             }
                         },
-                        selectedContentColor = com.iamkamrul.designsystem.theme.White,
-                        unselectedContentColor = com.iamkamrul.designsystem.theme.White.copy(alpha = 0.5f),
+                        selectedContentColor = White,
+                        unselectedContentColor = White.copy(alpha = 0.5f),
                     )
                 }
             }

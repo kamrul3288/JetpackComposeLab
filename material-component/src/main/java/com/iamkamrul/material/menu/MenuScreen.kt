@@ -14,15 +14,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.material.icons.outlined.Restore
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuDefaults
@@ -36,8 +35,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
-import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.color
 
 @Composable
@@ -56,9 +54,9 @@ internal fun MenuScreen(
 
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
         title = "Menu",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) { it ->
         Column(
             modifier = Modifier
@@ -105,7 +103,7 @@ internal fun MenuScreen(
                             leadingIconColor = MaterialTheme.color.black
                         )
                     )
-                    Divider()
+                    HorizontalDivider()
                     DropdownMenuItem(
                         text = { Text("Delete") },
                         onClick = {},
@@ -120,13 +118,13 @@ internal fun MenuScreen(
                             leadingIconColor = MaterialTheme.color.black
                         )
                     )
-                    Divider()
+                    HorizontalDivider()
                     DropdownMenuItem(
                         text = { Text("Restore") },
                         onClick = {},
                         leadingIcon = {
                             Icon(
-                                Icons.Outlined.Restore,
+                                JclIcons.Restore,
                                 contentDescription = null
                             )
                         },

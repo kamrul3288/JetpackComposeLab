@@ -1,11 +1,7 @@
 package com.iamkamrul.designsystem.component
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.BottomSheetScaffoldState
@@ -19,18 +15,21 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.White
 import com.iamkamrul.designsystem.theme.color
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScaffoldWithBackNavigation(
+fun ScaffoldTopAppbar(
     title:String,
-    onBackClick:()->Unit,
+    onNavigationIconClick:()->Unit,
+    navigationIcon:Painter = rememberVectorPainter(image = JclIcons.ArrowBack),
     snackbarHost: @Composable () -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
     content: @Composable (PaddingValues) -> Unit,
@@ -46,13 +45,13 @@ fun ScaffoldWithBackNavigation(
                     containerColor = MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = {
-                    IconButton(onClick = onBackClick) {
+                    IconButton(onClick = onNavigationIconClick) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
+                            painter = navigationIcon,
+                            contentDescription = "navigationIcon", tint = White
                         )
                     }
-                }
+                },
             )
         },
         bottomBar = bottomBar,
@@ -61,40 +60,13 @@ fun ScaffoldWithBackNavigation(
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun ScaffoldWithMenu(
-    title:String,
-    onMeniClick:()->Unit,
-    content: @Composable (PaddingValues) -> Unit
-){
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(text = title, color = Color.White)
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary
-                ),
-                navigationIcon = {
-                    Icon(
-                        imageVector = Icons.Default.Menu,
-                        modifier = Modifier.clickable {onMeniClick()},
-                        contentDescription = "menu_icon", tint = com.iamkamrul.designsystem.theme.White
-                    )
-                }
-            )
-        },
-        content = content
-    )
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScaffoldWithBottomSheet(
+fun ScaffoldBottomSheet(
     title:String,
-    onBackClick:()->Unit,
+    navigationIcon:Painter = rememberVectorPainter(image = JclIcons.ArrowBack),
+    onNavigationIconClick:()->Unit,
     bottomSheetContent: @Composable ColumnScope.() -> Unit,
     scaffoldState: BottomSheetScaffoldState = rememberBottomSheetScaffoldState(),
     sheetPeekHeight: Dp = BottomSheetDefaults.SheetPeekHeight,
@@ -118,10 +90,10 @@ fun ScaffoldWithBottomSheet(
                     containerColor = MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = {
-                    IconButton(onClick = onBackClick) {
+                    IconButton(onClick = onNavigationIconClick) {
                         Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
+                            painter = navigationIcon,
+                            contentDescription = "navigationIcon", tint = White
                         )
                     }
                 }

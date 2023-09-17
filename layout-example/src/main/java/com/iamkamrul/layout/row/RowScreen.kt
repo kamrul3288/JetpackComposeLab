@@ -22,19 +22,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 import com.iamkamrul.designsystem.theme.Pink40
 import com.iamkamrul.designsystem.theme.Purple40
 import com.iamkamrul.designsystem.theme.Purple80
-import com.iamkamrul.designsystem.theme.Red
 
 @Composable
 fun RowScreen(
     onBackClick:()->Unit,
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Row",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         //Use Column to place items vertically on the screen.
 
@@ -107,7 +106,7 @@ fun RowScreen(
             Row {
                 Text(
                     modifier = Modifier.weight(1f).height(40.dp)
-                        .background(com.iamkamrul.designsystem.theme.Purple40)
+                        .background(Purple40)
                         .wrapContentHeight(Alignment.CenterVertically),
                     text = "Android",
                     style = MaterialTheme.typography.titleMedium,
@@ -115,7 +114,7 @@ fun RowScreen(
                 )
                 Text(
                     modifier = Modifier.weight(1f).height(40.dp)
-                        .background(com.iamkamrul.designsystem.theme.Purple80)
+                        .background(Purple80)
                         .wrapContentHeight(Alignment.CenterVertically),
                     text = "Android",
                     style = MaterialTheme.typography.titleMedium,
@@ -123,7 +122,7 @@ fun RowScreen(
                 )
                 Text(
                     modifier = Modifier.weight(1f).height(40.dp)
-                        .background(com.iamkamrul.designsystem.theme.Pink40)
+                        .background(Pink40)
                         .wrapContentHeight(Alignment.CenterVertically),
                     text = "Android",
                     style = MaterialTheme.typography.titleMedium,

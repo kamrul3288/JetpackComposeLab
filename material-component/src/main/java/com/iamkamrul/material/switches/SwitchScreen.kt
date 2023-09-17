@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.RadioButtonUnchecked
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
@@ -23,7 +22,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
+import com.iamkamrul.designsystem.icon.JclIcons
 
 @Composable
 internal fun SwitchScreen(
@@ -34,9 +34,9 @@ internal fun SwitchScreen(
     var isCheckedSwitch2 by remember { mutableStateOf(true) }
 
 
-    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+    ScaffoldTopAppbar(
         title = "Switch",
-        onBackClick = onBackClick
+        onNavigationIconClick = onBackClick
     ) {
         Column(
             modifier = Modifier
@@ -72,7 +72,7 @@ internal fun SwitchScreen(
                 ),
                 thumbContent = {
                     Icon(
-                        imageVector = if (isCheckedSwitch2) Icons.Filled.Check else Icons.Filled.RadioButtonUnchecked,
+                        imageVector = if (isCheckedSwitch2) Icons.Filled.Check else JclIcons.RadioButtonUnchecked,
                         contentDescription = null,
                         modifier = Modifier.size(SwitchDefaults.IconSize),
                     )
