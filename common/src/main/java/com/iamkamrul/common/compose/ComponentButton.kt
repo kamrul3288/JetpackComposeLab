@@ -31,7 +31,8 @@ fun ComponentButton(
         modifier = modifier.clickable { onClick() },
         shape = RoundedCornerShape(5.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.color.card
+            containerColor = MaterialTheme.color.card,
+            contentColor = MaterialTheme.color.black
         )
     ) {
         Column(
@@ -42,13 +43,12 @@ fun ComponentButton(
             Icon(
                 painter = icon,
                 contentDescription = "android",
-                tint = MaterialTheme.color.black,
                 modifier = Modifier.size(18.dp)
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = buttonLabel,
-                style = MaterialTheme.typography.titleSmall
+                style = MaterialTheme.typography.titleSmall,
             )
         }
     }
