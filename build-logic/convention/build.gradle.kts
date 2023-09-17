@@ -37,5 +37,9 @@ gradlePlugin{
             id = "iamkamrul.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("jvmLibrary") {
+            id = "iamkamrul.jvm.library"
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
     }
 }
