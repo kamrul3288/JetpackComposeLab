@@ -33,7 +33,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             configurations.configureEach {
                 resolutionStrategy {
-                    force(libs.findLibrary("junit4").get())
+                    force(libs.findLibrary("test-junit4").get())
                     // Temporary workaround for https://issuetracker.google.com/174733673
                     force("org.objenesis:objenesis:2.6")
                 }
@@ -48,14 +48,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 add("implementation",libs.findLibrary("androidx-compose-material3").get())
                 add("implementation",libs.findLibrary("gson").get())
 
-                add("testImplementation",libs.findLibrary("junit4").get())
-                add("androidTestImplementation",libs.findLibrary("androidx-junit").get())
-                add("androidTestImplementation",libs.findLibrary("androidx-espresso-core").get())
-                add("androidTestImplementation",libs.findLibrary("androidx-compose-ui-test-junit4").get())
-                add("debugImplementation",libs.findLibrary("androidx-compose-ui-tooling").get())
-                add("debugImplementation",libs.findLibrary("androidx-compose-ui-test-manifest").get())
-
-
+                add("testImplementation",libs.findLibrary("test-junit4").get())
+                add("androidTestImplementation",libs.findLibrary("test-androidx-junit").get())
+                add("androidTestImplementation",libs.findLibrary("test-androidx-espresso").get())
+                add("androidTestImplementation",libs.findLibrary("test-androidx-compose-ui-junit").get())
+                add("debugImplementation",libs.findLibrary("test-androidx-compose-ui-tooling").get())
+                add("debugImplementation",libs.findLibrary("test-androidx-compose-ui-manifest").get())
+                
             }
         }
     }

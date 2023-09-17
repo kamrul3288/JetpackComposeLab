@@ -10,6 +10,6 @@ android {
 dependencies{
     implementation(project(":common"))
     implementation(libs.androidx.compose.navigation)
-    implementation(libs.coil)
+    implementation(libs.image.coil)
     implementation(libs.androidx.compose.materialicon)
 }

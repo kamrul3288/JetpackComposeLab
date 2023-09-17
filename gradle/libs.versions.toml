@@ -1,9 +1,9 @@
 [versions]
-androidGradlePlugin = "8.1.1"
+agp = "8.1.1"
 kotlin = "1.9.0"
-androidxCore = "1.12.0"
+androidxCoreKtx = "1.12.0"
 material3 = "1.2.0-alpha07"
-androidxLifeCycleRuntime = "2.6.2"
+lifecycle = "2.6.2"
 androidxComposeActivity = "1.7.2"
 androidxComposeBom = "2023.09.00"
 #https://developer.android.com/jetpack/androidx/releases/compose-kotlin
@@ -22,37 +22,38 @@ coil = "2.4.0"
 
 [libraries]
 accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
-androidx-core-ktx = {group = "androidx.core", name="core-ktx", version.ref = "androidxCore"}
-androidx-lifecycle-runtime = {group = "androidx.lifecycle", name="lifecycle-runtime-ktx", version.ref="androidxLifeCycleRuntime"}
-androidx-compose-activity = {group = "androidx.activity", name="activity-compose", version.ref="androidxComposeActivity"}
-androidx-compose-navigation = {group = "androidx.navigation", name="navigation-compose", version.ref="androidxComposeNavigation"}
+androidx-core-ktx = {group = "androidx.core", name="core-ktx", version.ref = "androidxCoreKtx"}
+androidx-lifecycle-runtime = {group = "androidx.lifecycle", name="lifecycle-runtime-ktx", version.ref="lifecycle"}
+
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui"}
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics"}
-androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
+androidx-compose-activity = {group = "androidx.activity", name="activity-compose", version.ref="androidxComposeActivity"}
+androidx-compose-navigation = {group = "androidx.navigation", name="navigation-compose", version.ref="androidxComposeNavigation"}
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref="material3"}
 androidx-compose-materialicon = { group = "androidx.compose.material", name = "material-icons-extended"}
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref="androidxComposeFoundation"}
 androidx-compose-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+
 gson = {group = "com.google.code.gson", name = "gson", version.ref = "gson"}
+image-coil = {group="io.coil-kt", name="coil-compose", version.ref="coil"}
 
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
-junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
-androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4"}
-androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling"}
-androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest"}
-
-coil = {group="io.coil-kt", name="coil-compose", version.ref="coil"}
+test-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
+test-androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
+test-androidx-compose-ui-junit = { group = "androidx.compose.ui", name = "ui-test-junit4"}
+test-androidx-compose-ui-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest"}
+test-androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+test-junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 
 # Dependencies of the included build-logic
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
