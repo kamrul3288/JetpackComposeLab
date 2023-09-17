@@ -1,4 +1,4 @@
-package com.iamkamrul.jetpackcomposelab
+package com.iamkamrul
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

@@ -1,4 +1,4 @@
-package com.iamkamrul.jetpackcomposelab
+package com.iamkamrul
 
 
 import com.android.build.api.dsl.CommonExtension

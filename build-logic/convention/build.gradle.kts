@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `kotlin-dsl`
 }
-group = "com.iamkamrul.jetpackcomposelab.buildlogic"
+group = "com.iamkamrul.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17

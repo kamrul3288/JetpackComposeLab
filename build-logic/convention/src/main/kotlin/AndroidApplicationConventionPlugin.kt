@@ -1,8 +1,8 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.iamkamrul.jetpackcomposelab.configureKotlinAndroid
-import com.iamkamrul.jetpackcomposelab.configurePrintApksTask
+import com.iamkamrul.configureKotlinAndroid
+import com.iamkamrul.configurePrintApksTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

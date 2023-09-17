@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.iamkamrul.jetpackcomposelab
+package com.iamkamrul
 
 import com.android.build.api.artifact.SingleArtifact
 import com.android.build.api.variant.AndroidComponentsExtension
