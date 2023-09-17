@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
+    implementation(project(":core:common"))
     implementation(project(":material-component"))
     implementation(project(":layout-example"))
     implementation(project(":navigation-example"))
