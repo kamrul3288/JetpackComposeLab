@@ -1,9 +1,7 @@
-import com.iamkamrul.jetpackcomposelab.NiaBuildType
 
 plugins {
     id ("composelab.android.application")
     id ("composelab.application.compose")
-    id ("composelab.android.application.flavors")
 }
 
 android {
@@ -19,8 +17,21 @@ android {
     }
 
     buildTypes{
-        debug {
-            applicationIdSuffix = NiaBuildType.DEBUG.applicationIdSuffix
+        getByName("debug") {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        getByName("release") {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }

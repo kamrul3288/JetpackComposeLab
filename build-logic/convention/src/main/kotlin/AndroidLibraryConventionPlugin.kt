@@ -2,8 +2,6 @@
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
-import com.iamkamrul.jetpackcomposelab.configureFlavors
-import com.iamkamrul.jetpackcomposelab.configureGradleManagedDevices
 import com.iamkamrul.jetpackcomposelab.configureKotlinAndroid
 import com.iamkamrul.jetpackcomposelab.configurePrintApksTask
 import org.gradle.api.Plugin
@@ -24,8 +22,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 33
-                configureFlavors(this)
-                configureGradleManagedDevices(this)
+                //configureFlavors(this)
+                //configureGradleManagedDevices(this)
             }
             extensions.configure<LibraryAndroidComponentsExtension> {
                 configurePrintApksTask(this)
@@ -54,7 +52,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 add("androidTestImplementation",libs.findLibrary("test-androidx-compose-ui-junit").get())
                 add("debugImplementation",libs.findLibrary("test-androidx-compose-ui-tooling").get())
                 add("debugImplementation",libs.findLibrary("test-androidx-compose-ui-manifest").get())
-                
+
             }
         }
     }

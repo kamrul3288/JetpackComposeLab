@@ -37,9 +37,5 @@ gradlePlugin{
             id = "composelab.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        register("androidFlavors") {
-            id = "composelab.android.application.flavors"
-            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
-        }
     }
 }

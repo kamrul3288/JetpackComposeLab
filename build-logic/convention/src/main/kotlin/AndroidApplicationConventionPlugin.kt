@@ -1,7 +1,6 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.iamkamrul.jetpackcomposelab.configureGradleManagedDevices
 import com.iamkamrul.jetpackcomposelab.configureKotlinAndroid
 import com.iamkamrul.jetpackcomposelab.configurePrintApksTask
 import org.gradle.api.Plugin
@@ -19,7 +18,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 33
-                configureGradleManagedDevices(this)
+                //configureGradleManagedDevices(this)
             }
             extensions.configure<ApplicationAndroidComponentsExtension> {
                 configurePrintApksTask(this)
