@@ -10,13 +10,13 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.PlainTooltipBox
-import androidx.compose.material3.RichTooltipBox
+import androidx.compose.material3.PlainTooltip
+import androidx.compose.material3.RichTooltip
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
-import androidx.compose.material3.rememberPlainTooltipState
-import androidx.compose.material3.rememberRichTooltipState
+import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -33,11 +33,11 @@ internal fun TooltipScreen(
     onBackClick:()->Unit
 ) {
     val lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    val plainTooltipState = rememberPlainTooltipState()
-    val richTooltipState = rememberRichTooltipState(isPersistent = true)
     val scope = rememberCoroutineScope()
-    
-    
+    val tooltipState = rememberTooltipState()
+    val tooltipPersistState = rememberTooltipState(isPersistent = true)
+
+
 
     ScaffoldWithBackNavigation(title = "Tooltip", onBackClick = onBackClick) {
         Column(
@@ -50,14 +50,17 @@ internal fun TooltipScreen(
 
 
             //-------------- Long press tooltip box example--------------------
-            PlainTooltipBox(
+            TooltipBox(
+                positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
                 tooltip = {
-                    Text(text = lorem)
+                    PlainTooltip {
+                        Text(text = lorem)
+                    }
                 },
+                state = rememberTooltipState()
             ){
                 ElevatedButton(
                     onClick = {},
-                    modifier = Modifier.tooltipTrigger(),
                     colors = ButtonDefaults.elevatedButtonColors(
                         containerColor = Purple40,
                         contentColor = White
@@ -69,16 +72,22 @@ internal fun TooltipScreen(
 
             //-------------- Event base tooltip box example--------------------
             Spacer(modifier = Modifier.height(50.dp))
-            PlainTooltipBox(
+            TooltipBox(
+                positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
                 tooltip = {
-                    Text(text = lorem)
+                    PlainTooltip(
+                        containerColor = MaterialTheme.color.card,
+                        contentColor = MaterialTheme.color.black
+                    ) {
+                        Text(text = lorem)
+                    }
                 },
-                tooltipState = plainTooltipState
+                state = tooltipState
             ){
                 ElevatedButton(
                     onClick = {
                        scope.launch {
-                           plainTooltipState.show()
+                           tooltipState.show()
                        }
                     },
                     colors = ButtonDefaults.elevatedButtonColors(
@@ -93,31 +102,35 @@ internal fun TooltipScreen(
 
             //-------------- Event base Rich box example--------------------
             Spacer(modifier = Modifier.height(50.dp))
-            RichTooltipBox(
-                title = {
-                    Text(text = "RichTooltip Alert")
+            TooltipBox(
+                positionProvider = TooltipDefaults.rememberRichTooltipPositionProvider(),
+                tooltip = {
+                   RichTooltip(
+                       title = {
+                           Text(text = "RichTooltip Alert")
+                       },
+                       action = {
+                           TextButton(onClick = {
+                               scope.launch {
+                                   tooltipPersistState.dismiss()
+                               }
+                           }) {
+                               Text(text = "Okay", color = MaterialTheme.color.black)
+                           }
+                       },
+                       colors = TooltipDefaults.richTooltipColors(
+                           containerColor = MaterialTheme.color.card
+                       )
+                   ) {
+                       Text(text = lorem)
+                   }
                 },
-                action = {
-                    TextButton(onClick = { 
-                        scope.launch {
-                            richTooltipState.dismiss()
-                        }
-                    }) {
-                        Text(text = "Okay", color = MaterialTheme.color.black)
-                    }
-                },
-                text = {
-                    Text(text = lorem)
-                },
-                tooltipState = richTooltipState,
-                colors = TooltipDefaults.richTooltipColors(
-                    containerColor = MaterialTheme.color.card
-                )
+                state = tooltipPersistState,
             ){
                 ElevatedButton(
                     onClick = {
                         scope.launch {
-                            richTooltipState.show()
+                            tooltipPersistState.show()
                         }
                     },
                     colors = ButtonDefaults.elevatedButtonColors(
