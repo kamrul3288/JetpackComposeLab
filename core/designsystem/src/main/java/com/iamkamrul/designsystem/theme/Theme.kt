@@ -1,4 +1,4 @@
-package com.iamkamrul.common.theme
+package com.iamkamrul.designsystem.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme

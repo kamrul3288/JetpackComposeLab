@@ -18,8 +18,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun OtpVerifyScreen(
@@ -27,7 +27,10 @@ internal fun OtpVerifyScreen(
     onSignUpBtnClick:()->Unit,
     phoneNumber:String
 ) {
-    ScaffoldWithBackNavigation(title = "Otp Verify", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Otp Verify",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -43,7 +46,7 @@ internal fun OtpVerifyScreen(
                 onClick = onSignUpBtnClick,
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Text(text = "Navigation To Signup", style = MaterialTheme.typography.labelLarge)

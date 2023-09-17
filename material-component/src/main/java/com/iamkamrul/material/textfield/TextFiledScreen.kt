@@ -34,13 +34,13 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Pink40
-import com.iamkamrul.common.theme.Pink80
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Purple80
-import com.iamkamrul.common.theme.Red
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Pink40
+import com.iamkamrul.designsystem.theme.Pink80
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Purple80
+import com.iamkamrul.designsystem.theme.Red
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun TextFieldScreen(
@@ -52,16 +52,21 @@ internal fun TextFieldScreen(
     var showPassword by remember { mutableStateOf(false) }
     var isPhoneNumberInValid by remember { mutableStateOf(false) }
 
-    ScaffoldWithBackNavigation(title = "TextField", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)
-            .padding(16.dp)) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "TextField",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+                .padding(16.dp)
+        ) {
 
 
             TextField(
                 value = textFiledValue,
-                onValueChange = {value->
+                onValueChange = { value ->
                     textFiledValue = value
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -78,7 +83,7 @@ internal fun TextFieldScreen(
             Spacer(modifier = Modifier.height(16.dp))
             OutlinedTextField(
                 value = textFiledValue,
-                onValueChange = {value->
+                onValueChange = { value ->
                     textFiledValue = value
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -90,8 +95,8 @@ internal fun TextFieldScreen(
                     unfocusedTextColor = MaterialTheme.color.black,
                     unfocusedContainerColor = Color.Transparent,
                     focusedContainerColor = Color.Transparent,
-                    unfocusedBorderColor = Purple80,
-                    focusedBorderColor = Purple40
+                    unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                    focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
             )
@@ -100,7 +105,7 @@ internal fun TextFieldScreen(
             Spacer(modifier = Modifier.height(16.dp))
             OutlinedTextField(
                 value = textFiledValue,
-                onValueChange = {value->
+                onValueChange = { value ->
                     textFiledValue = value
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -112,8 +117,8 @@ internal fun TextFieldScreen(
                     unfocusedTextColor = MaterialTheme.color.black,
                     unfocusedContainerColor = Color.Transparent,
                     focusedContainerColor = Color.Transparent,
-                    unfocusedBorderColor = Pink80,
-                    focusedBorderColor = Pink40
+                    unfocusedBorderColor = com.iamkamrul.designsystem.theme.Pink80,
+                    focusedBorderColor = com.iamkamrul.designsystem.theme.Pink40
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
@@ -135,7 +140,7 @@ internal fun TextFieldScreen(
             Spacer(modifier = Modifier.height(16.dp))
             OutlinedTextField(
                 value = textFiledValue,
-                onValueChange = {value->
+                onValueChange = { value ->
                     textFiledValue = value
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -158,9 +163,9 @@ internal fun TextFieldScreen(
             OutlinedTextField(
                 value = phoneValue,
                 isError = isPhoneNumberInValid,
-                onValueChange = {value->
+                onValueChange = { value ->
                     phoneValue = value
-                    isPhoneNumberInValid = value.length<10
+                    isPhoneNumberInValid = value.length < 10
                 },
                 modifier = Modifier.fillMaxWidth(),
                 colors = OutlinedTextFieldDefaults.colors(
@@ -174,14 +179,22 @@ internal fun TextFieldScreen(
                 }
             )
 
-            if (isPhoneNumberInValid){
+            if (isPhoneNumberInValid) {
                 Spacer(modifier = Modifier.height(4.dp))
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                   Icon(imageVector = Icons.Outlined.Error, contentDescription = "Error", tint = Red)
+                    Icon(
+                        imageVector = Icons.Outlined.Error,
+                        contentDescription = "Error",
+                        tint = com.iamkamrul.designsystem.theme.Red
+                    )
                     Spacer(modifier = Modifier.width(4.dp))
-                   Text(text = "Invalid Phone Number", style = MaterialTheme.typography.labelSmall, color = Red)
+                    Text(
+                        text = "Invalid Phone Number",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = com.iamkamrul.designsystem.theme.Red
+                    )
                 }
             }
 

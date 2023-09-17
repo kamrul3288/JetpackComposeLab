@@ -22,25 +22,30 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Pink40
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Purple80
-import com.iamkamrul.common.theme.Red
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Pink40
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Purple80
+import com.iamkamrul.designsystem.theme.Red
 
 @Composable
 fun RowScreen(
     onBackClick:()->Unit,
 ) {
-    ScaffoldWithBackNavigation(title = "Row", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Row",
+        onBackClick = onBackClick
+    ) {
         //Use Column to place items vertically on the screen.
 
-        Column(modifier = Modifier
-            .padding(it)
-            .padding(8.dp)
-            .fillMaxSize()) {
+        Column(
+            modifier = Modifier
+                .padding(it)
+                .padding(8.dp)
+                .fillMaxSize()
+        ) {
 
-            Row{
+            Row {
                 Text(text = "Row-1", style = MaterialTheme.typography.titleMedium)
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(text = "Row-2", style = MaterialTheme.typography.titleMedium)
@@ -82,12 +87,16 @@ fun RowScreen(
                         .width(60.dp)
                         .height(60.dp)
                         .clip(CircleShape)
-                        .background(Red)
+                        .background(com.iamkamrul.designsystem.theme.Red)
                 )
                 Spacer(modifier = Modifier.width(16.dp))
                 Column {
                     Text(text = "Kamrul Hasan", style = MaterialTheme.typography.bodyMedium)
-                    Text(text = "+88xxxxxxxx",style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Light)
+                    Text(
+                        text = "+88xxxxxxxx",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Light
+                    )
                 }
             }
 
@@ -97,19 +106,25 @@ fun RowScreen(
             Spacer(modifier = Modifier.height(8.dp))
             Row {
                 Text(
-                    modifier = Modifier.weight(1f).height(40.dp).background(Purple40).wrapContentHeight(Alignment.CenterVertically),
+                    modifier = Modifier.weight(1f).height(40.dp)
+                        .background(com.iamkamrul.designsystem.theme.Purple40)
+                        .wrapContentHeight(Alignment.CenterVertically),
                     text = "Android",
                     style = MaterialTheme.typography.titleMedium,
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    modifier = Modifier.weight(1f).height(40.dp).background(Purple80).wrapContentHeight(Alignment.CenterVertically),
+                    modifier = Modifier.weight(1f).height(40.dp)
+                        .background(com.iamkamrul.designsystem.theme.Purple80)
+                        .wrapContentHeight(Alignment.CenterVertically),
                     text = "Android",
                     style = MaterialTheme.typography.titleMedium,
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    modifier = Modifier.weight(1f).height(40.dp).background(Pink40).wrapContentHeight(Alignment.CenterVertically),
+                    modifier = Modifier.weight(1f).height(40.dp)
+                        .background(com.iamkamrul.designsystem.theme.Pink40)
+                        .wrapContentHeight(Alignment.CenterVertically),
                     text = "Android",
                     style = MaterialTheme.typography.titleMedium,
                     textAlign = TextAlign.Center

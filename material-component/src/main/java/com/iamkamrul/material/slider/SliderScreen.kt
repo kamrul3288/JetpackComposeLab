@@ -31,8 +31,8 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun SliderScreen(
@@ -44,7 +44,10 @@ internal fun SliderScreen(
     var sliderPosition3 by remember { mutableFloatStateOf(0f) }
 
 
-    ScaffoldWithBackNavigation(title = "Slider", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Slider",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -58,7 +61,7 @@ internal fun SliderScreen(
             Slider(
                 modifier = Modifier.semantics { contentDescription = "Localized Description" },
                 value = sliderPosition1,
-                onValueChange = {value->
+                onValueChange = { value ->
                     sliderPosition1 = value
                 },
                 valueRange = 0f..100f,
@@ -73,7 +76,7 @@ internal fun SliderScreen(
             Slider(
                 modifier = Modifier.semantics { contentDescription = "Localized Description" },
                 value = sliderPosition2,
-                onValueChange = {value->
+                onValueChange = { value ->
                     sliderPosition2 = value
                 },
                 valueRange = 0f..100f,

@@ -13,13 +13,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 internal fun DividerScreen(
     onBackClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()

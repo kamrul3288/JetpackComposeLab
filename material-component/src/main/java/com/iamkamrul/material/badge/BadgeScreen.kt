@@ -27,8 +27,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.bottomnavigation.bottomNavItems
 
 @Composable
@@ -39,7 +39,10 @@ internal fun BadgeScreen(
     var selectedItem by remember { mutableIntStateOf(0) }
 
 
-    ScaffoldWithBackNavigation(title = "Badge", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Badge",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -66,7 +69,7 @@ internal fun BadgeScreen(
             NavigationBar(
                 containerColor = MaterialTheme.color.card,
                 contentColor = MaterialTheme.color.black
-            ){
+            ) {
                 bottomNavItems.forEachIndexed { index, item ->
                     NavigationBarItem(
                         selected = selectedItem == index,
@@ -76,9 +79,9 @@ internal fun BadgeScreen(
                         icon = {
                             BadgedBox(
                                 badge = {
-                                   Badge {
-                                       Text(text = "8")
-                                   }
+                                    Badge {
+                                        Text(text = "8")
+                                    }
                                 }
                             ) {
                                 Icon(imageVector = item.labelIcon, contentDescription = "")

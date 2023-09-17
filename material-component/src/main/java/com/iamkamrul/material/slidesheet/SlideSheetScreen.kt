@@ -18,8 +18,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.iamkamrul.common.compose.ScaffoldWithBottomSheet
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBottomSheet
+import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun SlideSheetScreen(
@@ -29,7 +29,7 @@ internal fun SlideSheetScreen(
     var showingModalSheet by remember { mutableStateOf(false) }
 
 
-    ScaffoldWithBottomSheet(
+    com.iamkamrul.designsystem.component.ScaffoldWithBottomSheet(
         title = "Slide Sheet",
         onBackClick = onBackClick,
         bottomSheetContent = {
@@ -38,7 +38,7 @@ internal fun SlideSheetScreen(
     ) {
 
         //------------Show modal bottom sheet here-------------------
-        if (showingModalSheet){
+        if (showingModalSheet) {
             ModalBottomSheetScreen {
                 showingModalSheet = false
             }
@@ -53,11 +53,11 @@ internal fun SlideSheetScreen(
         ) {
             ElevatedButton(
                 onClick = {
-                   showingModalSheet = true
+                    showingModalSheet = true
                 },
-                colors =  ButtonDefaults.elevatedButtonColors(
+                colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Text(text = "Show Modal Sheet")

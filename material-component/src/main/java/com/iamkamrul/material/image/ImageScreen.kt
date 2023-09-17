@@ -31,7 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 import com.iamkamrul.material.R
 
 @Composable
@@ -56,10 +56,14 @@ internal fun ImageScreen(
     val borderWidth = 4.dp
 
 
-    ScaffoldWithBackNavigation(title = "Images", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Images",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
 
         ) {
 
@@ -88,7 +92,10 @@ internal fun ImageScreen(
                     style = MaterialTheme.typography.titleSmall,
                     modifier = Modifier.padding(8.dp)
                 )
-                Image(imageVector = ImageVector.vectorResource(id = R.drawable.ic_android), contentDescription = "Android")
+                Image(
+                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_android),
+                    contentDescription = "Android"
+                )
             }
 
 
@@ -106,14 +113,14 @@ internal fun ImageScreen(
                     .height(150.dp),
                 contentScale = ContentScale.FillBounds,
                 loading = {
-                   Box(
-                       modifier = Modifier
-                           .fillMaxWidth()
-                           .height(150.dp),
-                       contentAlignment = Alignment.Center
-                   ) {
-                       CircularProgressIndicator()
-                   }
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        CircularProgressIndicator()
+                    }
                 }
             )
 

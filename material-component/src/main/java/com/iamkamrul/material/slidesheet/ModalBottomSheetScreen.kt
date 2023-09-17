@@ -16,7 +16,7 @@ import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun ModalBottomSheetScreen(

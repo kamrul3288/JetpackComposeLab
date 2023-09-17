@@ -19,8 +19,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
 import com.iamkamrul.navigation.home.User
 
 @Composable
@@ -32,7 +32,10 @@ internal fun SignUpScreen(
     BackHandler(enabled = true) {
         onBackClick()
     }
-    ScaffoldWithBackNavigation(title = "Sign up", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Sign up",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -49,7 +52,7 @@ internal fun SignUpScreen(
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Text(text = "Navigation To Home", style = MaterialTheme.typography.labelLarge)

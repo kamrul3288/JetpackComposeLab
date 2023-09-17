@@ -35,9 +35,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -56,7 +56,10 @@ internal fun TimePickerScreen(
 
 
 
-    ScaffoldWithBackNavigation(title = "Time Picker", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Time Picker",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -90,7 +93,7 @@ internal fun TimePickerScreen(
                         state = timePickerState,
                         colors = TimePickerDefaults.colors(
                             clockDialColor = MaterialTheme.color.clockDialColor,
-                            clockDialSelectedContentColor = White,
+                            clockDialSelectedContentColor = com.iamkamrul.designsystem.theme.White,
                             clockDialUnselectedContentColor = MaterialTheme.color.black
                         )
                     )

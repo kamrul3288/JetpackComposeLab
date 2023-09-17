@@ -26,9 +26,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Purple80
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Purple80
+import com.iamkamrul.designsystem.theme.White
 import kotlinx.coroutines.launch
 
 @Composable
@@ -47,18 +47,21 @@ internal fun TabsScreen(
     val coroutineScope = rememberCoroutineScope()
 
 
-    ScaffoldWithBackNavigation(title = "Tabs Example", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Tabs Example",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier.padding(it)
         ) {
             TabRow(
                 selectedTabIndex = pagerState.currentPage,
                 containerColor = MaterialTheme.colorScheme.primary,
-                indicator = {tabPositions->
+                indicator = { tabPositions ->
                     TabRowDefaults.PrimaryIndicator(
                         modifier = Modifier.tabIndicatorOffset(tabPositions[pagerState.currentPage]),
                         height = 4.dp,
-                        color = Purple80,
+                        color = com.iamkamrul.designsystem.theme.Purple80,
                         width = 30.dp
                     )
                 }
@@ -77,8 +80,8 @@ internal fun TabsScreen(
                                 pagerState.animateScrollToPage(index)
                             }
                         },
-                        selectedContentColor = White,
-                        unselectedContentColor = White.copy(alpha = 0.5f),
+                        selectedContentColor = com.iamkamrul.designsystem.theme.White,
+                        unselectedContentColor = com.iamkamrul.designsystem.theme.White.copy(alpha = 0.5f),
                     )
                 }
             }

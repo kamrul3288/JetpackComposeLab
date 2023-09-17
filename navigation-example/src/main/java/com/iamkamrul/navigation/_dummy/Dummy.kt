@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 const val _ScreenRoute = "_ScreenRoute"
 
@@ -30,7 +30,10 @@ fun NavGraphBuilder._Screen(
 internal fun _Screen(
     onBackClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier.fillMaxSize().padding(it),
             horizontalAlignment = Alignment.CenterHorizontally,

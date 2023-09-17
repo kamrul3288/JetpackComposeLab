@@ -31,11 +31,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Red
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Red
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -67,7 +67,10 @@ internal fun DatePickerScreen(
     )
 
 
-    ScaffoldWithBackNavigation(title = "Date Picker", onBackClick = onBackClick) { it ->
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Date Picker",
+        onBackClick = onBackClick
+    ) { it ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -82,7 +85,7 @@ internal fun DatePickerScreen(
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Icon(imageVector = Icons.Default.CalendarViewDay, contentDescription = null)
@@ -111,14 +114,17 @@ internal fun DatePickerScreen(
                             }
                             openDatePickerDialog = false
                         }) {
-                            Text(text = "Confirm", color = Purple40)
+                            Text(
+                                text = "Confirm",
+                                color = com.iamkamrul.designsystem.theme.Purple40
+                            )
                         }
                     },
                     dismissButton = {
                         TextButton(onClick = {
                             openDatePickerDialog = false
                         }) {
-                            Text(text = "Dismiss", color = Red)
+                            Text(text = "Dismiss", color = com.iamkamrul.designsystem.theme.Red)
                         }
                     },
                     colors = DatePickerDefaults.colors(
@@ -129,10 +135,10 @@ internal fun DatePickerScreen(
                         state = datePickerState,
                         colors = DatePickerDefaults.colors(
                             dayContentColor = MaterialTheme.color.black,
-                            selectedDayContentColor = White,
-                            selectedDayContainerColor = Purple40,
+                            selectedDayContentColor = com.iamkamrul.designsystem.theme.White,
+                            selectedDayContainerColor = com.iamkamrul.designsystem.theme.Purple40,
                             todayContentColor = MaterialTheme.color.black,
-                            todayDateBorderColor = Purple40
+                            todayDateBorderColor = com.iamkamrul.designsystem.theme.Purple40
 
                         )
                     )

@@ -19,25 +19,30 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 fun ConstraintLayoutScreen(
     onBackClick:()->Unit
 ){
-    ScaffoldWithBackNavigation(title = "ConstraintLayout", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "ConstraintLayout",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+        ) {
 
             //---------------------EXAMPLE 1----------------------------
             Text(text = "Simple Constraint Layout:", style = MaterialTheme.typography.labelSmall)
             ConstraintLayout {
-                val(nameTv,desTv) = createRefs()
+                val (nameTv, desTv) = createRefs()
                 Text(
                     text = "Kamrul Hasan",
                     style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.constrainAs(nameTv){
+                    modifier = Modifier.constrainAs(nameTv) {
                         start.linkTo(parent.start, margin = 16.dp)
                         top.linkTo(parent.top, margin = 16.dp)
                     }
@@ -45,7 +50,7 @@ fun ConstraintLayoutScreen(
                 Text(
                     text = "Mobile Application Developer",
                     style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.constrainAs(desTv){
+                    modifier = Modifier.constrainAs(desTv) {
                         start.linkTo(nameTv.start)
                         top.linkTo(nameTv.bottom)
                     }
@@ -55,14 +60,17 @@ fun ConstraintLayoutScreen(
 
             //---------------------EXAMPLE 2----------------------------
             Spacer(modifier = Modifier.height(32.dp))
-            Text(text = "Constraint Layout Horizontal Chain:", style = MaterialTheme.typography.labelSmall)
+            Text(
+                text = "Constraint Layout Horizontal Chain:",
+                style = MaterialTheme.typography.labelSmall
+            )
             ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
-                val(nameTv,desTv) = createRefs()
-                createHorizontalChain(nameTv,desTv, chainStyle = ChainStyle.SpreadInside)
+                val (nameTv, desTv) = createRefs()
+                createHorizontalChain(nameTv, desTv, chainStyle = ChainStyle.SpreadInside)
                 Text(
                     text = "Kamrul Hasan",
                     style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.constrainAs(nameTv){
+                    modifier = Modifier.constrainAs(nameTv) {
                         start.linkTo(parent.start)
                         top.linkTo(parent.top, margin = 16.dp)
                     }
@@ -70,7 +78,7 @@ fun ConstraintLayoutScreen(
                 Text(
                     text = "Mobile Application Developer",
                     style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.constrainAs(desTv){
+                    modifier = Modifier.constrainAs(desTv) {
                         start.linkTo(nameTv.end)
                         top.linkTo(nameTv.top)
                         end.linkTo(parent.end)
@@ -80,14 +88,17 @@ fun ConstraintLayoutScreen(
 
             //---------------------EXAMPLE 3----------------------------
             Spacer(modifier = Modifier.height(32.dp))
-            Text(text = "Constraint Layout Vertical Chain:", style = MaterialTheme.typography.labelSmall)
+            Text(
+                text = "Constraint Layout Vertical Chain:",
+                style = MaterialTheme.typography.labelSmall
+            )
             ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
-                val(nameTv,desTv) = createRefs()
-                createVerticalChain(nameTv,desTv)
+                val (nameTv, desTv) = createRefs()
+                createVerticalChain(nameTv, desTv)
                 Text(
                     text = "Kamrul Hasan",
                     style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.constrainAs(nameTv){
+                    modifier = Modifier.constrainAs(nameTv) {
                         start.linkTo(parent.start)
                         top.linkTo(parent.top)
                         end.linkTo(parent.end)
@@ -96,7 +107,7 @@ fun ConstraintLayoutScreen(
                 Text(
                     text = "Mobile Application Developer",
                     style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.constrainAs(desTv){
+                    modifier = Modifier.constrainAs(desTv) {
                         start.linkTo(nameTv.start)
                         top.linkTo(nameTv.bottom)
                     }
@@ -105,16 +116,19 @@ fun ConstraintLayoutScreen(
 
             //---------------------EXAMPLE 4----------------------------
             Spacer(modifier = Modifier.height(32.dp))
-            Text(text = "Constraint Layout Complex Example:", style = MaterialTheme.typography.labelSmall)
+            Text(
+                text = "Constraint Layout Complex Example:",
+                style = MaterialTheme.typography.labelSmall
+            )
             ConstraintLayout {
-                val(profileIv,nameTv,desTv) = createRefs()
+                val (profileIv, nameTv, desTv) = createRefs()
                 Box(
                     modifier = Modifier
                         .width(60.dp)
                         .height(60.dp)
                         .clip(CircleShape)
                         .background(Color.LightGray)
-                        .constrainAs(profileIv){
+                        .constrainAs(profileIv) {
                             top.linkTo(parent.top, margin = 16.dp)
                             start.linkTo(parent.start, margin = 16.dp)
                         }
@@ -123,7 +137,7 @@ fun ConstraintLayoutScreen(
                 Text(
                     text = "Kamrul Hasan",
                     style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.constrainAs(nameTv){
+                    modifier = Modifier.constrainAs(nameTv) {
                         start.linkTo(profileIv.end, margin = 16.dp)
                         top.linkTo(profileIv.top, margin = 8.dp)
                     }
@@ -132,7 +146,7 @@ fun ConstraintLayoutScreen(
                 Text(
                     text = "Mobile Application Developer",
                     style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.constrainAs(desTv){
+                    modifier = Modifier.constrainAs(desTv) {
                         start.linkTo(nameTv.start)
                         top.linkTo(nameTv.bottom)
                     }

@@ -12,9 +12,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Red
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Red
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun BasicAlertDialog(
@@ -32,7 +32,7 @@ internal fun BasicAlertDialog(
                    openDialog = false
                    onDialogDismiss.invoke()
                }) {
-                   Text(text = "Confirm", color = Purple40)
+                   Text(text = "Confirm", color = com.iamkamrul.designsystem.theme.Purple40)
                }
            },
            dismissButton = {
@@ -40,7 +40,7 @@ internal fun BasicAlertDialog(
                    openDialog = false
                    onDialogDismiss.invoke()
                }) {
-                   Text(text = "Dismiss", color = Red)
+                   Text(text = "Dismiss", color = com.iamkamrul.designsystem.theme.Red)
                }
            },
            icon = {

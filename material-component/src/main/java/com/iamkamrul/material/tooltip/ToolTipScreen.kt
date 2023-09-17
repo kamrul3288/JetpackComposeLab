@@ -22,10 +22,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 import kotlinx.coroutines.launch
 
 @Composable
@@ -39,7 +39,10 @@ internal fun TooltipScreen(
 
 
 
-    ScaffoldWithBackNavigation(title = "Tooltip", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Tooltip",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -58,12 +61,12 @@ internal fun TooltipScreen(
                     }
                 },
                 state = rememberTooltipState()
-            ){
+            ) {
                 ElevatedButton(
                     onClick = {},
                     colors = ButtonDefaults.elevatedButtonColors(
-                        containerColor = Purple40,
-                        contentColor = White
+                        containerColor = com.iamkamrul.designsystem.theme.Purple40,
+                        contentColor = com.iamkamrul.designsystem.theme.White
                     )
                 ) {
                     Text(text = "Long Press To Display Tooltip")
@@ -83,16 +86,16 @@ internal fun TooltipScreen(
                     }
                 },
                 state = tooltipState
-            ){
+            ) {
                 ElevatedButton(
                     onClick = {
-                       scope.launch {
-                           tooltipState.show()
-                       }
+                        scope.launch {
+                            tooltipState.show()
+                        }
                     },
                     colors = ButtonDefaults.elevatedButtonColors(
-                        containerColor = Purple40,
-                        contentColor = White
+                        containerColor = com.iamkamrul.designsystem.theme.Purple40,
+                        contentColor = com.iamkamrul.designsystem.theme.White
                     )
                 ) {
                     Text(text = "Click To Display Tooltip")
@@ -105,28 +108,28 @@ internal fun TooltipScreen(
             TooltipBox(
                 positionProvider = TooltipDefaults.rememberRichTooltipPositionProvider(),
                 tooltip = {
-                   RichTooltip(
-                       title = {
-                           Text(text = "RichTooltip Alert")
-                       },
-                       action = {
-                           TextButton(onClick = {
-                               scope.launch {
-                                   tooltipPersistState.dismiss()
-                               }
-                           }) {
-                               Text(text = "Okay", color = MaterialTheme.color.black)
-                           }
-                       },
-                       colors = TooltipDefaults.richTooltipColors(
-                           containerColor = MaterialTheme.color.card
-                       )
-                   ) {
-                       Text(text = lorem)
-                   }
+                    RichTooltip(
+                        title = {
+                            Text(text = "RichTooltip Alert")
+                        },
+                        action = {
+                            TextButton(onClick = {
+                                scope.launch {
+                                    tooltipPersistState.dismiss()
+                                }
+                            }) {
+                                Text(text = "Okay", color = MaterialTheme.color.black)
+                            }
+                        },
+                        colors = TooltipDefaults.richTooltipColors(
+                            containerColor = MaterialTheme.color.card
+                        )
+                    ) {
+                        Text(text = lorem)
+                    }
                 },
                 state = tooltipPersistState,
-            ){
+            ) {
                 ElevatedButton(
                     onClick = {
                         scope.launch {
@@ -134,8 +137,8 @@ internal fun TooltipScreen(
                         }
                     },
                     colors = ButtonDefaults.elevatedButtonColors(
-                        containerColor = Purple40,
-                        contentColor = White
+                        containerColor = com.iamkamrul.designsystem.theme.Purple40,
+                        contentColor = com.iamkamrul.designsystem.theme.White
                     )
                 ) {
                     Text(text = "Click To Display Rich Tooltip")

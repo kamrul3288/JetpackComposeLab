@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ComponentButton
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ComponentButton
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 fun LayoutHomeScreen(
@@ -26,20 +26,25 @@ fun LayoutHomeScreen(
     onFlowBtnClick:()->Unit,
     onConstraintLayoutBtnClick:()->Unit,
 ){
-    ScaffoldWithBackNavigation(title = "Layouts", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Layouts",
+        onBackClick = onBackClick
+    ) {
         val modifier = Modifier.padding(it)
-        Column(modifier = modifier
-            .fillMaxSize()
-            .padding(4.dp)) {
-            Row{
-                ComponentButton(
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(4.dp)
+        ) {
+            Row {
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
                     buttonLabel = "Column",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onColumnBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(0.8f).height(80.dp),
                     buttonLabel = "Row",
                     icon = painterResource(id = R.drawable.ic_layout),
@@ -48,15 +53,15 @@ fun LayoutHomeScreen(
             }
 
             Spacer(modifier = Modifier.height(5.dp))
-            Row{
-                ComponentButton(
+            Row {
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(0.8f).height(80.dp),
                     buttonLabel = "Box",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onBoxBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
                     buttonLabel = "BoxWithConstraints",
                     icon = painterResource(id = R.drawable.ic_layout),
@@ -66,15 +71,15 @@ fun LayoutHomeScreen(
 
 
             Spacer(modifier = Modifier.height(5.dp))
-            Row{
-                ComponentButton(
+            Row {
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
                     buttonLabel = "Horizontal Pager",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onHorizontalPagerBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(0.8f).height(80.dp),
                     buttonLabel = "Vertical Pager",
                     icon = painterResource(id = R.drawable.ic_layout),
@@ -83,15 +88,15 @@ fun LayoutHomeScreen(
             }
 
             Spacer(modifier = Modifier.height(5.dp))
-            Row{
-                ComponentButton(
+            Row {
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(0.8f).height(80.dp),
                     buttonLabel = "Flow",
                     icon = painterResource(id = R.drawable.ic_layout),
                     onClick = onFlowBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier.weight(1f).height(80.dp),
                     buttonLabel = "ConstraintLayout",
                     icon = painterResource(id = R.drawable.ic_layout),

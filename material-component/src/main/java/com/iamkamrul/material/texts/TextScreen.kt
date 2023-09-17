@@ -35,9 +35,9 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.iamkamrul.common.R
-import com.iamkamrul.common.theme.Pink40
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.theme.Pink40
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.White
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,7 +61,7 @@ fun TextScreen(
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         modifier = Modifier.clickable {onBackClick()},
-                        contentDescription = "back_icon", tint = White
+                        contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
                     )
                 }
             )
@@ -79,15 +79,15 @@ fun TextScreen(
 
             Text(text = stringResource(id = R.string.app_name))
 
-            Text(text = "Hello Compose", style = MaterialTheme.typography.titleMedium, color = Purple40)
+            Text(text = "Hello Compose", style = MaterialTheme.typography.titleMedium, color = com.iamkamrul.designsystem.theme.Purple40)
 
 
             Text(
                 buildAnnotatedString {
-                    withStyle(style = SpanStyle(color = Purple40)){
+                    withStyle(style = SpanStyle(color = com.iamkamrul.designsystem.theme.Purple40)){
                         append("Hello")
                     }
-                    withStyle(style = SpanStyle(color = Pink40, fontWeight = FontWeight.Black)){
+                    withStyle(style = SpanStyle(color = com.iamkamrul.designsystem.theme.Pink40, fontWeight = FontWeight.Black)){
                         append("Compose")
                     }
                 },
@@ -96,7 +96,7 @@ fun TextScreen(
 
             Text(
                 modifier = Modifier
-                    .background(color = Purple40, shape = RoundedCornerShape(5.dp))
+                    .background(color = com.iamkamrul.designsystem.theme.Purple40, shape = RoundedCornerShape(5.dp))
                     .padding(10.dp),
                 text = "Hello Compose",
                 style = MaterialTheme.typography.titleMedium,

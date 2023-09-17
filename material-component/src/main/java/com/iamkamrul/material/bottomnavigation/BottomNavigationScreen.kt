@@ -16,8 +16,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavBookmarkScreen
 import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavHomeScreen
 import com.iamkamrul.material.bottomnavigation.navscreen.BottomNavProfileScreen
@@ -38,20 +38,20 @@ internal fun BottomNavigationScreen(
         }
     }
 
-    ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
         title = "Bottom Navigation",
         onBackClick = onBackClick,
         bottomBar = {
             NavigationBar(
                 containerColor = MaterialTheme.color.card,
                 contentColor = MaterialTheme.color.black
-            ){
-                bottomNavItems.forEachIndexed {index, item ->
+            ) {
+                bottomNavItems.forEachIndexed { index, item ->
                     NavigationBarItem(
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
-                            navController.navigate(item.route){
+                            navController.navigate(item.route) {
                                 popUpTo(navController.graph.findStartDestination().id)
                                 launchSingleTop = true
                             }
@@ -74,19 +74,19 @@ internal fun BottomNavigationScreen(
         }
     ) {
         NavHost(
-            navController = navController ,
+            navController = navController,
             startDestination = bottomNavigationHomeScreenRoute
-        ){
+        ) {
 
-            composable(route = bottomNavigationHomeScreenRoute){
+            composable(route = bottomNavigationHomeScreenRoute) {
                 BottomNavHomeScreen()
             }
 
-            composable(route = bottomNavigationProfileScreenRoute){
+            composable(route = bottomNavigationProfileScreenRoute) {
                 BottomNavProfileScreen()
             }
 
-            composable(route = bottomNavigationBookmarksScreenRoute){
+            composable(route = bottomNavigationBookmarksScreenRoute) {
                 BottomNavBookmarkScreen()
             }
         }

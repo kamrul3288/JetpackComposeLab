@@ -23,7 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 internal fun SwitchScreen(
@@ -34,7 +34,10 @@ internal fun SwitchScreen(
     var isCheckedSwitch2 by remember { mutableStateOf(true) }
 
 
-    ScaffoldWithBackNavigation(title = "Switch", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Switch",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -42,10 +45,10 @@ internal fun SwitchScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            
+
             Switch(
                 checked = isCheckedSwitch1,
-                onCheckedChange = {isChecked->
+                onCheckedChange = { isChecked ->
                     isCheckedSwitch1 = isChecked
                 },
                 colors = SwitchDefaults.colors(
@@ -59,7 +62,7 @@ internal fun SwitchScreen(
             Spacer(modifier = Modifier.height(16.dp))
             Switch(
                 checked = isCheckedSwitch2,
-                onCheckedChange = {isChecked->
+                onCheckedChange = { isChecked ->
                     isCheckedSwitch2 = isChecked
                 },
                 colors = SwitchDefaults.colors(
@@ -69,14 +72,14 @@ internal fun SwitchScreen(
                 ),
                 thumbContent = {
                     Icon(
-                        imageVector = if (isCheckedSwitch2)Icons.Filled.Check else Icons.Filled.RadioButtonUnchecked,
+                        imageVector = if (isCheckedSwitch2) Icons.Filled.Check else Icons.Filled.RadioButtonUnchecked,
                         contentDescription = null,
                         modifier = Modifier.size(SwitchDefaults.IconSize),
                     )
 
                 }
             )
-            
+
         }
     }
 }

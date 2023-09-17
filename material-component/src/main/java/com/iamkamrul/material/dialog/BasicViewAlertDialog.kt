@@ -34,10 +34,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Purple80
-import com.iamkamrul.common.theme.Red
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Purple80
+import com.iamkamrul.designsystem.theme.Red
+import com.iamkamrul.designsystem.theme.color
 
 
 @Composable
@@ -90,8 +90,8 @@ internal fun BasicViewAlertDialog(
                            unfocusedTextColor = MaterialTheme.color.black,
                            unfocusedContainerColor = Color.Transparent,
                            focusedContainerColor = Color.Transparent,
-                           unfocusedBorderColor = Purple80,
-                           focusedBorderColor = Purple40
+                           unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                           focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
                        ),
                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
                    )
@@ -110,8 +110,8 @@ internal fun BasicViewAlertDialog(
                            unfocusedTextColor = MaterialTheme.color.black,
                            unfocusedContainerColor = Color.Transparent,
                            focusedContainerColor = Color.Transparent,
-                           unfocusedBorderColor = Purple80,
-                           focusedBorderColor = Purple40
+                           unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                           focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
                        ),
                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
                    )
@@ -126,14 +126,14 @@ internal fun BasicViewAlertDialog(
                            openDialog = false
                            onDialogDismiss.invoke()
                        }) {
-                           Text(text = "Dismiss", color = Red)
+                           Text(text = "Dismiss", color = com.iamkamrul.designsystem.theme.Red)
                        }
 
                        TextButton(onClick = {
                            openDialog = false
                            onDialogDismiss.invoke()
                        }) {
-                           Text(text = "Confirm", color = Purple40)
+                           Text(text = "Confirm", color = com.iamkamrul.designsystem.theme.Purple40)
                        }
                    }
                }

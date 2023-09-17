@@ -12,21 +12,26 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.layout.R
 
 @Composable
 fun BoxScreen(
     onBackClick:()->Unit,
 ){
-    ScaffoldWithBackNavigation(title = "Box", onBackClick = onBackClick) {
-        Box(modifier = Modifier
-            .padding(it)
-            .fillMaxSize()) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Box",
+        onBackClick = onBackClick
+    ) {
+        Box(
+            modifier = Modifier
+                .padding(it)
+                .fillMaxSize()
+        ) {
 
             Text(text = "No pending task available...", modifier = Modifier.align(Alignment.Center))
-            
+
             ExtendedFloatingActionButton(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)

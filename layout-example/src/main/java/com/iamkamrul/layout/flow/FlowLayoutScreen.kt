@@ -17,18 +17,23 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 fun FlowLayoutScreen(
     onBackClick:()->Unit
 ){
-    ScaffoldWithBackNavigation(title = "Flow Layout", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .padding(it)
-            .padding(16.dp)
-            .fillMaxSize()) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Flow Layout",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .padding(it)
+                .padding(16.dp)
+                .fillMaxSize()
+        ) {
 
 
             Text(text = "Flow Row", style = MaterialTheme.typography.labelLarge)
@@ -44,7 +49,7 @@ fun FlowLayoutScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
             Text(text = "Flow Column", style = MaterialTheme.typography.labelLarge)
-            FlowColumn{
+            FlowColumn {
                 ChipItem("Price: High to Low")
                 ChipItem("Avg rating: 4+")
                 ChipItem("Free breakfast")

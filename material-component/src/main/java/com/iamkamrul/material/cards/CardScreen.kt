@@ -18,18 +18,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun CardScreen(
     onBackClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "Card", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)
-            .padding(16.dp)) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Card",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+                .padding(16.dp)
+        ) {
 
 
             //--------------- ElevatedCard Example------------------
@@ -47,7 +52,6 @@ internal fun CardScreen(
                 }
 
             }
-
 
 
             //--------------- OutlinedCard Example------------------

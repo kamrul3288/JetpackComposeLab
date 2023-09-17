@@ -25,8 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ComponentButton
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ComponentButton
+import com.iamkamrul.designsystem.theme.White
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -74,7 +74,7 @@ fun  MaterialComponentScreen(
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         modifier = Modifier.clickable {onBackClick()},
-                        contentDescription = "back_icon", tint = White
+                        contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
                     )
                 }
             )
@@ -88,7 +88,7 @@ fun  MaterialComponentScreen(
 
             //-------------------------- Row  1 ---------------------------
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -97,7 +97,7 @@ fun  MaterialComponentScreen(
                     onClick = onTextClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -107,7 +107,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -122,7 +122,7 @@ fun  MaterialComponentScreen(
             //--------------------------- Row  2 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -132,7 +132,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -142,7 +142,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -158,7 +158,7 @@ fun  MaterialComponentScreen(
             //---------------------------- Row  3 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -167,7 +167,7 @@ fun  MaterialComponentScreen(
                     onClick = onTopAppBarBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -177,7 +177,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -192,7 +192,7 @@ fun  MaterialComponentScreen(
             //------------------------------- Row  4 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -202,7 +202,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -212,7 +212,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -228,7 +228,7 @@ fun  MaterialComponentScreen(
             //------------------------------ Row  5 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -237,7 +237,7 @@ fun  MaterialComponentScreen(
                     onClick = onSlideBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -247,7 +247,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -260,7 +260,7 @@ fun  MaterialComponentScreen(
             //------------------------------ Row  6 ----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -269,7 +269,7 @@ fun  MaterialComponentScreen(
                     onClick = onRadioBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -279,7 +279,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -296,7 +296,7 @@ fun  MaterialComponentScreen(
 
 
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -306,7 +306,7 @@ fun  MaterialComponentScreen(
                 )
                 Spacer(modifier = Modifier.width(5.dp))
 
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -317,7 +317,7 @@ fun  MaterialComponentScreen(
 
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -332,7 +332,7 @@ fun  MaterialComponentScreen(
             //----------------------------- Row  8----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -341,7 +341,7 @@ fun  MaterialComponentScreen(
                     onClick = onDialogBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -351,7 +351,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -364,7 +364,7 @@ fun  MaterialComponentScreen(
             //----------------------------- Row  9----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),
@@ -373,7 +373,7 @@ fun  MaterialComponentScreen(
                     onClick = onCheckboxBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(1f)
                         .height(70.dp),
@@ -383,7 +383,7 @@ fun  MaterialComponentScreen(
                 )
 
                 Spacer(modifier = Modifier.width(5.dp))
-                ComponentButton(
+                com.iamkamrul.designsystem.component.ComponentButton(
                     modifier = Modifier
                         .weight(0.8f)
                         .height(70.dp),

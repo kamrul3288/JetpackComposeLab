@@ -36,9 +36,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun MenuScreen(
@@ -56,7 +56,10 @@ internal fun MenuScreen(
 
 
 
-    ScaffoldWithBackNavigation(title = "Menu", onBackClick = onBackClick) { it ->
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Menu",
+        onBackClick = onBackClick
+    ) { it ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -73,7 +76,7 @@ internal fun MenuScreen(
                     },
                     colors = ButtonDefaults.elevatedButtonColors(
                         containerColor = MaterialTheme.colorScheme.primary,
-                        contentColor = White
+                        contentColor = com.iamkamrul.designsystem.theme.White
                     )
                 ) {
                     Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "")
@@ -161,8 +164,8 @@ internal fun MenuScreen(
                     ExposedDropdownMenu(
                         expanded = isExposeDropDownMenuExpanded,
                         onDismissRequest = { isExposeDropDownMenuExpanded = false },
-                        modifier= Modifier.background(MaterialTheme.color.card)
-                    ){
+                        modifier = Modifier.background(MaterialTheme.color.card)
+                    ) {
                         countries.forEach { country ->
                             DropdownMenuItem(
                                 text = { Text(country) },
@@ -208,13 +211,14 @@ internal fun MenuScreen(
                         ),
                     )
 
-                    val filteringOptions = countries.filter { it.contains(selectedCountry2, ignoreCase = true) }
-                    if (filteringOptions.isNotEmpty()){
+                    val filteringOptions =
+                        countries.filter { it.contains(selectedCountry2, ignoreCase = true) }
+                    if (filteringOptions.isNotEmpty()) {
                         ExposedDropdownMenu(
                             expanded = isExposeDropDownMenu2Expanded,
                             onDismissRequest = { isExposeDropDownMenu2Expanded = false },
-                            modifier= Modifier.background(MaterialTheme.color.card)
-                        ){
+                            modifier = Modifier.background(MaterialTheme.color.card)
+                        ) {
                             filteringOptions.forEach { country ->
                                 DropdownMenuItem(
                                     text = { Text(country) },

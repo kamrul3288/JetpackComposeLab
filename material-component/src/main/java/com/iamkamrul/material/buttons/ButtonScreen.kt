@@ -29,27 +29,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Pink80
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Purple80
-import com.iamkamrul.common.theme.PurpleGrey40
-import com.iamkamrul.common.theme.PurpleGrey80
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Pink80
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Purple80
+import com.iamkamrul.designsystem.theme.PurpleGrey40
+import com.iamkamrul.designsystem.theme.PurpleGrey80
+import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.R
 
 @Composable
 internal fun ButtonScreen(
     onBackClick:()->Unit
 ){
-    ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
         title = "Buttons",
-        onBackClick = onBackClick)
+        onBackClick = onBackClick
+    )
     {
         val modifier = Modifier.padding(it)
-        Column(modifier = modifier
-            .fillMaxSize()
-            .padding(16.dp)) {
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
 
             //--------------------- ElevatedButton Example------------------
             ElevatedButton(
@@ -71,7 +74,7 @@ internal fun ButtonScreen(
                 onClick = {},
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Purple40
+                    containerColor = com.iamkamrul.designsystem.theme.Purple40
                 )
             ) {
                 Text(text = "Filled Button")
@@ -83,7 +86,7 @@ internal fun ButtonScreen(
                 onClick = {},
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.filledTonalButtonColors(
-                    containerColor = PurpleGrey80
+                    containerColor = com.iamkamrul.designsystem.theme.PurpleGrey80
                 )
             ) {
                 Text(text = "Filled Tonal Button")
@@ -94,7 +97,10 @@ internal fun ButtonScreen(
             OutlinedButton(
                 onClick = {},
                 modifier = Modifier.fillMaxWidth(),
-                border = BorderStroke(width = 2.dp, color = Purple40),
+                border = BorderStroke(
+                    width = 2.dp,
+                    color = com.iamkamrul.designsystem.theme.Purple40
+                ),
                 shape = RoundedCornerShape(5.dp),
                 colors = ButtonDefaults.outlinedButtonColors(
                     contentColor = MaterialTheme.color.black
@@ -123,15 +129,15 @@ internal fun ButtonScreen(
             ) {
                 FloatingActionButton(
                     onClick = {},
-                    containerColor = Purple80
+                    containerColor = com.iamkamrul.designsystem.theme.Purple80
                 ) {
                     Text(text = "FAB")
                 }
 
                 ExtendedFloatingActionButton(
                     onClick = {},
-                    containerColor = Pink80,
-                    contentColor = PurpleGrey40,
+                    containerColor = com.iamkamrul.designsystem.theme.Pink80,
+                    contentColor = com.iamkamrul.designsystem.theme.PurpleGrey40,
                 ) {
                     Icon(painter = painterResource(id = R.drawable.ic_add), contentDescription = "")
                     Text(text = "EXTENDED FAB")

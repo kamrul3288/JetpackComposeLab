@@ -1,4 +1,4 @@
-package com.iamkamrul.common.compose
+package com.iamkamrul.designsystem.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.ColumnScope
@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -49,7 +49,7 @@ fun ScaffoldWithBackNavigation(
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "back_icon", tint = White
+                            contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
                         )
                     }
                 }
@@ -81,7 +81,7 @@ fun ScaffoldWithMenu(
                     Icon(
                         imageVector = Icons.Default.Menu,
                         modifier = Modifier.clickable {onMeniClick()},
-                        contentDescription = "menu_icon", tint = White
+                        contentDescription = "menu_icon", tint = com.iamkamrul.designsystem.theme.White
                     )
                 }
             )
@@ -121,7 +121,7 @@ fun ScaffoldWithBottomSheet(
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "back_icon", tint = White
+                            contentDescription = "back_icon", tint = com.iamkamrul.designsystem.theme.White
                         )
                     }
                 }

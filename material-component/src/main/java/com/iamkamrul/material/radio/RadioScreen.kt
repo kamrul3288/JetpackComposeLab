@@ -27,11 +27,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Pink40
-import com.iamkamrul.common.theme.Pink80
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Pink40
+import com.iamkamrul.designsystem.theme.Pink80
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun RadioButtonScreen(
@@ -42,7 +42,10 @@ internal fun RadioButtonScreen(
 
 
 
-    ScaffoldWithBackNavigation(title = "Radio Button", onBackClick = onBackClick) { it ->
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Radio Button",
+        onBackClick = onBackClick
+    ) { it ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -108,7 +111,7 @@ internal fun RadioButtonScreen(
 
                     ) {
                         Icon(
-                            imageVector = if (it == selectedOption)Icons.Default.CheckCircleOutline else Icons.Default.RadioButtonUnchecked,
+                            imageVector = if (it == selectedOption) Icons.Default.CheckCircleOutline else Icons.Default.RadioButtonUnchecked,
                             contentDescription = "Radio",
                             tint = MaterialTheme.color.sliderThumbColor
                         )
@@ -144,8 +147,8 @@ internal fun RadioButtonScreen(
                                 onOptionSelected(it)
                             },
                             colors = ButtonDefaults.elevatedButtonColors(
-                                contentColor = White,
-                                containerColor = if (it == selectedOption) Pink40 else Pink80
+                                contentColor = com.iamkamrul.designsystem.theme.White,
+                                containerColor = if (it == selectedOption) com.iamkamrul.designsystem.theme.Pink40 else com.iamkamrul.designsystem.theme.Pink80
                             )
                         ) {
                             Text(text = it)

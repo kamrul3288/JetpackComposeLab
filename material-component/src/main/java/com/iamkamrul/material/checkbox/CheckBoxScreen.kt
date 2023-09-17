@@ -14,7 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 internal fun CheckBoxScreen(
@@ -25,7 +25,10 @@ internal fun CheckBoxScreen(
     var isOrangeCheckBoxChecked by remember { mutableStateOf(false) }
 
 
-    ScaffoldWithBackNavigation(title = "CheckBox", onBackClick = onBackClick) { it ->
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "CheckBox",
+        onBackClick = onBackClick
+    ) { it ->
         Column(
             modifier = Modifier
                 .fillMaxSize()

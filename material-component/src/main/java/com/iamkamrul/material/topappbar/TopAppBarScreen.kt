@@ -23,18 +23,23 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun TopAppbarScreen(
     onBackClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "Top Appbar Example", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)
-            .padding(16.dp)) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Top Appbar Example",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+                .padding(16.dp)
+        ) {
 
 
             //------------------------- Default App Bar Example -------------------------------
@@ -54,10 +59,18 @@ internal fun TopAppbarScreen(
                 },
                 actions = {
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.Attachment, contentDescription = "Attachment", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.Attachment,
+                            contentDescription = "Attachment",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.AccountCircle, contentDescription = "Account", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.AccountCircle,
+                            contentDescription = "Account",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                 }
             )
@@ -66,7 +79,10 @@ internal fun TopAppbarScreen(
             //------------------------- Center Aligned TopAppBar Example -------------------------------
 
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = "Center Aligned TopAppBar Example", style = MaterialTheme.typography.labelMedium)
+            Text(
+                text = "Center Aligned TopAppBar Example",
+                style = MaterialTheme.typography.labelMedium
+            )
             Spacer(modifier = Modifier.height(8.dp))
             CenterAlignedTopAppBar(
                 title = {
@@ -82,10 +98,18 @@ internal fun TopAppbarScreen(
                 },
                 actions = {
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.Attachment, contentDescription = "Attachment", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.Attachment,
+                            contentDescription = "Attachment",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.AccountCircle, contentDescription = "Account", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.AccountCircle,
+                            contentDescription = "Account",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                 }
             )
@@ -110,10 +134,18 @@ internal fun TopAppbarScreen(
                 },
                 actions = {
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.Attachment, contentDescription = "Attachment", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.Attachment,
+                            contentDescription = "Attachment",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.AccountCircle, contentDescription = "Account", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.AccountCircle,
+                            contentDescription = "Account",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                 }
             )
@@ -138,10 +170,18 @@ internal fun TopAppbarScreen(
                 },
                 actions = {
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.Attachment, contentDescription = "Attachment", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.Attachment,
+                            contentDescription = "Attachment",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                     IconButton(onClick = { }) {
-                        Icon(imageVector = Icons.Outlined.AccountCircle, contentDescription = "Account", tint = White)
+                        Icon(
+                            imageVector = Icons.Outlined.AccountCircle,
+                            contentDescription = "Account",
+                            tint = com.iamkamrul.designsystem.theme.White
+                        )
                     }
                 }
             )

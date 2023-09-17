@@ -34,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.Purple80
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.Purple80
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun FullScreenDialog(
@@ -85,7 +85,7 @@ internal fun FullScreenDialog(
                             openDialog = false
                             onDialogDismiss.invoke()
                         }) {
-                            Text(text = "Save", color = Purple40)
+                            Text(text = "Save", color = com.iamkamrul.designsystem.theme.Purple40)
                         }
 
                     }
@@ -109,8 +109,8 @@ internal fun FullScreenDialog(
                             unfocusedTextColor = MaterialTheme.color.black,
                             unfocusedContainerColor = Color.Transparent,
                             focusedContainerColor = Color.Transparent,
-                            unfocusedBorderColor = Purple80,
-                            focusedBorderColor = Purple40
+                            unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                            focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
                         ),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
                     )
@@ -129,8 +129,8 @@ internal fun FullScreenDialog(
                             unfocusedTextColor = MaterialTheme.color.black,
                             unfocusedContainerColor = Color.Transparent,
                             focusedContainerColor = Color.Transparent,
-                            unfocusedBorderColor = Purple80,
-                            focusedBorderColor = Purple40
+                            unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                            focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
                         ),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
                     )

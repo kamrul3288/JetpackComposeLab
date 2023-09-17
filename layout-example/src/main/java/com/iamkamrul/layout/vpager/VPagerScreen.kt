@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
 
 @Composable
 fun VerticalPagerScreen(
@@ -20,11 +20,15 @@ fun VerticalPagerScreen(
 ){
     val pagerState = rememberPagerState(pageCount = {10}, initialPage = 0)
 
-    ScaffoldWithBackNavigation(title = "Vertical Pager", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Vertical Pager",
+        onBackClick = onBackClick
+    ) {
         VerticalPager(state = pagerState) {
-            Box(modifier = Modifier.fillMaxSize(),
+            Box(
+                modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
-            ){
+            ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {

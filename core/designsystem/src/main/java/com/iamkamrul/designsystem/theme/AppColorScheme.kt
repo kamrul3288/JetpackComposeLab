@@ -1,4 +1,4 @@
-package com.iamkamrul.common.theme
+package com.iamkamrul.designsystem.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -16,7 +16,7 @@ data class AppColor(
 )
 internal val LocalAppColor = compositionLocalOf { AppColor() }
 
-val MaterialTheme.color:AppColor
+val MaterialTheme.color: AppColor
     @Composable
     @ReadOnlyComposable
     get() = LocalAppColor.current

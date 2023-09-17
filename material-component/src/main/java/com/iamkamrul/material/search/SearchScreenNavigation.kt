@@ -29,9 +29,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Pink40
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Pink40
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun SearchScreen(
@@ -41,7 +41,10 @@ internal fun SearchScreen(
     var active by rememberSaveable { mutableStateOf(false) }
     val lastSearches = mutableListOf<String>()
 
-    ScaffoldWithBackNavigation(title = "Search", onBackClick = onBackClick) { it ->
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Search",
+        onBackClick = onBackClick
+    ) { it ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -65,7 +68,7 @@ internal fun SearchScreen(
                 placeholder = { Text("Search") },
                 colors = SearchBarDefaults.colors(
                     containerColor = MaterialTheme.color.card,
-                    dividerColor = Pink40,
+                    dividerColor = com.iamkamrul.designsystem.theme.Pink40,
                     inputFieldColors = TextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.color.black,
                         unfocusedTextColor = MaterialTheme.color.black,
@@ -73,7 +76,7 @@ internal fun SearchScreen(
                 ),
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                 trailingIcon = {
-                    if (active){
+                    if (active) {
                         Icon(
                             Icons.Default.Clear,
                             contentDescription = null,

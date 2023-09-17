@@ -8,6 +8,7 @@ android {
 
 dependencies{
     implementation(project(":core:common"))
+    implementation(project(":core:designsystem"))
     implementation(libs.androidx.compose.navigation)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.ui.util)

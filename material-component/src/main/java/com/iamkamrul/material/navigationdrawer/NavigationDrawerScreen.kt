@@ -41,10 +41,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithMenu
-import com.iamkamrul.common.theme.Purple40
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithMenu
+import com.iamkamrul.designsystem.theme.Purple40
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.material.R
 import kotlinx.coroutines.launch
 
@@ -59,7 +59,7 @@ internal fun NavigationDrawerScreen() {
         drawerContent = {
             ModalDrawerSheet(
                 drawerContainerColor = MaterialTheme.color.card,
-                drawerContentColor = White
+                drawerContentColor = com.iamkamrul.designsystem.theme.White
             ) {
 
                 DrawerHeader()
@@ -69,7 +69,7 @@ internal fun NavigationDrawerScreen() {
             }
         },
     ){
-        ScaffoldWithMenu(
+        com.iamkamrul.designsystem.component.ScaffoldWithMenu(
             title = "Navigation Drawer",
             onMeniClick = {
                 scope.launch {
@@ -96,7 +96,7 @@ fun DrawerHeader() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .background(Purple40.copy(alpha = 0.7f))
+            .background(com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.7f))
             .padding(24.dp)
             .fillMaxWidth()
     ) {
@@ -134,7 +134,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
@@ -149,7 +149,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
@@ -164,7 +164,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
@@ -181,7 +181,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small
@@ -196,7 +196,7 @@ private fun DrawerItem(){
         },
         modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
         colors = NavigationDrawerItemDefaults.colors(
-            selectedContainerColor = Purple40.copy(alpha = 0.3f),
+            selectedContainerColor = com.iamkamrul.designsystem.theme.Purple40.copy(alpha = 0.3f),
             unselectedContainerColor = Color.Transparent,
         ),
         shape = MaterialTheme.shapes.small

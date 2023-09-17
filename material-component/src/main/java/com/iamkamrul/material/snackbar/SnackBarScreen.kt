@@ -17,8 +17,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
 import kotlinx.coroutines.launch
 
 
@@ -30,7 +30,7 @@ internal fun SnackBarScreen(
     val snackBarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
-    ScaffoldWithBackNavigation(
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
         title = "SnackBar",
         onBackClick = onBackClick,
         snackbarHost = {
@@ -48,26 +48,25 @@ internal fun SnackBarScreen(
 
             ElevatedButton(
                 onClick = {
-                   scope.launch{
-                       val result = snackBarHostState.showSnackbar(
-                           message = "Hello From Snackbar",
-                           actionLabel = "Undo",
-                           duration = SnackbarDuration.Long
+                    scope.launch {
+                        val result = snackBarHostState.showSnackbar(
+                            message = "Hello From Snackbar",
+                            actionLabel = "Undo",
+                            duration = SnackbarDuration.Long
                         )
-                       when(result){
-                           SnackbarResult.Dismissed -> {}
-                           SnackbarResult.ActionPerformed -> {}
-                       }
-                   }
+                        when (result) {
+                            SnackbarResult.Dismissed -> {}
+                            SnackbarResult.ActionPerformed -> {}
+                        }
+                    }
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Text(text = "Show Simple Snackbar")
             }
-
 
 
         }

@@ -1,4 +1,4 @@
-package com.iamkamrul.common.theme
+package com.iamkamrul.designsystem.theme
 import androidx.compose.ui.graphics.Color
 
 val Purple80 = Color(0xFFD0BCFF)

@@ -30,17 +30,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
-import com.iamkamrul.common.theme.color
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 internal fun ChipScreen(
     onBackClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "Chip", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Chip",
+        onBackClick = onBackClick
+    ) {
 
-        val filterItemChips  = listOf("Ongoing","Confirmed","Completed")
+        val filterItemChips = listOf("Ongoing", "Confirmed", "Completed")
         var selectedFilterItemIndex by remember { mutableIntStateOf(0) }
 
 
@@ -53,18 +56,22 @@ internal fun ChipScreen(
         ) {
 
 
-
             //-------------------Assist Chip Example---------------------
             Text(text = "Assist Chip Example:", style = MaterialTheme.typography.labelMedium)
             Spacer(modifier = Modifier.height(8.dp))
-            Row (
+            Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
-            ){
+            ) {
                 AssistChip(
                     onClick = {},
                     label = { Text(text = "Assist Chip") },
-                    leadingIcon = { Icon(imageVector = Icons.Default.Add, contentDescription = null) },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Add,
+                            contentDescription = null
+                        )
+                    },
                     colors = AssistChipDefaults.assistChipColors(
                         labelColor = MaterialTheme.color.black,
                         leadingIconContentColor = MaterialTheme.color.sliderThumbColor
@@ -74,10 +81,15 @@ internal fun ChipScreen(
                 ElevatedAssistChip(
                     onClick = {},
                     label = { Text(text = "Elevated Assist Chip") },
-                    leadingIcon = { Icon(imageVector = Icons.Default.Add, contentDescription = null) },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Add,
+                            contentDescription = null
+                        )
+                    },
                     colors = AssistChipDefaults.assistChipColors(
-                        labelColor = White,
-                        leadingIconContentColor = White,
+                        labelColor = com.iamkamrul.designsystem.theme.White,
+                        leadingIconContentColor = com.iamkamrul.designsystem.theme.White,
                         containerColor = MaterialTheme.colorScheme.primary
                     )
                 )
@@ -105,12 +117,11 @@ internal fun ChipScreen(
                             {
                                 Icon(imageVector = Icons.Default.Check, contentDescription = null)
                             }
-                        }
-                        else null,
+                        } else null,
                         colors = FilterChipDefaults.filterChipColors(
                             selectedContainerColor = MaterialTheme.colorScheme.primary,
-                            selectedLeadingIconColor = White,
-                            selectedLabelColor = White
+                            selectedLeadingIconColor = com.iamkamrul.designsystem.theme.White,
+                            selectedLabelColor = com.iamkamrul.designsystem.theme.White
                         )
                     )
                 }

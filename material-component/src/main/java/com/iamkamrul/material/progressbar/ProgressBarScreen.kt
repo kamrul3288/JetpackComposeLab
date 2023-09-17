@@ -14,15 +14,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Red
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Red
+import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun ProgressBarScreen(
     onBackClick:()->Unit
 ) {
-    ScaffoldWithBackNavigation(title = "Progressbar", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Progressbar",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -43,8 +46,8 @@ internal fun ProgressBarScreen(
                 Spacer(modifier = Modifier.width(16.dp))
                 CircularProgressIndicator(
                     strokeWidth = 4.dp,
-                    trackColor = White,
-                    color = Red
+                    trackColor = com.iamkamrul.designsystem.theme.White,
+                    color = com.iamkamrul.designsystem.theme.Red
                 )
             }
 

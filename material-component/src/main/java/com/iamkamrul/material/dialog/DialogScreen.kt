@@ -25,8 +25,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.White
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun DialogScreen(
@@ -36,7 +36,10 @@ internal fun DialogScreen(
     var isOpenBasicViewDialog by remember { mutableStateOf(false) }
     var isOpenFullScreenDialog by remember { mutableStateOf(false) }
 
-    ScaffoldWithBackNavigation(title = "Dialogs", onBackClick = onBackClick) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Dialogs",
+        onBackClick = onBackClick
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -47,19 +50,19 @@ internal fun DialogScreen(
 
             ElevatedButton(
                 onClick = {
-                   isOpenBasicDialog = true
+                    isOpenBasicDialog = true
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Icon(imageVector = Icons.Default.CrisisAlert, contentDescription = "")
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(text = "Basic Alert Dialog")
             }
-            if (isOpenBasicDialog){
-                BasicAlertDialog{
+            if (isOpenBasicDialog) {
+                BasicAlertDialog {
                     isOpenBasicDialog = false
                 }
             }
@@ -73,15 +76,15 @@ internal fun DialogScreen(
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Icon(imageVector = Icons.Default.CrisisAlert, contentDescription = "")
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(text = "View Alert Dialog")
             }
-            if (isOpenBasicViewDialog){
-                BasicViewAlertDialog{
+            if (isOpenBasicViewDialog) {
+                BasicViewAlertDialog {
                     isOpenBasicViewDialog = false
                 }
             }
@@ -95,14 +98,14 @@ internal fun DialogScreen(
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = White
+                    contentColor = com.iamkamrul.designsystem.theme.White
                 )
             ) {
                 Icon(imageVector = Icons.Default.CrisisAlert, contentDescription = "")
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(text = "Full Screen Dialog")
             }
-            if (isOpenFullScreenDialog){
+            if (isOpenFullScreenDialog) {
                 FullScreenDialog {
                     isOpenFullScreenDialog = false
                 }

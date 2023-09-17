@@ -18,23 +18,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.common.compose.ScaffoldWithBackNavigation
-import com.iamkamrul.common.theme.Red
+import com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation
+import com.iamkamrul.designsystem.theme.Red
 import com.iamkamrul.material.R
 
 @Composable
 internal fun IconScreen(
     onBackClick:()->Unit
 ){
-    ScaffoldWithBackNavigation(title = "Icons", onBackClick = onBackClick) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)
-            .padding(16.dp)) {
+    com.iamkamrul.designsystem.component.ScaffoldWithBackNavigation(
+        title = "Icons",
+        onBackClick = onBackClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+                .padding(16.dp)
+        ) {
 
 
-            Text(text = "Icons From Drawable Resources:", style = MaterialTheme.typography.titleSmall)
-            Icon(painter = painterResource(id = R.drawable.ic_material), contentDescription = "Material Icon")
+            Text(
+                text = "Icons From Drawable Resources:",
+                style = MaterialTheme.typography.titleSmall
+            )
+            Icon(
+                painter = painterResource(id = R.drawable.ic_material),
+                contentDescription = "Material Icon"
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
             Text(text = "Icons From Material:", style = MaterialTheme.typography.titleSmall)
@@ -42,7 +53,10 @@ internal fun IconScreen(
 
 
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = "Resize Icons From Drawable Resources:", style = MaterialTheme.typography.titleSmall)
+            Text(
+                text = "Resize Icons From Drawable Resources:",
+                style = MaterialTheme.typography.titleSmall
+            )
             Icon(
                 painter = painterResource(id = R.drawable.ic_material),
                 contentDescription = "Material Icon",
@@ -56,7 +70,7 @@ internal fun IconScreen(
             Icon(
                 imageVector = Icons.Default.Favorite,
                 contentDescription = "Hearts",
-                tint = Red,
+                tint = com.iamkamrul.designsystem.theme.Red,
                 modifier = Modifier
                     .width(80.dp)
                     .height(80.dp)
@@ -68,7 +82,7 @@ internal fun IconScreen(
                 Icon(
                     imageVector = Icons.Default.Favorite,
                     contentDescription = "Hearts",
-                    tint = Red,
+                    tint = com.iamkamrul.designsystem.theme.Red,
                     modifier = Modifier.size(ButtonDefaults.IconSize)
 
                 )
