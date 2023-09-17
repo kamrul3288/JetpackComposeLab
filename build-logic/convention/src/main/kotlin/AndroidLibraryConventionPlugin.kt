@@ -10,6 +10,7 @@ import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.kotlin
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -37,22 +38,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 }
             }
             dependencies {
-                add("implementation",libs.findLibrary("androidx-core-ktx").get())
-                add("implementation",libs.findLibrary("androidx-lifecycle-runtime").get())
-                add("implementation",libs.findLibrary("androidx-compose-activity").get())
-                add("implementation",libs.findLibrary("androidx-compose-ui").get())
-                add("implementation",libs.findLibrary("androidx-compose-ui-graphics").get())
-                add("implementation",libs.findLibrary("androidx-compose-ui-tooling-preview").get())
-                add("implementation",libs.findLibrary("androidx-compose-material3").get())
-                add("implementation",libs.findLibrary("gson").get())
-
-                add("testImplementation",libs.findLibrary("test-junit4").get())
-                add("androidTestImplementation",libs.findLibrary("test-androidx-junit").get())
-                add("androidTestImplementation",libs.findLibrary("test-androidx-espresso").get())
-                add("androidTestImplementation",libs.findLibrary("test-androidx-compose-ui-junit").get())
-                add("debugImplementation",libs.findLibrary("test-androidx-compose-ui-tooling").get())
-                add("debugImplementation",libs.findLibrary("test-androidx-compose-ui-manifest").get())
-
+                add("androidTestImplementation", kotlin("test"))
+                add("testImplementation", kotlin("test"))
             }
         }
     }
