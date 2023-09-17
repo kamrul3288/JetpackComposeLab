@@ -22,19 +22,19 @@ dependencies {
 gradlePlugin{
     plugins{
         register("androidApplicationCompose") {
-            id = "composelab.application.compose"
+            id = "iamkamrul.android.compose.application" 
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
-            id = "composelab.android.application"
+            id = "iamkamrul.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "composelab.android.library.compose"
+            id = "iamkamrul.android.compose.library"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "composelab.android.library"
+            id = "iamkamrul.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
     }

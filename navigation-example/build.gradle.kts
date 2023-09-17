@@ -1,6 +1,6 @@
 plugins {
-    id("composelab.android.library.compose")
-    id("composelab.android.library")
+    id("iamkamrul.android.compose.library")
+    id("iamkamrul.android.library")
 }
 
 android {

@@ -1,7 +1,7 @@
 
 plugins {
-    id ("composelab.android.application")
-    id ("composelab.application.compose")
+    id ("iamkamrul.android.application")
+    id ("iamkamrul.android.compose.application")
 }
 
 android {
