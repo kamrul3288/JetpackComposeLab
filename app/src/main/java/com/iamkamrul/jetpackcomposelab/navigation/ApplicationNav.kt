@@ -1,5 +1,7 @@
 package com.iamkamrul.jetpackcomposelab.navigation
 
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -93,7 +95,31 @@ fun ApplicationNav(
     NavHost(
         navController = navController,
         startDestination = startDestination,
-        modifier = modifier
+        modifier = modifier,
+        enterTransition = {
+            slideIntoContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                animationSpec = tween(700)
+            )
+        },
+        exitTransition = {
+            slideOutOfContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                animationSpec = tween(700)
+            )
+        },
+        popEnterTransition = {
+            slideIntoContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                animationSpec = tween(700)
+            )
+        },
+        popExitTransition = {
+            slideOutOfContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                animationSpec = tween(700)
+            )
+        }
     ){
         mainScreen(
             onMaterialBtnClick = navController::navigateToMaterialComponentScreen,
