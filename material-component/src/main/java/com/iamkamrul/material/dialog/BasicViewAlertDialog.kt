@@ -34,9 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.iamkamrul.designsystem.theme.Purple40
-import com.iamkamrul.designsystem.theme.Purple80
-import com.iamkamrul.designsystem.theme.Red
 import com.iamkamrul.designsystem.theme.color
 
 
@@ -58,7 +55,8 @@ internal fun BasicViewAlertDialog(
                     .wrapContentHeight(),
                 shape = MaterialTheme.shapes.large,
                 tonalElevation = AlertDialogDefaults.TonalElevation,
-                color = MaterialTheme.color.card
+                color = MaterialTheme.color.card,
+                contentColor = MaterialTheme.color.black
             ){
                Column(
                    modifier = Modifier.padding(16.dp),

@@ -34,8 +34,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
-import com.iamkamrul.designsystem.theme.Purple40
-import com.iamkamrul.designsystem.theme.Purple80
 import com.iamkamrul.designsystem.theme.color
 
 @Composable
@@ -58,7 +56,8 @@ internal fun FullScreenDialog(
                 modifier = Modifier.fillMaxSize(),
                 shape = MaterialTheme.shapes.large,
                 tonalElevation = AlertDialogDefaults.TonalElevation,
-                color = MaterialTheme.color.card
+                color = MaterialTheme.color.card,
+                contentColor = MaterialTheme.color.black
             ){
                 Column(
                     modifier = Modifier
