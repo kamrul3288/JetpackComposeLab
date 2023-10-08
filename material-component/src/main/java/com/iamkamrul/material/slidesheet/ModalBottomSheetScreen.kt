@@ -63,6 +63,7 @@ internal fun ModalBottomSheetScreen(
         sheetState = modalBottomSheetState,
         dragHandle = { BottomSheetDefaults.DragHandle() },
         containerColor = MaterialTheme.color.card,
+        contentColor = MaterialTheme.color.black
     ) {
         LazyColumn {
             items(countries){(country, flag) ->

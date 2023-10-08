@@ -5,6 +5,7 @@ package com.iamkamrul.material.slidesheet
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
@@ -18,6 +19,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.iamkamrul.designsystem.component.ScaffoldBottomSheet
+import com.iamkamrul.designsystem.theme.White
 
 @Composable
 internal fun SlideSheetScreen(
@@ -27,7 +31,7 @@ internal fun SlideSheetScreen(
     var showingModalSheet by remember { mutableStateOf(false) }
 
 
-    com.iamkamrul.designsystem.component.ScaffoldBottomSheet(
+    ScaffoldBottomSheet(
         title = "Slide Sheet",
         onNavigationIconClick = onBackClick,
         bottomSheetContent = {
@@ -45,17 +49,19 @@ internal fun SlideSheetScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it),
+                .padding(it)
+                .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             ElevatedButton(
+                modifier = Modifier.fillMaxWidth(),
                 onClick = {
                     showingModalSheet = true
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = com.iamkamrul.designsystem.theme.White
+                    contentColor = White
                 )
             ) {
                 Text(text = "Show Modal Sheet")

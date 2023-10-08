@@ -77,6 +77,7 @@ fun ScaffoldBottomSheet(
         scaffoldState = scaffoldState,
         sheetContainerColor = MaterialTheme.color.card,
         containerColor = MaterialTheme.color.card,
+        contentColor = MaterialTheme.color.black,
         sheetPeekHeight = sheetPeekHeight,
         content = content,
         sheetShadowElevation = 10.dp,
