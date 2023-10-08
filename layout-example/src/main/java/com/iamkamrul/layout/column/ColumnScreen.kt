@@ -34,6 +34,7 @@ internal fun ColumnScreen(
         Column(
             modifier = Modifier
                 .padding(it)
+                .padding(16.dp)
                 .fillMaxSize()
         ) {
             Text(text = "Kamrul Hasan", style = MaterialTheme.typography.titleMedium)
