@@ -7,6 +7,7 @@ import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.BottomSheetScaffoldState
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -59,6 +60,43 @@ fun ScaffoldTopAppbar(
     )
 }
 
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ScaffoldBottomAppbar(
+    title:String,
+    onNavigationIconClick:()->Unit,
+    navigationIcon:Painter = rememberVectorPainter(image = JclIcons.ArrowBack),
+    bottomBar: @Composable () -> Unit = {},
+    floatingActionButton:@Composable () -> Unit = {},
+    floatingActionButtonPosition:FabPosition = FabPosition.End,
+    content: @Composable (PaddingValues) -> Unit,
+){
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(text = title, color = Color.White)
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                ),
+                navigationIcon = {
+                    IconButton(onClick = onNavigationIconClick) {
+                        Icon(
+                            painter = navigationIcon,
+                            contentDescription = "navigationIcon", tint = White
+                        )
+                    }
+                },
+            )
+        },
+        bottomBar = bottomBar,
+        content = content,
+        floatingActionButtonPosition = floatingActionButtonPosition,
+        floatingActionButton = floatingActionButton
+    )
+}
 
 
 @OptIn(ExperimentalMaterial3Api::class)
