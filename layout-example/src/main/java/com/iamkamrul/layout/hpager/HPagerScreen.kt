@@ -3,7 +3,6 @@
 package com.iamkamrul.layout.hpager
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,11 +12,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -26,14 +26,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
+import coil.compose.AsyncImage
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
-import com.iamkamrul.designsystem.theme.Purple40
-import com.iamkamrul.designsystem.theme.Purple80
-import com.iamkamrul.designsystem.theme.PurpleGrey80
+import com.iamkamrul.designsystem.theme.White
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
 
@@ -42,10 +43,17 @@ fun HorizontalPagerScreen(
     onBackClick:()->Unit
 ){
     val pagerState = rememberPagerState(pageCount = {5}, initialPage = 0)
-    val pagerState1 = rememberPagerState(pageCount = {5},initialPage = 0)
-    val pagerState2 = rememberPagerState(pageCount = {5},initialPage = 0)
-    val pagerState3 = rememberPagerState(pageCount = {5},initialPage = 1)
+    val pagerState1 = rememberPagerState(pageCount = {5},initialPage = 1)
+    val pagerState2 = rememberPagerState(pageCount = {5},initialPage = 2)
+    val pagerState3 = rememberPagerState(pageCount = {5},initialPage = 3)
     val coroutineScope = rememberCoroutineScope()
+    val imageList = listOf(
+        "https://wallpaper.dog/small/20508896.jpg",
+        "https://wallpaper.dog/small/20609094.jpg",
+        "https://wallpaper.dog/small/20557592.jpg",
+        "https://wallpaper.dog/small/20611420.jpg",
+        "https://wallpaper.dog/small/20609161.jpg"
+    )
 
     ScaffoldTopAppbar(
         title = "Horizontal Pager",
@@ -56,40 +64,43 @@ fun HorizontalPagerScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it)
+                .padding(16.dp)
         ) {
 
 
             //---------------------EXAMPLE 1----------------------------
-            Text(text = "Example-1", modifier = Modifier.padding(8.dp))
             HorizontalPager(
                 state = pagerState
             ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .background(Purple80),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "Horizontal Pager Index : $it")
+                Box{
+                  AsyncImage(
+                      modifier = Modifier
+                          .fillMaxWidth()
+                          .height(120.dp)
+                          .clip(RoundedCornerShape(10.dp)),
+                      model = imageList[it],
+                      contentDescription = "image",
+                      contentScale = ContentScale.FillWidth,
+                  )
                 }
             }
 
 
             //---------------------EXAMPLE 2----------------------------
-            Text(text = "Example-2", modifier = Modifier.padding(8.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(100.dp)
-            ) {
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 16.dp),
+                color = MaterialTheme.colorScheme.primary
+            )
+            Box{
                 HorizontalPager(state = pagerState1) {
-                    Text(
-                        text = "Page Index $it",
+                    AsyncImage(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .background(PurpleGrey80)
-                            .wrapContentSize(align = Alignment.Center)
+                            .fillMaxWidth()
+                            .height(120.dp)
+                            .clip(RoundedCornerShape(10.dp)),
+                        model = imageList[it],
+                        contentDescription = "image",
+                        contentScale = ContentScale.FillWidth,
                     )
                 }
 
@@ -140,19 +151,20 @@ fun HorizontalPagerScreen(
 
 
             //---------------------EXAMPLE 3----------------------------
-            Text(text = "Example-3", modifier = Modifier.padding(8.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(100.dp)
-                    .background(Purple80)
-            ) {
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 16.dp),
+                color = MaterialTheme.colorScheme.primary
+            )
+            Box{
                 HorizontalPager(state = pagerState2) {
-                    Text(
-                        text = "Horizontal Pager Index : $it",
+                    AsyncImage(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .wrapContentSize(Alignment.Center)
+                            .fillMaxWidth()
+                            .height(120.dp)
+                            .clip(RoundedCornerShape(10.dp)),
+                        model = imageList[it],
+                        contentDescription = "image",
+                        contentScale = ContentScale.FillWidth,
                     )
                 }
 
@@ -162,11 +174,16 @@ fun HorizontalPagerScreen(
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
                         .padding(bottom = 10.dp),
+                    activeColor = White,
+                    inactiveColor = White.copy(alpha = 0.3f)
                 )
             }
 
             //---------------------EXAMPLE 3----------------------------
-            Text(text = "Example-4", modifier = Modifier.padding(8.dp))
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 16.dp),
+                color = MaterialTheme.colorScheme.primary
+            )
             HorizontalPager(
                 state = pagerState3,
                 contentPadding = PaddingValues(horizontal = 64.dp),
@@ -195,12 +212,13 @@ fun HorizontalPagerScreen(
                                 fraction = 1f - pageOffset.coerceIn(0f, 1f)
                             )
                         }
-                        .fillMaxSize(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = Purple40
-                    )
                 ) {
-
+                    AsyncImage(
+                        modifier = Modifier.fillMaxSize(),
+                        model = imageList[page],
+                        contentDescription = "image",
+                        contentScale = ContentScale.FillHeight,
+                    )
                 }
             }
 
