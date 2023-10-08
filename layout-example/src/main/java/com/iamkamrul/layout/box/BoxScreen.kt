@@ -36,10 +36,14 @@ fun BoxScreen(
                     .align(Alignment.BottomEnd)
                     .padding(16.dp),
                 onClick = {},
-                containerColor = MaterialTheme.color.card
+                containerColor = MaterialTheme.color.card,
+                contentColor = MaterialTheme.color.black
             ) {
                 Text(text = "Add Task")
-                Icon(imageVector = JclIcons.Add, contentDescription = "")
+                Icon(
+                    imageVector = JclIcons.Add,
+                    contentDescription = "",
+                )
             }
 
         }
