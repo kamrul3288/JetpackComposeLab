@@ -9,13 +9,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 
 @Composable
 internal fun HomeScreen(
     onBackClick:()->Unit,
     user: User
 ) {
-    com.iamkamrul.designsystem.component.ScaffoldTopAppbar(
+    ScaffoldTopAppbar(
         title = "Home",
         onNavigationIconClick = onBackClick
     ) {

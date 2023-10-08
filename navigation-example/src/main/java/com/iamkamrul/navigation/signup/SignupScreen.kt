@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -38,11 +39,12 @@ internal fun SignUpScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(16.dp)
                 .padding(it),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "Sing up completed")
+            Text(text = "Account created successfully", style = MaterialTheme.typography.titleMedium)
 
             Spacer(modifier = Modifier.height(32.dp))
             ElevatedButton(
@@ -52,9 +54,10 @@ internal fun SignUpScreen(
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = White
-                )
+                ),
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Navigation To Home", style = MaterialTheme.typography.labelLarge)
+                Text(text = "Explore now", style = MaterialTheme.typography.labelLarge)
                 Spacer(modifier = Modifier.width(5.dp))
                 Icon(imageVector = JclIcons.ArrowCircleRight, contentDescription = null)
             }

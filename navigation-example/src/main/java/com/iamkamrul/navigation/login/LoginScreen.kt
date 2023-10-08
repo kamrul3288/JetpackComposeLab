@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ButtonDefaults
@@ -30,36 +31,47 @@ internal fun LoginScreen(
         onNavigationIconClick = onBackClick
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(it),
+            modifier = Modifier.fillMaxSize().padding(16.dp).padding(it),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+
+            Text(
+                text = "Welcome Back, Developer!",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(bottom = 24.dp)
+            )
+
+
+            //------------passing custom object/intent-----------------------
             ElevatedButton(
                 onClick = {
-                    onHomeBtnClick(User(name = "Kamrul Hasan", phoneNumber = "+8801701999999"))
+                    onHomeBtnClick(User(name = "Kamrul Hasan", phoneNumber = "+880xxxxxxxx"))
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = com.iamkamrul.designsystem.theme.White
-                )
+                ),
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Navigation To Home", style = MaterialTheme.typography.labelLarge)
+                Text(text = "Login", style = MaterialTheme.typography.labelLarge)
                 Spacer(modifier = Modifier.width(5.dp))
                 Icon(imageVector = JclIcons.ArrowCircleRight, contentDescription = null)
             }
 
+
+            //------------passing  primitive intent-----------------------
             ElevatedButton(
                 onClick = {
-                    onOtpVerifyBtnClick("+8801701999999")
+                    onOtpVerifyBtnClick("+880xxxxxxx")
                 },
                 colors = ButtonDefaults.elevatedButtonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = com.iamkamrul.designsystem.theme.White
-                )
+                ),
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Navigation To Opt Verify", style = MaterialTheme.typography.labelLarge)
+                Text(text = "Create Account", style = MaterialTheme.typography.labelLarge)
                 Spacer(modifier = Modifier.width(5.dp))
                 Icon(imageVector = JclIcons.ArrowCircleRight, contentDescription = null)
             }
