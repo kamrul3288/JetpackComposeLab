@@ -67,7 +67,7 @@ internal fun SearchScreen(
                 },
                 placeholder = { Text("Search") },
                 colors = SearchBarDefaults.colors(
-                    containerColor = MaterialTheme.color.card,
+                    containerColor = MaterialTheme.color.secondaryBackground,
                     dividerColor = Pink40,
                     inputFieldColors = TextFieldDefaults.colors(
                         focusedTextColor = MaterialTheme.color.black,
