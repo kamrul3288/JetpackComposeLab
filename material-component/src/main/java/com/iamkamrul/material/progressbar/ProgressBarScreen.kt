@@ -53,8 +53,8 @@ internal fun ProgressBarScreen(
 
             Spacer(modifier = Modifier.height(32.dp))
             LinearProgressIndicator(
+                progress = { 0.5f },
                 modifier = Modifier.height(10.dp),
-                progress = 0.5f,
             )
 
 

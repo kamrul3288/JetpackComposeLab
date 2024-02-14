@@ -1,5 +1,5 @@
 plugins {
-    id("iamkamrul.android.compose.library")
+    alias(libs.plugins.iamkamrul.android.feature.compose)
 }
 
 android {
@@ -7,13 +7,6 @@ android {
 }
 
 dependencies{
-    implementation(project(":core:common"))
-    implementation(project(":core:ui"))
-    implementation(project(":core:designsystem"))
-    implementation(libs.androidx.compose.navigation)
-    implementation(libs.androidx.compose.foundation)
-    implementation(libs.androidx.compose.ui.util)
-    implementation(libs.accompanist.pager.indicators)
-    implementation(libs.androidx.compose.constraintlayout)
-    implementation(libs.image.coil)
+    implementation(libs.image.coil.compose)
+    implementation(libs.accompanist.pagerindicator)
 }

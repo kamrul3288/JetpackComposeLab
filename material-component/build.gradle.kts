@@ -1,15 +1,10 @@
 plugins {
-    id("iamkamrul.android.compose.library")
+    alias(libs.plugins.iamkamrul.android.feature.compose)
 }
-
 android {
     namespace = "com.iamkamrul.material"
 }
 
 dependencies{
-    implementation(project(":core:common"))
-    implementation(project(":core:ui"))
-    implementation(project(":core:designsystem"))
-    implementation(libs.androidx.compose.navigation)
-    implementation(libs.image.coil)
+    implementation(libs.image.coil.compose)
 }

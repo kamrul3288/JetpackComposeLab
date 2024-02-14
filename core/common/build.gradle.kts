@@ -1,5 +1,5 @@
 plugins {
-    id("iamkamrul.android.compose.library")
+    alias(libs.plugins.iamkamrul.android.library)
 }
 
 android {
@@ -7,5 +7,6 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx)
     implementation(libs.gson)
 }

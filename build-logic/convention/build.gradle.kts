@@ -22,7 +22,7 @@ dependencies {
 gradlePlugin{
     plugins{
         register("androidApplicationCompose") {
-            id = "iamkamrul.android.compose.application" 
+            id = "iamkamrul.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
@@ -30,7 +30,7 @@ gradlePlugin{
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "iamkamrul.android.compose.library"
+            id = "iamkamrul.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
@@ -40,6 +40,11 @@ gradlePlugin{
         register("jvmLibrary") {
             id = "iamkamrul.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
+        }
+
+        register("androidFeatureCompose") {
+            id = "iamkamrul.android.feature.compose"
+            implementationClass = "AndroidFeatureComposeConventionPlugin"
         }
     }
 }
