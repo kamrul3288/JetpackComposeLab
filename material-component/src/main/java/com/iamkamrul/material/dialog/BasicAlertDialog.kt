@@ -32,7 +32,7 @@ internal fun BasicAlertDialog(
                    openDialog = false
                    onDialogDismiss.invoke()
                }) {
-                   Text(text = "Confirm", color = com.iamkamrul.designsystem.theme.Purple40)
+                   Text(text = "Confirm", color = Purple40)
                }
            },
            dismissButton = {
@@ -40,7 +40,7 @@ internal fun BasicAlertDialog(
                    openDialog = false
                    onDialogDismiss.invoke()
                }) {
-                   Text(text = "Dismiss", color = com.iamkamrul.designsystem.theme.Red)
+                   Text(text = "Dismiss", color = Red)
                }
            },
            icon = {

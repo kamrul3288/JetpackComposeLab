@@ -14,8 +14,8 @@ import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AlertDialogDefaults
+import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -46,7 +46,7 @@ internal fun BasicViewAlertDialog(
     var nameFiledValue by remember { mutableStateOf("") }
 
     if (openDialog){
-        AlertDialog(
+        BasicAlertDialog(
             onDismissRequest = {}
         ) {
             Surface(
@@ -57,84 +57,90 @@ internal fun BasicViewAlertDialog(
                 tonalElevation = AlertDialogDefaults.TonalElevation,
                 color = MaterialTheme.color.card,
                 contentColor = MaterialTheme.color.black
-            ){
-               Column(
-                   modifier = Modifier.padding(16.dp),
-                   horizontalAlignment = Alignment.CenterHorizontally
-               ) {
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
 
-                   Spacer(modifier = Modifier.height(16.dp))
-                   Icon(imageVector = Icons.Default.Check, contentDescription = null)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Icon(imageVector = Icons.Default.Check, contentDescription = null)
 
 
-                   Spacer(modifier = Modifier.height(16.dp))
-                   Text(text = "Basic Alert Dialog Title", style = MaterialTheme.typography.titleLarge)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Basic Alert Dialog Title",
+                        style = MaterialTheme.typography.titleLarge
+                    )
 
 
-                   //------------Input Field-------------
-                   Spacer(modifier = Modifier.height(16.dp))
-                   OutlinedTextField(
-                       value = emailFiledValue,
-                       onValueChange = {value->
-                           emailFiledValue = value
-                       },
-                       modifier = Modifier.fillMaxWidth(),
-                       label = {
-                           Text(text = "Input Your Email")
-                       },
-                       colors = OutlinedTextFieldDefaults.colors(
-                           focusedTextColor = MaterialTheme.color.black,
-                           unfocusedTextColor = MaterialTheme.color.black,
-                           unfocusedContainerColor = Color.Transparent,
-                           focusedContainerColor = Color.Transparent,
-                           unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
-                           focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
-                       ),
-                       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
-                   )
+                    //------------Input Field-------------
+                    Spacer(modifier = Modifier.height(16.dp))
+                    OutlinedTextField(
+                        value = emailFiledValue,
+                        onValueChange = { value ->
+                            emailFiledValue = value
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        label = {
+                            Text(text = "Input Your Email")
+                        },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = MaterialTheme.color.black,
+                            unfocusedTextColor = MaterialTheme.color.black,
+                            unfocusedContainerColor = Color.Transparent,
+                            focusedContainerColor = Color.Transparent,
+                            unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                            focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
+                        ),
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+                    )
 
-                   OutlinedTextField(
-                       value = nameFiledValue,
-                       onValueChange = {value->
-                           nameFiledValue = value
-                       },
-                       modifier = Modifier.fillMaxWidth(),
-                       label = {
-                           Text(text = "Input Your Name")
-                       },
-                       colors = OutlinedTextFieldDefaults.colors(
-                           focusedTextColor = MaterialTheme.color.black,
-                           unfocusedTextColor = MaterialTheme.color.black,
-                           unfocusedContainerColor = Color.Transparent,
-                           focusedContainerColor = Color.Transparent,
-                           unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
-                           focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
-                       ),
-                       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
-                   )
+                    OutlinedTextField(
+                        value = nameFiledValue,
+                        onValueChange = { value ->
+                            nameFiledValue = value
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        label = {
+                            Text(text = "Input Your Name")
+                        },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = MaterialTheme.color.black,
+                            unfocusedTextColor = MaterialTheme.color.black,
+                            unfocusedContainerColor = Color.Transparent,
+                            focusedContainerColor = Color.Transparent,
+                            unfocusedBorderColor = com.iamkamrul.designsystem.theme.Purple80,
+                            focusedBorderColor = com.iamkamrul.designsystem.theme.Purple40
+                        ),
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                    )
 
-                   //------------Action Button---------------------
-                   Row(
-                       modifier = Modifier.fillMaxWidth(),
-                       horizontalArrangement = Arrangement.End
-                   ) {
+                    //------------Action Button---------------------
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.End
+                    ) {
 
-                       TextButton(onClick = {
-                           openDialog = false
-                           onDialogDismiss.invoke()
-                       }) {
-                           Text(text = "Dismiss", color = com.iamkamrul.designsystem.theme.Red)
-                       }
+                        TextButton(onClick = {
+                            openDialog = false
+                            onDialogDismiss.invoke()
+                        }) {
+                            Text(text = "Dismiss", color = com.iamkamrul.designsystem.theme.Red)
+                        }
 
-                       TextButton(onClick = {
-                           openDialog = false
-                           onDialogDismiss.invoke()
-                       }) {
-                           Text(text = "Confirm", color = com.iamkamrul.designsystem.theme.Purple40)
-                       }
-                   }
-               }
+                        TextButton(onClick = {
+                            openDialog = false
+                            onDialogDismiss.invoke()
+                        }) {
+                            Text(
+                                text = "Confirm",
+                                color = com.iamkamrul.designsystem.theme.Purple40
+                            )
+                        }
+                    }
+                }
             }
         }
     }

@@ -12,8 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AlertDialogDefaults
+import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -46,7 +46,7 @@ internal fun FullScreenDialog(
 
 
     if (openDialog){
-        AlertDialog(
+        BasicAlertDialog(
             onDismissRequest = {},
             properties = DialogProperties(
                 usePlatformDefaultWidth = false
@@ -58,12 +58,12 @@ internal fun FullScreenDialog(
                 tonalElevation = AlertDialogDefaults.TonalElevation,
                 color = MaterialTheme.color.card,
                 contentColor = MaterialTheme.color.black
-            ){
+            ) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(16.dp)
-                ){
+                ) {
 
 
                     Row(
@@ -90,13 +90,11 @@ internal fun FullScreenDialog(
                     }
 
 
-
-
                     //------------Input Field-------------
                     Spacer(modifier = Modifier.height(16.dp))
                     OutlinedTextField(
                         value = emailFiledValue,
-                        onValueChange = {value->
+                        onValueChange = { value ->
                             emailFiledValue = value
                         },
                         modifier = Modifier.fillMaxWidth(),
@@ -116,7 +114,7 @@ internal fun FullScreenDialog(
 
                     OutlinedTextField(
                         value = nameFiledValue,
-                        onValueChange = {value->
+                        onValueChange = { value ->
                             nameFiledValue = value
                         },
                         modifier = Modifier.fillMaxWidth(),
