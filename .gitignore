@@ -113,3 +113,4 @@ lint/tmp/
 /.idea/.gitignore
 /.idea/copyright/profiles_settings.xml
 
+/.idea/migrations.xml

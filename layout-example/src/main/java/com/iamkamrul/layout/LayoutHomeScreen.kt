@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
@@ -14,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.iamkamrul.ui.component.FeatureCardItem
 import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 import com.iamkamrul.designsystem.icon.JclIcons
+import com.iamkamrul.designsystem.theme.color
 
 @Composable
 fun LayoutHomeScreen(
@@ -29,6 +31,7 @@ fun LayoutHomeScreen(
 ){
     ScaffoldTopAppbar(
         title = "Layouts",
+        containerColor = MaterialTheme.color.secondaryBackground,
         onNavigationIconClick = onBackClick
     ) {
         val modifier = Modifier.padding(it)

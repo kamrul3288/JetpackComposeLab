@@ -13,9 +13,11 @@ data class AppColor(
     val card:Color = Color.Unspecified,
     val clockDialColor:Color = Color.Unspecified,
     val sliderThumbColor:Color = Color.Unspecified,
+    val secondaryBackground:Color = Color.Unspecified,
 )
 internal val LocalAppColor = compositionLocalOf { AppColor() }
 
+@Suppress("UnusedReceiverParameter")
 val MaterialTheme.color: AppColor
     @Composable
     @ReadOnlyComposable
@@ -28,7 +30,8 @@ internal val LocalLightColorScheme = AppColor(
     black = Color(0xFF000000),
     card = White,
     clockDialColor = Color(0xFFE6E0E9),
-    sliderThumbColor = Purple40
+    sliderThumbColor = Purple40,
+    secondaryBackground = LightGray10
 )
 
 internal val LocalDarkColorScheme = AppColor(
@@ -37,5 +40,6 @@ internal val LocalDarkColorScheme = AppColor(
     card = Black80,
     clockDialColor = Black50,
     sliderThumbColor = White,
+    secondaryBackground = Black50
 )
 

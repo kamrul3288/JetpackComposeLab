@@ -8,41 +8,29 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.iamkamrul.designsystem.component.ScaffoldTopAppbar
 import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.JetpackComposeLabTheme
+import com.iamkamrul.designsystem.theme.color
 import com.iamkamrul.ui.component.FeatureCardItem
 import com.iamkamrul.ui.utils.DevicePreviews
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun MainScreen(
     onMaterialBtnClick:()->Unit = {},
     onLayoutBtnClick:()->Unit = {},
     onNavigationBtnClick:()->Unit = {}
 ){
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(text = "Jetpack ComposeLab")
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary
-                )
-            )
-        }
+    ScaffoldTopAppbar(
+        title = "Jetpack ComposeLab",
+        containerColor = MaterialTheme.color.secondaryBackground
     ) {
         val modifier = Modifier.padding(it)
         Column(modifier = modifier

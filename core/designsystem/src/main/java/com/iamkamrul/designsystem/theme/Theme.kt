@@ -47,7 +47,7 @@ private val LightColorScheme = lightColorScheme(
     //The onSecondary color could be used for text and icons that appear on top of secondary-colored backgrounds.
     onSecondary = White,
     //The Background color could be used for backgrounds.
-    background = LightGray,
+    background = White,
     //The onBackground color could be used for text and icons that appear on top of background backgrounds.
     onBackground = Black,
     //The surface color that affect surfaces of components, such as cards, sheets, and menus.

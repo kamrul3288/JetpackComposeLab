@@ -33,6 +33,7 @@ fun ScaffoldTopAppbar(
     navigationIcon:Painter = rememberVectorPainter(image = JclIcons.ArrowBack),
     snackbarHost: @Composable () -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
+    containerColor:Color = MaterialTheme.colorScheme.background,
     content: @Composable (PaddingValues) -> Unit,
     ){
     Scaffold(
@@ -55,10 +56,39 @@ fun ScaffoldTopAppbar(
                 },
             )
         },
+        containerColor = containerColor,
         bottomBar = bottomBar,
         content = content
     )
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ScaffoldTopAppbar(
+    title:String,
+    snackbarHost: @Composable () -> Unit = {},
+    bottomBar: @Composable () -> Unit = {},
+    containerColor:Color = MaterialTheme.colorScheme.background,
+    content: @Composable (PaddingValues) -> Unit,
+){
+    Scaffold(
+        snackbarHost = snackbarHost,
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(text = title, color = Color.White)
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                ),
+            )
+        },
+        containerColor = containerColor,
+        bottomBar = bottomBar,
+        content = content
+    )
+}
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
