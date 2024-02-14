@@ -6,8 +6,8 @@ import com.google.gson.Gson
 import java.io.Serializable
 
 fun <T : Serializable?> Bundle.getSerializableCompat(key: String, clazz: Class<T>): T {
-    @Suppress("DEPRECATION")
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) getSerializable(key, clazz)!! else (getSerializable(key) as T)
+    @Suppress("DEPRECATION", "UNCHECKED_CAST")
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) getSerializable(key, clazz)!! else getSerializable(key) as T
 }
 
 fun <T> String.convertJsonObject(type: Class<T>): T {
