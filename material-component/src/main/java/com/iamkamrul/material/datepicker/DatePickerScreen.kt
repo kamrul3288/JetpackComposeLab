@@ -134,6 +134,7 @@ internal fun DatePickerScreen(
                         state = datePickerState,
                         colors = DatePickerDefaults.colors(
                             dayContentColor = MaterialTheme.color.black,
+                            disabledDayContentColor = MaterialTheme.color.black,
                             selectedDayContentColor = White,
                             selectedDayContainerColor = Purple40,
                             todayContentColor = MaterialTheme.color.black,
