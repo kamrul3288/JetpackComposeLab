@@ -24,6 +24,8 @@ import androidx.compose.ui.unit.dp
 import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.White
 import com.iamkamrul.designsystem.theme.color
+import com.iamkamrul.designsystem.utils.debounceClick
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +49,7 @@ fun ScaffoldTopAppbar(
                     containerColor = MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = {
-                    IconButton(onClick = onNavigationIconClick) {
+                    IconButton(onClick = debounceClick { onNavigationIconClick() }) {
                         Icon(
                             painter = navigationIcon,
                             contentDescription = "navigationIcon", tint = White
