@@ -26,7 +26,8 @@ import com.iamkamrul.ui.utils.DevicePreviews
 internal fun MainScreen(
     onMaterialBtnClick:()->Unit = {},
     onLayoutBtnClick:()->Unit = {},
-    onNavigationBtnClick:()->Unit = {}
+    onNavigationBtnClick:()->Unit = {},
+    onServiceComponentBtnClick:()->Unit = {}
 ){
     ScaffoldTopAppbar(
         title = "Jetpack ComposeLab",
@@ -76,16 +77,14 @@ internal fun MainScreen(
                     modifier = Modifier
                         .weight(1f)
                         .height(80.dp),
-                    label = "Modifiers",
+                    label = "Service Component",
                    icon = painterResource(id = R.drawable.ic_modifier),
-                    onClick = {
-
-                    }
+                    onClick = onServiceComponentBtnClick
                 )
 
             }
 
-            //-----------Row  3----------------------
+            /*//-----------Row  3----------------------
             Spacer(modifier = Modifier.height(5.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 FeatureCardItem(
@@ -187,7 +186,7 @@ internal fun MainScreen(
 
                     }
                 )
-            }
+            }*/
         }
     }
 }

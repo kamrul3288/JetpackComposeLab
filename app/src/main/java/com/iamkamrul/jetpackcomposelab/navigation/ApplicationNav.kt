@@ -85,6 +85,8 @@ import com.iamkamrul.material.topappbar.navigateToTopAppBarScreen
 import com.iamkamrul.material.topappbar.topAppBarScreen
 import com.iamkamrul.navigation.navigateToNavigationModule
 import com.iamkamrul.navigation.navigationModuleGraph
+import com.iamkamrul.sc.navigateToServiceComponentGraph
+import com.iamkamrul.sc.serviceComponentNavGraph
 
 @Composable
 fun ApplicationNav(
@@ -125,7 +127,14 @@ fun ApplicationNav(
             onMaterialBtnClick = navController::navigateToMaterialComponentScreen,
             onLayoutBtnClick = navController::navigateToLayoutHomeScreen,
             onNavigationBtnClick = navController::navigateToNavigationModule,
+            onServiceComponentBtnClick = navController::navigateToServiceComponentGraph
         )
+
+
+        navigationModuleGraph(navController = navController)
+        serviceComponentNavGraph(navController = navController)
+
+
         layoutHomeScreen(
             onBackClick = navController::popBackStack,
             onColumnBtnClick = navController::navigateToColumnScreen,
@@ -204,8 +213,6 @@ fun ApplicationNav(
         checkBoxScreen(onBackClick = navController::popBackStack)
         badgeScreen(onBackClick = navController::popBackStack)
         bottomAppBarScreen(onBackClick = navController::popBackStack)
-
-        navigationModuleGraph(navController = navController)
 
     }
 }

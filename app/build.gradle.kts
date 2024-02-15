@@ -37,6 +37,7 @@ dependencies {
     implementation(projects.layoutExample)
     implementation(projects.materialComponent)
     implementation(projects.navigationExample)
+    implementation(projects.serviceComponent)
 
     implementation(projects.core.common)
     implementation(projects.core.ui)

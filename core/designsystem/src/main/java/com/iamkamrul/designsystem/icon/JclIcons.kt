@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.Attachment
 import androidx.compose.material.icons.outlined.Error
+import androidx.compose.material.icons.outlined.NetworkCheck
 import androidx.compose.material.icons.rounded.AccessTime
 import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material.icons.rounded.Add
@@ -51,4 +52,5 @@ object JclIcons {
     val ArrowBack = Icons.AutoMirrored.Outlined.ArrowBack
     val Send = Icons.AutoMirrored.Outlined.Send
     val Attachment = Icons.Outlined.Attachment
+    val Connectivity = Icons.Outlined.NetworkCheck
 }
