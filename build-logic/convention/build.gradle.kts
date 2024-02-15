@@ -46,5 +46,10 @@ gradlePlugin{
             id = "iamkamrul.android.feature.compose"
             implementationClass = "AndroidFeatureComposeConventionPlugin"
         }
+
+        register("androidHilt") {
+            id = "iamkamrul.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }

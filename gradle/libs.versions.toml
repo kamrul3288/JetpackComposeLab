@@ -120,16 +120,16 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
-com-android-application = { id = "com.android.application", version.ref = "agp-version" }
-com-android-library = { id = "com.android.library", version.ref = "agp-version" }
-com-google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-version" }
-com-google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "gms-version" }
-com-google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
-org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
-org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
-com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-version" }
-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets-version" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
+android-application = { id = "com.android.application", version.ref = "agp-version" }
+android-library = { id = "com.android.library", version.ref = "agp-version" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-version" }
+google-services = { id = "com.google.gms.google-services", version.ref = "gms-version" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-version" }
+secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets-version" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
 
 # Plugins defined by this project
 iamkamrul-android-application = { id = "iamkamrul.android.application", version = "unspecified" }
