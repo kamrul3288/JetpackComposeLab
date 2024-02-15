@@ -11,7 +11,7 @@ class AndroidFeatureComposeConventionPlugin : Plugin<Project> {
             pluginManager.apply {
                 apply("iamkamrul.android.library")
                 apply("iamkamrul.android.library.compose")
-                //apply("iamkamrul.android.hilt")
+                apply("iamkamrul.android.hilt")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {

@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.iamkamrul.android.library)
+    alias(libs.plugins.iamkamrul.android.hilt)
 }
 
 android {

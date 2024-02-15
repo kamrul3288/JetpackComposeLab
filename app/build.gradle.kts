@@ -37,6 +37,7 @@ dependencies {
     implementation(projects.navigationExample)
     implementation(projects.serviceComponent)
 
+    implementation(projects.core.data)
     implementation(projects.core.common)
     implementation(projects.core.ui)
     implementation(projects.core.designsystem)
