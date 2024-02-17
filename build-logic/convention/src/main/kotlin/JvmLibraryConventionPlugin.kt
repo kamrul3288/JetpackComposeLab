@@ -1,4 +1,4 @@
-package com.iamkamrul
+import com.iamkamrul.configureKotlinJvm
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
