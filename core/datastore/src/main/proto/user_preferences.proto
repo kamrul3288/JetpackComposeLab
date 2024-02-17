@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "com.iamkamrul.datastore";
+option java_multiple_files = true;
+
+message UserPreferences{
+  string fullName = 1;
+  string email = 2;
+  int32 age = 3;
+  repeated string full_name_changes_lists = 4;
+  bool has_done_string_to_list_migration = 5;
+}

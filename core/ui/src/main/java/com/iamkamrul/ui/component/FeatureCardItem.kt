@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.iamkamrul.designsystem.icon.JclIcons
 import com.iamkamrul.designsystem.theme.JetpackComposeLabTheme
 import com.iamkamrul.designsystem.theme.color
+import com.iamkamrul.designsystem.utils.debounceClick
 import com.iamkamrul.ui.utils.ComponentPreviews
 import com.iamkamrul.ui.utils.DevicePreviews
 
@@ -34,7 +35,7 @@ fun FeatureCardItem(
     onClick:()->Unit = {}
 ){
     Card(
-        modifier = modifier.clickable { onClick() },
+        modifier = modifier.debounceClick {onClick()},
         shape = RoundedCornerShape(5.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.color.card,

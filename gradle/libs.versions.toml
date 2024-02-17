@@ -17,7 +17,11 @@ compose-navigation-hilt-version = "1.1.0"
 compose-lifecycle-version = "2.7.0"
 core-ktx-version = "1.12.0"
 accompanist-version ="0.34.0"
+datastore-preference-version = "1.0.0"
+datastore-proto-version = "1.0.0"
 
+protobuf-version = "3.24.4"
+protobuf-plugin-version = "0.9.4"
 retrofit2-version = "2.9.0"
 okhHttp3-version = "4.12.0"
 gson-version = "2.10.1"
@@ -59,10 +63,16 @@ androidx-compose-navigation-hilt = { group = "androidx.hilt", name = "hilt-navig
 androidx-compose-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "compose-constraintlayout-version" }
 androidx-compose-lifecycle-viewmodel= { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "compose-lifecycle-version" }
 androidx-compose-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "compose-lifecycle-version" }
+
 androidx-core-ktx = {group = "androidx.core", name = "core-ktx", version.ref = "core-ktx-version"}
+androidx-datastore-preferences = {group = "androidx.datastore", name = "datastore-preferences", version.ref="datastore-preference-version"}
+androidx-datastore-proto = {group = "androidx.datastore", name = "datastore", version.ref="datastore-proto-version"}
 
 desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar-version" }
 accompanist-pagerindicator = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist-version" }
+protobuf-kotlinlite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobuf-version" }
+protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf-version" }
+
 
 
 hilt-android = {group = "com.google.dagger", name = "hilt-android", version.ref="hilt-version"}
@@ -130,6 +140,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-version" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets-version" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf-plugin-version" }
 
 # Plugins defined by this project
 iamkamrul-android-application = { id = "iamkamrul.android.application", version = "unspecified" }

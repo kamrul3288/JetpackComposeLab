@@ -36,6 +36,7 @@ dependencies {
     implementation(projects.materialComponent)
     implementation(projects.navigationExample)
     implementation(projects.serviceComponent)
+    implementation(projects.datastoreUi)
 
     implementation(projects.core.data)
     implementation(projects.core.common)

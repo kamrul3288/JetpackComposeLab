@@ -7,6 +7,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.iamkamrul.datastore_ui.dataStoreNavigationGraph
+import com.iamkamrul.datastore_ui.navigateToDataStoreNavigationGraph
 import com.iamkamrul.jetpackcomposelab.mainScreen
 import com.iamkamrul.jetpackcomposelab.mainScreenRoute
 import com.iamkamrul.layout.box.boxScreen
@@ -127,12 +129,14 @@ fun ApplicationNav(
             onMaterialBtnClick = navController::navigateToMaterialComponentScreen,
             onLayoutBtnClick = navController::navigateToLayoutHomeScreen,
             onNavigationBtnClick = navController::navigateToNavigationModule,
-            onServiceComponentBtnClick = navController::navigateToServiceComponentGraph
+            onServiceComponentBtnClick = navController::navigateToServiceComponentGraph,
+            onDataStoreBtnClick = navController::navigateToDataStoreNavigationGraph
         )
 
 
         navigationModuleGraph(navController = navController)
         serviceComponentNavGraph(navController = navController)
+        dataStoreNavigationGraph(navController = navController)
 
 
         layoutHomeScreen(

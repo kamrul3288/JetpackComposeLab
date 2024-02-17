@@ -27,7 +27,8 @@ internal fun MainScreen(
     onMaterialBtnClick:()->Unit = {},
     onLayoutBtnClick:()->Unit = {},
     onNavigationBtnClick:()->Unit = {},
-    onServiceComponentBtnClick:()->Unit = {}
+    onServiceComponentBtnClick:()->Unit = {},
+    onDataStoreBtnClick:()->Unit = {}
 ){
     ScaffoldTopAppbar(
         title = "Jetpack ComposeLab",
@@ -82,6 +83,28 @@ internal fun MainScreen(
                     onClick = onServiceComponentBtnClick
                 )
 
+            }
+
+            //-----------Row  3----------------------
+            Spacer(modifier = Modifier.height(5.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                FeatureCardItem(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
+                    label = "Data Store",
+                    icon = rememberVectorPainter(image = JclIcons.Menu),
+                    onClick = onDataStoreBtnClick
+                )
+                Spacer(modifier = Modifier.width(5.dp))
+                FeatureCardItem(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(80.dp),
+                    label = "Sample Project",
+                    icon = painterResource(id = R.drawable.ic_material),
+                    onClick = {}
+                )
             }
 
             /*//-----------Row  3----------------------

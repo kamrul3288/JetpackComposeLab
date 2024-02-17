@@ -9,14 +9,16 @@ fun NavGraphBuilder.mainScreen(
     onMaterialBtnClick:()->Unit,
     onLayoutBtnClick:()->Unit,
     onNavigationBtnClick:()->Unit,
-    onServiceComponentBtnClick:()->Unit
+    onServiceComponentBtnClick:()->Unit,
+    onDataStoreBtnClick:()->Unit
 ){
     composable(mainScreenRoute){
         MainScreen(
             onMaterialBtnClick = onMaterialBtnClick,
             onLayoutBtnClick = onLayoutBtnClick,
             onNavigationBtnClick = onNavigationBtnClick,
-            onServiceComponentBtnClick = onServiceComponentBtnClick
+            onServiceComponentBtnClick = onServiceComponentBtnClick,
+            onDataStoreBtnClick = onDataStoreBtnClick
         )
     }
 }
