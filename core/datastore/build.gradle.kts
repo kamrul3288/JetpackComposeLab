@@ -45,6 +45,8 @@ androidComponents {
 
 
 dependencies {
+    api(projects.core.model)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.proto)

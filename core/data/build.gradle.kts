@@ -9,10 +9,11 @@ android {
 }
 
 dependencies {
-    api(projects.core.datastore)
+    implementation(projects.core.datastore)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.datastore.preferences)
 
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.extjunit)

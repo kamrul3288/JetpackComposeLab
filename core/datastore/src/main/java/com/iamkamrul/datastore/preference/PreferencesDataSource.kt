@@ -3,14 +3,14 @@ package com.iamkamrul.datastore.preference
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class UserPreferencesDataSource @Inject constructor(
+class PreferencesDataSource @Inject constructor(
     private val preference: DataStore<Preferences>
 ){
-
     suspend fun<T> putValue(key:Preferences.Key<T>,value:T){
         preference.edit {
            it[key] = value
@@ -22,6 +22,4 @@ class UserPreferencesDataSource @Inject constructor(
             it[key]
         }
     }
-
-
 }

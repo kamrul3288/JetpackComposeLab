@@ -93,7 +93,7 @@ internal fun MainScreen(
                         .weight(1f)
                         .height(80.dp),
                     label = "Data Store",
-                    icon = rememberVectorPainter(image = JclIcons.Menu),
+                    icon = rememberVectorPainter(image = JclIcons.DataObject),
                     onClick = onDataStoreBtnClick
                 )
                 Spacer(modifier = Modifier.width(5.dp))

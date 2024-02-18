@@ -1,5 +1,9 @@
 package com.iamkamrul.data.di
 
+import com.iamkamrul.data.repoimpl.datastore.PreferenceDataStoreRepoImpl
+import com.iamkamrul.data.repoimpl.datastore.ProtoDataStoreRepoImpl
+import com.iamkamrul.data.repository.datastore.PreferenceDataStoreRepository
+import com.iamkamrul.data.repository.datastore.ProtoDataStoreRepository
 import com.iamkamrul.data.utils.NetworkMonitor
 import com.iamkamrul.data.utils.NetworkMonitorManager
 import dagger.Binds
@@ -14,4 +18,14 @@ abstract class DataModule {
     internal abstract fun bindsNetworkMonitor(
         networkMonitor: NetworkMonitorManager,
     ): NetworkMonitor
+
+    @Binds
+    internal abstract fun bindsProtoDataStoreRepository(
+        protoDataStoreRepoImpl: ProtoDataStoreRepoImpl,
+    ): ProtoDataStoreRepository
+
+    @Binds
+    internal abstract fun bindsPreferenceDataStoreRepository(
+        preferenceDataStoreRepoImpl: PreferenceDataStoreRepoImpl,
+    ): PreferenceDataStoreRepository
 }
